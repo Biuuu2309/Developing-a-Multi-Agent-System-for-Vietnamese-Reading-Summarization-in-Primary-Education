@@ -85,8 +85,13 @@ CREATE TABLE conversations (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
-ALTER TABLE read_history MODIFY id BIGINT NOT NULL AUTO_INCREMENT
+DROP TABLE IF EXISTS summary_history;
+DROP TABLE IF EXISTS summary_session;
+DROP TABLE IF EXISTS read_history;
+DROP TABLE IF EXISTS conversations;
+DROP TABLE IF EXISTS summary_tags;
+DROP TABLE IF EXISTS summaries;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS users;
 
-#DROP TABLE IF EXISTS summary_history;
-#DROP TABLE IF EXISTS summary_session;
-#DROP TABLE IF EXISTS read_history;
+SELECT * FROM users
