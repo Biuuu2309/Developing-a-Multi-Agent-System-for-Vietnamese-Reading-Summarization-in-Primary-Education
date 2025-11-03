@@ -95,3 +95,10 @@ DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS users;
 
 SELECT * FROM users
+SELECT * FROM summary_history
+SELECT * FROM summary_session
+SELECT * FROM read_history
+SELECT * FROM conversations
+SELECT * FROM summary_tags
+SELECT * FROM summaries
+SELECT * FROM tags

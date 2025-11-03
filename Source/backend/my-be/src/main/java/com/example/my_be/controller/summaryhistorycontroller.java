@@ -160,7 +160,7 @@ public class SummaryHistoryController {
             session, 
             request.getMethod(), 
             request.getContent(), 
-            request.getMethod().equals("paraphrase") ? request.getGrade() : null
+            request.getMethod().equals("T5_DIEN_GIAI") ? request.getGrade() : null
         );
         return ResponseEntity.ok(historyDTO);
     }
