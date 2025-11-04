@@ -18,11 +18,11 @@ import com.example.my_be.model.MessageUserAi;
 import com.example.my_be.service.MessageService;
 
 @RestController
-@RequestMapping("/message")
+@RequestMapping("/api/message")
 public class MessageController {
     @Autowired
     private MessageService messageService;
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<MessageUserAi> createMessage(@RequestBody MessageRequest request) {
         return new ResponseEntity<>(messageService.createRequest(request), HttpStatus.CREATED);
     }

@@ -67,23 +67,32 @@ CREATE TABLE read_history (
 )
 
 CREATE TABLE summary_tags (
-	summary_tag_id NVARCHAR(255),
-    summary_id NVARCHAR(255),
-    tag_id NVARCHAR(255),
+	summary_tag_id VARCHAR(255),
+    summary_id VARCHAR(255),
+    tag_id VARCHAR(255),
     PRIMARY KEY (summary_tag_id),
     FOREIGN KEY (summary_id) REFERENCES summaries(summary_id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (tag_id) REFERENCES tags(tag_id) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
 CREATE TABLE conversations (
-	message_id NVARCHAR(255),
-    user_id NVARCHAR(255),
-    role NVARCHAR(255) NOT NULL,
-    message TEXT NOT NULL,
+	conversation_id BIGINT AUTO_INCREMENT,
+    user_id VARCHAR(255),
+    title VARCHAR(255) NOT NULL,
+    status ENUM('ACTIVE', 'ARCHIVED', 'DELETED') DEFAULT 'ACTIVE' NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (message_id),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (conversation_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE
 )
+
+CREATE TABLE agents (
+    agent_id BIGINT AUTO_INCREMENT,
+    name VARCHAR(100),
+    description TEXT,
+    capabilities JSON,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 DROP TABLE IF EXISTS summary_history;
 DROP TABLE IF EXISTS summary_session;
