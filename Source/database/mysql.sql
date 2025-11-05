@@ -76,7 +76,7 @@ CREATE TABLE summary_tags (
 )
 
 CREATE TABLE conversations (
-	conversation_id BIGINT AUTO_INCREMENT,
+	conversation_id VARCHAR(255),
     user_id VARCHAR(255),
     title VARCHAR(255) NOT NULL,
     status ENUM('ACTIVE', 'ARCHIVED', 'DELETED') DEFAULT 'ACTIVE' NOT NULL,
@@ -87,11 +87,38 @@ CREATE TABLE conversations (
 )
 
 CREATE TABLE agents (
-    agent_id BIGINT AUTO_INCREMENT,
+    agent_id VARCHAR(255),
     name VARCHAR(100),
     description TEXT,
     capabilities JSON,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE messages (
+    message_id VARCHAR(255) PRIMARY KEY,
+    conversation_id VARCHAR(255),
+    user_id VARCHAR(255),
+    agent_id VARCHAR(255),
+    role ENUM('USER', 'ASSISTANT', 'SYSTEM'),
+    content TEXT,
+    metadata JSON,
+    status ENUM('PENDING', 'PROCESSING', 'COMPLETED', 'FAILED') DEFAULT 'PENDING',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (agent_id) REFERENCES agents(agent_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE agent_logs (
+    log_id VARCHAR(255) PRIMARY KEY,
+    message_id VARCHAR(255),
+    agent_id VARCHAR(255),
+    input TEXT,
+    output TEXT,
+    duration_ms INT,
+    status ENUM('SUCCESS', 'ERROR'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (message_id) REFERENCES messages(message_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (agent_id) REFERENCES agents(agent_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS summary_history;
