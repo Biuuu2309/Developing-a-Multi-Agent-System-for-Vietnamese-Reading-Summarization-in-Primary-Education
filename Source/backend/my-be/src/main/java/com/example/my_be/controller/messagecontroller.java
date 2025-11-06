@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.my_be.dto.MessageRequest;
-import com.example.my_be.model.MessageUserAi;
+import com.example.my_be.dto.CreateMessageRequest;
+import com.example.my_be.dto.MessageResponse;
+import com.example.my_be.model.Message;
+import com.example.my_be.service.MessageNewService;
 import com.example.my_be.service.MessageService;
 
 @RestController
@@ -22,21 +24,40 @@ import com.example.my_be.service.MessageService;
 public class MessageController {
     @Autowired
     private MessageService messageService;
+    
+    @Autowired
+    private MessageNewService messageNewService;
+    
     @PostMapping("/create")
-    public ResponseEntity<MessageUserAi> createMessage(@RequestBody MessageRequest request) {
-        return new ResponseEntity<>(messageService.createRequest(request), HttpStatus.CREATED);
+    public ResponseEntity<MessageResponse> createMessage(@RequestBody CreateMessageRequest request) {
+        return new ResponseEntity<>(messageNewService.createMessage(request), HttpStatus.CREATED);
     }
+    
+    @GetMapping("/conversation/{conversationId}")
+    public ResponseEntity<List<Message>> getMessagesByConversation(@PathVariable String conversationId) {
+        return new ResponseEntity<>(messageNewService.getMessagesByConversation(conversationId), HttpStatus.OK);
+    }
+    
+    @GetMapping("/new/{messageId}")
+    public ResponseEntity<Message> getMessageById(@PathVariable String messageId) {
+        return messageNewService.getMessageById(messageId)
+            .map(body -> new ResponseEntity<>(body, HttpStatus.OK))
+            .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+    
     @GetMapping
-    public ResponseEntity<List<MessageUserAi>> getMessages() {
+    public ResponseEntity<List<Message>> getMessages() {
         return new ResponseEntity<>(messageService.getMessages(), HttpStatus.OK);
     }
-    @GetMapping("/{message_id}")
-    public ResponseEntity<MessageUserAi> getMessageById(@PathVariable("message_id") String message_id) {
+    
+    @GetMapping("/old/{message_id}")
+    public ResponseEntity<Message> getOldMessageById(@PathVariable("message_id") String message_id) {
         return messageService.getMessageById(message_id)
             .map(body -> new ResponseEntity<>(body, HttpStatus.OK))
             .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-    @DeleteMapping("/{message_id}")
+    
+    @DeleteMapping("/old/{message_id}")
     public ResponseEntity<Void> deleteMessage(@PathVariable("message_id") String message_id) {
         messageService.deleteMessage(message_id);
         return new ResponseEntity<>(HttpStatus.OK);

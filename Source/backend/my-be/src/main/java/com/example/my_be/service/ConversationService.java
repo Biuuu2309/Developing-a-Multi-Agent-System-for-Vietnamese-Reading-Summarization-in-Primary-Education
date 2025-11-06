@@ -18,7 +18,7 @@ public class ConversationService {
         Conversation conversation = new Conversation();
         conversation.setUser_id(request.getUser_id());
         conversation.setTitle(request.getTitle());
-        conversation.setStatus(request.getStatus());
+        conversation.setStatus("ACTIVE");
         conversation.setCreated_at(request.getCreated_at());
         conversation.setUpdated_at(request.getUpdated_at());
         return conversationRepository.save(conversation);
