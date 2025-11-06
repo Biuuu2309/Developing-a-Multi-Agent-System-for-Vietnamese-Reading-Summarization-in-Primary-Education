@@ -1,7 +1,6 @@
 package com.example.my_be.model;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,12 +45,12 @@ public class Message {
     private MessageStatus status;
 
     @Column(name = "created_at")
-    private String createdAt;
+    private LocalDateTime createdAt;
 
     @PrePersist
     protected void onCreate() {
         if (createdAt == null) {
-            createdAt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
+            createdAt = LocalDateTime.now();
         }
         if (status == null) {
             status = MessageStatus.PENDING;
@@ -90,7 +89,7 @@ public class Message {
     public void setStatus(MessageStatus status) {
         this.status = status;
     }
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
     public String getMessageId() {
@@ -118,9 +117,9 @@ public class Message {
         return status;
     }
     public LocalDateTime getCreatedAt() {
-        return LocalDateTime.parse(createdAt);
+        return createdAt;
     }
-    public Message(String messageId, String conversationId, String userId, String agentId, MessageRole role, String content, String metadata, MessageStatus status, String createdAt) {
+    public Message(String messageId, String conversationId, String userId, String agentId, MessageRole role, String content, String metadata, MessageStatus status, LocalDateTime createdAt) {
         this.messageId = messageId;
         this.conversationId = conversationId;
         this.userId = userId;
@@ -129,7 +128,7 @@ public class Message {
         this.content = content;
         this.metadata = metadata;
         this.status = status;
-        this.createdAt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
+        this.createdAt = LocalDateTime.now();
     }
 }
 
