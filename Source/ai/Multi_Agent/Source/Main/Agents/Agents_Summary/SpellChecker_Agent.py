@@ -55,7 +55,7 @@ def spellchecker_agent(state: AgentState):
     # Trong thực tế có thể có spell checker thật
     corrected_text = processed_text  # Tạm thời giữ nguyên
     
-    response = AIMessage(content=f"Văn bản đã được kiểm tra chính tả:\n\n{corrected_text}\n\nBây giờ hãy chọn loại tóm tắt:\n1. TRÍCH XUẤT (Extract): Giữ nguyên câu từ quan trọng\n2. DIỄN GIẢI (Abstract): Viết lại theo cách hiểu của bạn\n\nVà cho biết khối lớp (1-5):")
+    response = AIMessage(content=f"✅ Văn bản đã được kiểm tra chính tả!\n\n📝 **Văn bản của bạn:**\n{corrected_text}\n\n---\n\n🔍 **Bây giờ hãy chọn loại tóm tắt và khối lớp:**\n\n1️⃣ **TRÍCH XUẤT** (Extract): Giữ nguyên câu từ quan trọng từ văn bản gốc\n2️⃣ **DIỄN GIẢI** (Abstract): Viết lại theo cách hiểu, diễn đạt lại nội dung\n\n📚 **Khối lớp:** Chọn lớp 1, 2, 3, 4, hoặc 5\n\n💡 **Ví dụ:** \"Tôi muốn tóm tắt theo cách diễn giải cho lớp 5\" hoặc \"Trích xuất cho lớp 3\"")
     memory.add_message("assistant", response.content)
     
     return {
