@@ -34,7 +34,7 @@ export default function TabLayout() {
         name="summary-demo"
         options={{
           title: 'Summary Demo',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chevron.right" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="gearshape.fill" color={color} />,
         }}
       />
     </Tabs>

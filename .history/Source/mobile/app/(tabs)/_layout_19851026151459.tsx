@@ -30,13 +30,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
-      <Tabs.Screen
-        name="summary-demo"
-        options={{
-          title: 'Summary Demo',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chevron.right" color={color} />,
-        }}
-      />
     </Tabs>
   );
 }
