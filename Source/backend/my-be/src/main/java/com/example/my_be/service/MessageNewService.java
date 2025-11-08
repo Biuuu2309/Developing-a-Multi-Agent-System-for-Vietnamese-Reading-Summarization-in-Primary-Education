@@ -71,8 +71,50 @@ public class MessageNewService {
             savedMessage.setStatus(MessageStatus.PROCESSING);
             messageRepository.save(savedMessage);
             
-            ResponseEntity<String> response = restTemplate.postForEntity(masApiUrl, entity, String.class);
+            System.out.println("MAS API URL: " + masApiUrl);
+            System.out.println("MAS API entity: " + entity);
             
+            // Kiểm tra health check trước
+            String healthUrl = masApiUrl.replace("/process", "/health");
+            System.out.println("Checking Flask API health at: " + healthUrl);
+            try {
+                ResponseEntity<String> healthResponse = restTemplate.getForEntity(healthUrl, String.class);
+                System.out.println("✅ Flask API is running. Health check: " + healthResponse.getStatusCode());
+            } catch (Exception e) {
+                System.err.println("❌ Flask API is NOT running or not accessible!");
+                System.err.println("   Error: " + e.getMessage());
+                System.err.println("   Please start Flask API first: python flask_mas_api.py");
+                savedMessage.setStatus(MessageStatus.FAILED);
+                messageRepository.save(savedMessage);
+                throw new RuntimeException("Flask API không chạy. Vui lòng khởi động Flask API tại: " + healthUrl, e);
+            }
+            
+            System.out.println("Calling MAS API...");
+            
+            ResponseEntity<String> response;
+            try {
+                response = restTemplate.postForEntity(masApiUrl, entity, String.class);
+                System.out.println("✅ MAS API response status: " + response.getStatusCode());
+                String responseBody = response.getBody();
+                if (responseBody != null) {
+                    int maxLength = Math.min(200, responseBody.length());
+                    System.out.println("MAS API response body: " + responseBody.substring(0, maxLength));
+                } else {
+                    System.out.println("MAS API response body: null");
+                }
+            } catch (org.springframework.web.client.ResourceAccessException e) {
+                System.err.println("❌ MAS API connection error: " + e.getMessage());
+                System.err.println("   This usually means Flask API is not running or not accessible.");
+                savedMessage.setStatus(MessageStatus.FAILED);
+                messageRepository.save(savedMessage);
+                throw new RuntimeException("Không thể kết nối đến MAS API. Vui lòng kiểm tra xem Flask API đã chạy chưa tại: " + masApiUrl, e);
+            } catch (org.springframework.web.client.HttpClientErrorException | org.springframework.web.client.HttpServerErrorException e) {
+                System.err.println("❌ MAS API HTTP error: " + e.getStatusCode() + " - " + e.getMessage());
+                savedMessage.setStatus(MessageStatus.FAILED);
+                messageRepository.save(savedMessage);
+                throw new RuntimeException("MAS API trả về lỗi: " + e.getStatusCode() + " - " + e.getMessage(), e);
+            }
+
             if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
                 MASResponse masResponse = objectMapper.readValue(response.getBody(), MASResponse.class);
                 

@@ -51,11 +51,15 @@ def new_session(user_id: str = "default_user", clear_history: bool = True, keep_
         run_langgraph_chat(initial_state=initial_state)
     return sid
 
-sid = new_session()
-
-all_items = long_term_memory.collection.get(include=["metadatas"])
-session_ids = sorted({m.get("session_id") for m in all_items["metadatas"] if m})
-print(session_ids)
+# Chỉ chạy khi chạy trực tiếp file này, không chạy khi import
+if __name__ == "__main__" or __name__ == "__mp_main__":
+    sid = new_session()
+    all_items = long_term_memory.collection.get(include=["metadatas"])
+    session_ids = sorted({m.get("session_id") for m in all_items["metadatas"] if m})
+    print(session_ids)
+    
+    # Chạy chat nếu chạy trực tiếp
+    continue_chat_from_session(sid)
 
 def create_initial_state() -> AgentState:
     return {
@@ -252,7 +256,4 @@ def read_long_term_memory_by_session_id(session_id: str):
     return read_long_term_memory_by_session_id_new(session_id)
 
 print("✅ Đã import và override các hàm với version mới! Hàm cũ trong cell 8 đã bị override.")
-
-
-continue_chat_from_session(sid)
 
