@@ -5,7 +5,7 @@
 export const API_CONFIG = {
   // Development - Thay bằng IP máy bạn
   BASE_URL: __DEV__
-    ? 'http://192.168.10.4:8080/api' // ⚠️ THAY ĐỔI IP NÀY
+    ? 'http://192.168.1.64:8080/api' // ⚠️ THAY ĐỔI IP NÀY
     : 'https://your-production-api.com/api',
   
   TIMEOUT: 600000, // 10 phút cho MAS xử lý

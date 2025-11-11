@@ -181,7 +181,7 @@ export default function SummaryDemo() {
           <TouchableOpacity
             style={[
               styles.sendButton,
-              { backgroundColor: tintColor },
+              { backgroundColor: '#007eff' },
               (!inputText.trim() || isLoading || !conversationId) && styles.sendButtonDisabled,
             ]}
             onPress={sendMessage}
@@ -224,6 +224,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 40,
     paddingHorizontal: 20,
+    
   },
   emptyText: {
     textAlign: 'center',
@@ -233,18 +234,21 @@ const styles = StyleSheet.create({
   messageContainer: {
     marginBottom: 12,
     flexDirection: 'row',
+    
   },
   userMessageContainer: {
     justifyContent: 'flex-end',
   },
   assistantMessageContainer: {
     justifyContent: 'flex-start',
+    
   },
   messageBubble: {
     maxWidth: '80%',
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 18,
+    
   },
   userBubble: {
     backgroundColor: '#007AFF',
@@ -262,6 +266,7 @@ const styles = StyleSheet.create({
   messageText: {
     fontSize: 16,
     lineHeight: 20,
+    color: '#000',
   },
   userMessageText: {
     color: '#fff',
