@@ -12,7 +12,7 @@
 *.yaml
 # Log file
 *.log
-
+*.docx
 # BlueJ files
 *.ctxt
 
