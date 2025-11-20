@@ -28,9 +28,9 @@ class AgentState(TypedDict):
     summary_result: str
 
 EXTRACTOR_SYSTEM = """Bạn là Extractor Agent chuyên nghiệp. Nhiệm vụ:
-1. Trích xuất thông tin quan trọng từ văn bản
-2. KHÔNG thay đổi câu từ, chỉ lấy những phần quan trọng nhất
-3. Trả về bản tóm tắt trích xuất ngắn gọn"""
+1. Trích xuất câu, đoạn, từ quan trọng từ văn bản gốc
+2. KHÔNG THAY ĐỔI, THÊM BỚT bất kỳ từ, câu, đoạn nào khi lấy ra từ trong văn bản gốc, chỉ lấy những câu, đoạn quan trọng nhất
+3. Sau đó trả về bản tóm tắt trích xuất"""
 
 def extractor_agent(state: AgentState):
     messages = state["messages"]

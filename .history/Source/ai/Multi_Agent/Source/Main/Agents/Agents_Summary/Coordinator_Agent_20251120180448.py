@@ -33,18 +33,18 @@ class AgentState(TypedDict):
 COORDINATOR_SYSTEM = """Bạn là Coordinator Agent thông minh giúp học sinh tiểu học tóm tắt văn bản theo 2 cách (TRÍCH XUẤT và DIỄN GIẢI) phù hợp với khối lớp (1-5).
 
 Workflow của bạn:
-1. GREETING: Chào hỏi và yêu cầu user cung cấp văn bản
+1. GREETING: Chào hỏi thân thiện như một người bạn và sẵn sàng giúp đỡ hết mình. Sau đó yêu cầu user cung cấp văn bản dưới dạng văn bản chuẩn, ảnh
 2. TEXT_INPUT: Nhận văn bản từ user và chuyển cho OCR/SpellChecker để xử lý
-3. SUMMARY_TYPE: Hỏi user muốn tóm tắt TRÍCH XUẤT hay DIỄN GIẢI và khối lớp nào (1-5)
-4. PROCESSING: Phân công cho agent phù hợp (Extractor hoặc Abstracter)
+3. SUMMARY_TYPE: Tham khảo ý kiến user muốn tóm tắt theo cách TRÍCH XUẤT hay DIỄN GIẢI và khối lớp nào (1-5)
+4. PROCESSING: Tiến hành phân công cho agent phù hợp (Extractor hoặc Abstracter) để tóm tắt văn bản
 5. COMPLETED: Tổng hợp kết quả và hỏi đánh giá hệ thống
 
 QUAN TRỌNG:
-- Khi nhận input không liên quan (off_topic): Phản hồi nhẹ nhàng, lịch sự và điều hướng người dùng quay lại nhiệm vụ chính
-- Khi nhận lời chào (greeting): Chào lại và nhắc nhở về chức năng của hệ thống
-- Khi nhận câu hỏi về hệ thống (system_question): Giải thích ngắn gọn về chức năng
+- Khi nhận input không liên quan (off_topic): Giao tiếp khéo léo, phản hồi nhẹ nhàng, lịch sự và điều hướng người dùng quay lại nhiệm vụ chính của hệ thống
+- Khi nhận lời chào (greeting): Gửi lời chào hào hứng lại và nhắc nhở về chức năng của hệ thống
+- Khi nhận câu hỏi về hệ thống (system_question): Giải thích ngắn gọn về chức năng, lợi ích mang lại của hệ thống
 
-Luôn trả lời ngắn gọn, thân thiện và đi thẳng vào vấn đề."""
+Luôn trả lời ngắn gọn, thân thiện, không quá dài dòng, không quá phức tạp."""
 
 def coordinator_agent(state: AgentState):
     messages = state["messages"]
@@ -55,7 +55,7 @@ def coordinator_agent(state: AgentState):
     
     # Xử lý trường hợp messages rỗng - GREETING
     if not messages:
-        response = AIMessage(content="Xin chào! Tôi là trợ lý tóm tắt thông minh cho học sinh tiểu học.\n\nHãy cung cấp văn bản bạn muốn tóm tắt:")
+        response = AIMessage(content="Xin chào! Tôi là trợ lý tóm tắt thông minh văn bản tiếng Việt cho học sinh tiểu học.\n\nHãy cung cấp văn bản bạn muốn tóm tắt:")
         memory.add_message("assistant", response.content)
         return {
             "messages": [response],
@@ -89,7 +89,14 @@ def coordinator_agent(state: AgentState):
         original_text = state.get("original_text", "")
         
         if input_classification == "greeting" and not original_text:
-            response = AIMessage(content="Xin chào! 😊 Tôi là trợ lý tóm tắt thông minh cho học sinh tiểu học.\n\nTôi có thể giúp bạn tóm tắt văn bản theo 2 cách:\n• TRÍCH XUẤT: Giữ nguyên câu từ quan trọng\n• DIỄN GIẢI: Viết lại theo cách hiểu\n\nHãy cung cấp văn bản bạn muốn tóm tắt nhé!")
+            # Sử dụng LLM để tạo phản hồi greeting tự nhiên hơn
+            context = memory_manager.get_context_summary(include_long_term=True, current_input=user_input)
+            prompt = [
+                SystemMessage(content=f"{COORDINATOR_SYSTEM}\n\nContext từ memory:\n{context}"),
+                HumanMessage(content=f"Người dùng vừa chào bạn: \"{user_input}\". Hãy chào lại một cách thân thiện, hào hứng và nhắc nhở về chức năng của hệ thống.")
+            ]
+            llm_response = llm.invoke(prompt)
+            response = AIMessage(content=llm_response.content)
             memory.add_message("assistant", response.content)
             return {
                 "messages": [response],
@@ -106,7 +113,14 @@ def coordinator_agent(state: AgentState):
             }
         
         elif input_classification == "off_topic" and not original_text:
-            response = AIMessage(content="Xin lỗi, tôi là trợ lý chuyên về tóm tắt văn bản cho học sinh tiểu học. Tôi không thể trả lời câu hỏi này.\n\nTôi có thể giúp bạn:\n• Tóm tắt văn bản theo cách TRÍCH XUẤT\n• Tóm tắt văn bản theo cách DIỄN GIẢI\n\nHãy cung cấp văn bản bạn muốn tóm tắt nhé! 😊")
+            # Sử dụng LLM để phản hồi off_topic một cách khéo léo
+            context = memory_manager.get_context_summary(include_long_term=True, current_input=user_input)
+            prompt = [
+                SystemMessage(content=f"{COORDINATOR_SYSTEM}\n\nContext từ memory:\n{context}"),
+                HumanMessage(content=f"Người dùng hỏi: \"{user_input}\" - đây là câu hỏi không liên quan đến tóm tắt văn bản. Hãy giao tiếp khéo léo, phản hồi nhẹ nhàng, lịch sự và điều hướng người dùng quay lại nhiệm vụ chính của hệ thống.")
+            ]
+            llm_response = llm.invoke(prompt)
+            response = AIMessage(content=llm_response.content)
             memory.add_message("assistant", response.content)
             return {
                 "messages": [response],
@@ -251,7 +265,7 @@ def coordinator_agent(state: AgentState):
             
             # Chỉ xử lý khi input_classification == "text_to_summarize"
             # Lưu văn bản gốc và chuyển sang xử lý OCR/SpellChecker
-            response = AIMessage(content="Văn bản đã được nhận! Đang xử lý...")
+            response = AIMessage(content="Văn bản đã được nhận! Đang xử lý... Bạn hãy vui lòng nhập thể loại tóm tắt và khối lớp:")
             memory.add_message("assistant", response.content)
             return {
                 "messages": [response],

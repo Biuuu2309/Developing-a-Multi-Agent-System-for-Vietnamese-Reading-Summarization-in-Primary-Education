@@ -47,6 +47,7 @@ AGGREGATOR_SYSTEM = """Bạn là Aggregator Agent chuyên nghiệp. Nhiệm vụ
 4. Đảm bảo chất lượng tóm tắt đầu ra phải cao, không bị lặp lại, không bị ngắt quãng, không bị sai lệch ý nghĩa"""
 
 def aggregator_agent(state: AgentState):
+    messages = state["messages"]
     memory = memory_manager.get_memory()
     summary_result = state.get("summary_result", "")
     summary_type = state.get("summary_type", "extract")

@@ -27,19 +27,17 @@ class AgentState(TypedDict):
     processed_text: str
     summary_result: str
 
-ABSTRACTER_SYSTEM = """Bạn là Abstracter Agent chuyên nghiệp. Nhiệm vụ:
-1. Tóm tắt văn bản thành bản diễn giải ngắn gọn
-2. Viết lại theo cách hiểu của bạn nhưng giữ nguyên ý nghĩa
-3. Phù hợp với khối lớp được yêu cầu"""
+SPELLCHECKER_SYSTEM = """Bạn là Spell Checker Agent chuyên nghiệp. Nhiệm vụ:
+1. Kiểm tra và sửa lỗi chính tả trong văn bản
+2. KHÔNG thay đổi nội dung, chỉ sửa lỗi chính tả, dấu câu, và các từ sai
+3. Trả về văn bản đã được sửa"""
 
-def abstracter_agent(state: AgentState):
-    messages = state["messages"]
+def spellchecker_agent(state: AgentState):
     memory = memory_manager.get_memory()
     processed_text = state.get("processed_text", "")
-    grade_level = state.get("grade_level", 3)
     
     if not processed_text:
-        response = AIMessage(content="Không có văn bản để tóm tắt.")
+        response = AIMessage(content="Không có văn bản để kiểm tra chính tả.")
         memory.add_message("assistant", response.content)
         return {
             "messages": [response],
@@ -53,28 +51,36 @@ def abstracter_agent(state: AgentState):
             "summary_result": ""
         }
     
+    # Sử dụng LLM để kiểm tra và sửa lỗi chính tả
     context = memory_manager.get_context_summary(include_long_term=True, current_input=processed_text)
     prompt = [
-        SystemMessage(content=f"{ABSTRACTER_SYSTEM}\n\nContext từ memory:\n{context}\n\nVăn bản cần tóm tắt:\n{processed_text}\n\nKhối lớp: {grade_level}"),
-        HumanMessage(content=f"Hãy tóm tắt diễn giải văn bản trên cho học sinh lớp {grade_level}")
+        SystemMessage(content=f"{SPELLCHECKER_SYSTEM}\n\nContext từ memory:\n{context}"),
+        HumanMessage(content=f"Hãy kiểm tra và sửa lỗi chính tả, dấu câu trong văn bản sau (KHÔNG thay đổi nội dung, chỉ sửa lỗi):\n\n{processed_text}")
     ]
     
-    response = llm.invoke(prompt)
+    llm_response = llm.invoke(prompt)
+    corrected_text = llm_response.content.strip()
+    
+    # Nếu LLM trả về quá dài hoặc có format không mong muốn, fallback về văn bản gốc
+    if len(corrected_text) > len(processed_text) * 1.5:
+        corrected_text = processed_text
+    
+    response = AIMessage(content=f"✅ Văn bản đã được kiểm tra chính tả!\n\n📝 **Văn bản của bạn:**\n{corrected_text}\n\n---\n\n🔍 **Bây giờ hãy chọn loại tóm tắt và khối lớp:**\n\n1️⃣ **TRÍCH XUẤT** (Extract): Giữ nguyên câu từ quan trọng từ văn bản gốc\n2️⃣ **DIỄN GIẢI** (Abstract): Viết lại theo cách hiểu, diễn đạt lại nội dung\n\n📚 **Khối lớp:** Chọn lớp 1, 2, 3, 4, hoặc 5\n\n💡 **Ví dụ:** \"Tôi muốn tóm tắt theo cách diễn giải cho lớp 5\" hoặc \"Trích xuất cho lớp 3\"")
     memory.add_message("assistant", response.content)
     
     return {
         "messages": [response],
-        "current_agent": "grade_calibrator_agent",
-        "needs_user_input": False,
-        "conversation_stage": "processing",
+        "current_agent": "coordinator_agent",
+        "needs_user_input": True,
+        "conversation_stage": "summary_type",
         "original_text": state.get("original_text", ""),
-        "summary_type": "abstract",
-        "grade_level": grade_level,
-        "processed_text": processed_text,
-        "summary_result": response.content
+        "summary_type": None,
+        "grade_level": 0,
+        "processed_text": corrected_text,
+        "summary_result": ""
     }
-abstracter_tool = Tool(
-    name="AbstracterAgent",
-    func=abstracter_agent,
-    description="Use this to abstract a given text. Input must be a text."
+spellchecker_tool = Tool(
+    name="SpellCheckerAgent",
+    func=spellchecker_agent,
+    description="Use this to check the spelling of a given text. Input must be a text."
 )

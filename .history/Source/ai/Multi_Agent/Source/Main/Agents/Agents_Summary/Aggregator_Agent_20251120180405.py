@@ -20,13 +20,12 @@ class AgentState(TypedDict):
     messages: Annotated[List[Any], operator.add]
     current_agent: str
     needs_user_input: bool
-    conversation_stage: Literal["greeting", "text_input", "summary_type", "processing", "completed", "evaluation"]
+    conversation_stage: Literal["greeting", "text_input", "summary_type", "processing", "completed"]
     original_text: str
     summary_type: Literal["extract", "abstract", None]
     grade_level: int
     processed_text: str
     summary_result: str
-    final_result: str
 
 AGGREGATOR_SYSTEM = """Bạn là Aggregator Agent chuyên nghiệp. Nhiệm vụ:
 1. Tổng hợp các bản tóm tắt cuối cùng từ Extractor Agent và Abstracter Agent, sau đó chọn lọc, tinh chỉnh để được bản tóm tắt cuối cùng có chất lượng cao nhất
@@ -47,6 +46,7 @@ AGGREGATOR_SYSTEM = """Bạn là Aggregator Agent chuyên nghiệp. Nhiệm vụ
 4. Đảm bảo chất lượng tóm tắt đầu ra phải cao, không bị lặp lại, không bị ngắt quãng, không bị sai lệch ý nghĩa"""
 
 def aggregator_agent(state: AgentState):
+    messages = state["messages"]
     memory = memory_manager.get_memory()
     summary_result = state.get("summary_result", "")
     summary_type = state.get("summary_type", "extract")
@@ -69,18 +69,15 @@ def aggregator_agent(state: AgentState):
             "final_result": ""
         }
     
-    # Lấy thông tin cần thiết
-    original_text = state.get("original_text", "")
-    
     # Sử dụng LLM để tổng hợp và tinh chỉnh bản tóm tắt cuối cùng
     context = memory_manager.get_context_summary(include_long_term=True, current_input=summary_result)
     prompt = [
         SystemMessage(content=f"{AGGREGATOR_SYSTEM}\n\nContext từ memory:\n{context}\n\nVăn bản gốc:\n{original_text}\n\nBản tóm tắt hiện tại:\n{summary_result}\n\nLoại: {summary_type}\nKhối lớp: {grade_level}"),
-        HumanMessage(content=f"Hãy tổng hợp và tinh chỉnh bản tóm tắt {summary_type} cho học sinh lớp {grade_level} để có chất lượng cao nhất. Chỉ trả về nội dung tóm tắt đã được tinh chỉnh, không thêm giải thích hay format.")
+        HumanMessage(content=f"Hãy tổng hợp và tinh chỉnh bản tóm tắt {summary_type} cho học sinh lớp {grade_level} để có chất lượng cao nhất")
     ]
     
     llm_response = llm.invoke(prompt)
-    refined_summary = llm_response.content.strip()
+    refined_summary = llm_response.content
     
     # Tạo bản tóm tắt cuối cùng với format đẹp
     summary_type_vn = "TRÍCH XUẤT" if summary_type == "extract" else "DIỄN GIẢI"

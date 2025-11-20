@@ -113,14 +113,7 @@ def coordinator_agent(state: AgentState):
             }
         
         elif input_classification == "off_topic" and not original_text:
-            # Sử dụng LLM để phản hồi off_topic một cách khéo léo
-            context = memory_manager.get_context_summary(include_long_term=True, current_input=user_input)
-            prompt = [
-                SystemMessage(content=f"{COORDINATOR_SYSTEM}\n\nContext từ memory:\n{context}"),
-                HumanMessage(content=f"Người dùng hỏi: \"{user_input}\" - đây là câu hỏi không liên quan đến tóm tắt văn bản. Hãy giao tiếp khéo léo, phản hồi nhẹ nhàng, lịch sự và điều hướng người dùng quay lại nhiệm vụ chính của hệ thống.")
-            ]
-            llm_response = llm.invoke(prompt)
-            response = AIMessage(content=llm_response.content)
+            response = AIMessage(content="Xin lỗi, tôi là trợ lý chuyên về tóm tắt văn bản cho học sinh tiểu học. Tôi không thể trả lời câu hỏi này.\n\nTôi có thể giúp bạn:\n• Tóm tắt văn bản theo cách TRÍCH XUẤT\n• Tóm tắt văn bản theo cách DIỄN GIẢI\n\nHãy cung cấp văn bản bạn muốn tóm tắt nhé! 😊")
             memory.add_message("assistant", response.content)
             return {
                 "messages": [response],
@@ -137,14 +130,7 @@ def coordinator_agent(state: AgentState):
             }
         
         elif input_classification == "system_question" and not original_text:
-            # Sử dụng LLM để giải thích về hệ thống
-            context = memory_manager.get_context_summary(include_long_term=True, current_input=user_input)
-            prompt = [
-                SystemMessage(content=f"{COORDINATOR_SYSTEM}\n\nContext từ memory:\n{context}"),
-                HumanMessage(content=f"Người dùng hỏi: \"{user_input}\" - đây là câu hỏi về hệ thống. Hãy giải thích ngắn gọn về chức năng, lợi ích mang lại của hệ thống và cách sử dụng.")
-            ]
-            llm_response = llm.invoke(prompt)
-            response = AIMessage(content=llm_response.content)
+            response = AIMessage(content="Tôi là trợ lý tóm tắt thông minh cho học sinh tiểu học! 📚\n\n**Chức năng của tôi:**\n• Tóm tắt văn bản theo 2 cách: TRÍCH XUẤT và DIỄN GIẢI\n• Điều chỉnh độ dài và từ vựng phù hợp với khối lớp (1-5)\n\n**Cách sử dụng:**\n1. Cung cấp văn bản bạn muốn tóm tắt\n2. Chọn loại tóm tắt (TRÍCH XUẤT hoặc DIỄN GIẢI)\n3. Chọn khối lớp (1-5)\n4. Nhận kết quả tóm tắt phù hợp\n\nHãy cung cấp văn bản bạn muốn tóm tắt nhé! 😊")
             memory.add_message("assistant", response.content)
             return {
                 "messages": [response],

@@ -52,8 +52,19 @@ def spellchecker_agent(state: AgentState):
             "summary_result": ""
         }
     
-    # Trong thực tế có thể có spell checker thật
-    corrected_text = processed_text  # Tạm thời giữ nguyên
+    # Sử dụng LLM để kiểm tra và sửa lỗi chính tả
+    context = memory_manager.get_context_summary(include_long_term=True, current_input=processed_text)
+    prompt = [
+        SystemMessage(content=f"{SPELLCHECKER_SYSTEM}\n\nContext từ memory:\n{context}"),
+        HumanMessage(content=f"Hãy kiểm tra và sửa lỗi chính tả, dấu câu trong văn bản sau (KHÔNG thay đổi nội dung, chỉ sửa lỗi):\n\n{processed_text}")
+    ]
+    
+    llm_response = llm.invoke(prompt)
+    corrected_text = llm_response.content.strip()
+    
+    # Nếu LLM trả về quá dài hoặc có format không mong muốn, fallback về văn bản gốc
+    if len(corrected_text) > len(processed_text) * 1.5:
+        corrected_text = processed_text
     
     response = AIMessage(content=f"✅ Văn bản đã được kiểm tra chính tả!\n\n📝 **Văn bản của bạn:**\n{corrected_text}\n\n---\n\n🔍 **Bây giờ hãy chọn loại tóm tắt và khối lớp:**\n\n1️⃣ **TRÍCH XUẤT** (Extract): Giữ nguyên câu từ quan trọng từ văn bản gốc\n2️⃣ **DIỄN GIẢI** (Abstract): Viết lại theo cách hiểu, diễn đạt lại nội dung\n\n📚 **Khối lớp:** Chọn lớp 1, 2, 3, 4, hoặc 5\n\n💡 **Ví dụ:** \"Tôi muốn tóm tắt theo cách diễn giải cho lớp 5\" hoặc \"Trích xuất cho lớp 3\"")
     memory.add_message("assistant", response.content)

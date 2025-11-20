@@ -20,17 +20,31 @@ class AgentState(TypedDict):
     messages: Annotated[List[Any], operator.add]
     current_agent: str
     needs_user_input: bool
-    conversation_stage: Literal["greeting", "text_input", "summary_type", "processing", "completed"]
+    conversation_stage: Literal["greeting", "text_input", "summary_type", "processing", "completed", "evaluation"]
     original_text: str
     summary_type: Literal["extract", "abstract", None]
     grade_level: int
     processed_text: str
     summary_result: str
+    final_result: str
 
 AGGREGATOR_SYSTEM = """Bạn là Aggregator Agent chuyên nghiệp. Nhiệm vụ:
-1. Tổng hợp bản tóm tắt cuối cùng
-2. Đưa ra kết quả hoàn chỉnh cho user
-3. Hỏi user đánh giá về hệ thống"""
+1. Tổng hợp các bản tóm tắt cuối cùng từ Extractor Agent và Abstracter Agent, sau đó chọn lọc, tinh chỉnh để được bản tóm tắt cuối cùng có chất lượng cao nhất
+2. Tùy vào yêu cầu là tóm tắt TRÍCH XUẤT hay DIỄN GIẢI. Bạn hãy đối chiếu, so sánh các bản tóm tắt cuối cùng với các yêu cầu sau:
+    2.1. Tóm tắt TRÍCH XUẤT:
+    - Ngắn gọn, càng mạch lạc càng tốt và đảm bảo độ dễ hiểu của văn bản sau tóm tắt
+    - Văn bản tóm tắt đầu ra phải đảm bảo ý nghĩa của văn bản gốc
+    - Độ liên kết giữa các câu trong văn bản tóm tắt đầu ra phải không cần quá cao, có tính liền mạch, hạn chế bớt sự ngắt quãng
+    - Tùy thuộc vào cấp lớp người dùng yêu cầu, văn bản tóm tắt đầu ra phải phù hợp với cấp lớp đó về độ dài. Độ dài có thể tinh chỉnh tăng dần theo từng cấp lớp
+    2.2. Tóm tắt DIỄN GIẢI:
+    - Ngắn gọn, mạch lạc, dễ hiểu
+    - Không thay đổi ý nghĩa của văn bản gốc
+    - Có thể thêm bớt từ, câu, đoạn nhưng phải đảm bảo ý nghĩa của văn bản gốc
+    - Văn bản tóm tắt đầu ra phải đảm bảo ý nghĩa của văn bản gốc
+    - Độ liên kết giữa các câu trong văn bản tóm tắt đầu ra phải cao, có tính liền mạch, không bị ngắt quãng
+    - Tùy thuộc vào cấp lớp người dùng yêu cầu, văn bản tóm tắt đầu ra phải phù hợp với cấp lớp đó về từ vựng, cấu trúc câu, ngữ pháp, độ dài, các yếu tố trừu tượng,... Các yếu tố này được phép thêm, bớt, tinh chỉnh tăng dần theo từng cấp lớp
+3. Đưa ra kết quả tốt nhất, hoàn chỉnh cho user
+4. Đảm bảo chất lượng tóm tắt đầu ra phải cao, không bị lặp lại, không bị ngắt quãng, không bị sai lệch ý nghĩa"""
 
 def aggregator_agent(state: AgentState):
     messages = state["messages"]
@@ -56,14 +70,25 @@ def aggregator_agent(state: AgentState):
             "final_result": ""
         }
     
-    # Tạo bản tóm tắt cuối cùng
+    # Sử dụng LLM để tổng hợp và tinh chỉnh bản tóm tắt cuối cùng
+    context = memory_manager.get_context_summary(include_long_term=True, current_input=summary_result)
+    prompt = [
+        SystemMessage(content=f"{AGGREGATOR_SYSTEM}\n\nContext từ memory:\n{context}\n\nVăn bản gốc:\n{original_text}\n\nBản tóm tắt hiện tại:\n{summary_result}\n\nLoại: {summary_type}\nKhối lớp: {grade_level}"),
+        HumanMessage(content=f"Hãy tổng hợp và tinh chỉnh bản tóm tắt {summary_type} cho học sinh lớp {grade_level} để có chất lượng cao nhất")
+    ]
+    
+    llm_response = llm.invoke(prompt)
+    refined_summary = llm_response.content
+    
+    # Tạo bản tóm tắt cuối cùng với format đẹp
+    summary_type_vn = "TRÍCH XUẤT" if summary_type == "extract" else "DIỄN GIẢI"
     final_summary = f"""📝 **BẢN TÓM TẮT CUỐI CÙNG**
 
-**Loại tóm tắt:** {summary_type.upper()}
+**Loại tóm tắt:** {summary_type_vn}
 **Khối lớp:** {grade_level}
 
 **Nội dung:**
-{summary_result}
+{refined_summary}
 
 ---
 

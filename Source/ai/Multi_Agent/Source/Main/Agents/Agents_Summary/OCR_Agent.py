@@ -53,8 +53,19 @@ def ocr_agent(state: AgentState):
             "summary_result": ""
         }
     
-    # Xử lý văn bản (trong thực tế có thể có OCR thật)
-    processed_text = original_text.strip()
+    # Sử dụng LLM để xử lý và chuẩn hóa văn bản
+    context = memory_manager.get_context_summary(include_long_term=True, current_input=original_text)
+    prompt = [
+        SystemMessage(content=f"{OCR_SYSTEM}\n\nContext từ memory:\n{context}"),
+        HumanMessage(content=f"Hãy xử lý và chuẩn hóa văn bản sau thành dạng text chuẩn:\n\n{original_text}")
+    ]
+    
+    llm_response = llm.invoke(prompt)
+    processed_text = llm_response.content.strip()
+    
+    # Nếu LLM trả về quá dài hoặc có format không mong muốn, fallback về xử lý đơn giản
+    if len(processed_text) > len(original_text) * 2:
+        processed_text = original_text.strip()
     
     response = AIMessage(content=f"✅ Văn bản đã được xử lý!\n\n📝 **Văn bản của bạn:**\n{processed_text}\n\n---\n\n🔍 **Bây giờ hãy chọn loại tóm tắt và khối lớp:**\n\n1️⃣ **TRÍCH XUẤT** (Extract): Giữ nguyên câu từ quan trọng từ văn bản gốc\n2️⃣ **DIỄN GIẢI** (Abstract): Viết lại theo cách hiểu, diễn đạt lại nội dung\n\n📚 **Khối lớp:** Chọn lớp 1, 2, 3, 4, hoặc 5\n\n💡 **Ví dụ:** \"Tôi muốn tóm tắt theo cách diễn giải cho lớp 5\" hoặc \"Trích xuất cho lớp 3\"")
     memory.add_message("assistant", response.content)

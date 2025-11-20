@@ -47,6 +47,7 @@ AGGREGATOR_SYSTEM = """Bạn là Aggregator Agent chuyên nghiệp. Nhiệm vụ
 4. Đảm bảo chất lượng tóm tắt đầu ra phải cao, không bị lặp lại, không bị ngắt quãng, không bị sai lệch ý nghĩa"""
 
 def aggregator_agent(state: AgentState):
+    messages = state["messages"]
     memory = memory_manager.get_memory()
     summary_result = state.get("summary_result", "")
     summary_type = state.get("summary_type", "extract")
@@ -76,11 +77,11 @@ def aggregator_agent(state: AgentState):
     context = memory_manager.get_context_summary(include_long_term=True, current_input=summary_result)
     prompt = [
         SystemMessage(content=f"{AGGREGATOR_SYSTEM}\n\nContext từ memory:\n{context}\n\nVăn bản gốc:\n{original_text}\n\nBản tóm tắt hiện tại:\n{summary_result}\n\nLoại: {summary_type}\nKhối lớp: {grade_level}"),
-        HumanMessage(content=f"Hãy tổng hợp và tinh chỉnh bản tóm tắt {summary_type} cho học sinh lớp {grade_level} để có chất lượng cao nhất. Chỉ trả về nội dung tóm tắt đã được tinh chỉnh, không thêm giải thích hay format.")
+        HumanMessage(content=f"Hãy tổng hợp và tinh chỉnh bản tóm tắt {summary_type} cho học sinh lớp {grade_level} để có chất lượng cao nhất")
     ]
     
     llm_response = llm.invoke(prompt)
-    refined_summary = llm_response.content.strip()
+    refined_summary = llm_response.content
     
     # Tạo bản tóm tắt cuối cùng với format đẹp
     summary_type_vn = "TRÍCH XUẤT" if summary_type == "extract" else "DIỄN GIẢI"

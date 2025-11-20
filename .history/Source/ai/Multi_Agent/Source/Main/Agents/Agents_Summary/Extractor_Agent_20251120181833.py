@@ -27,20 +27,19 @@ class AgentState(TypedDict):
     processed_text: str
     summary_result: str
 
-GRADE_CALIBRATOR_SYSTEM = """Bạn là Grade Calibrator Agent chuyên nghiệp. Nhiệm vụ:
-1. Điều chỉnh độ dài và từ vựng phù hợp với khối lớp (1-5)
-2. Nếu là trích xuất: chỉ điều chỉnh độ dài, KHÔNG thay đổi câu từ
-3. Nếu là diễn giải: có thể điều chỉnh từ vựng cho phù hợp với khối lớp"""
+EXTRACTOR_SYSTEM = """Bạn là Extractor Agent chuyên nghiệp. Nhiệm vụ:
+1. Trích xuất câu, đoạn, từ quan trọng từ văn bản gốc
+2. KHÔNG THAY ĐỔI, THÊM BỚT bất kỳ từ, câu, đoạn nào khi lấy ra từ trong văn bản gốc, chỉ lấy những câu, đoạn quan trọng nhất
+3. Sau đó trả về bản tóm tắt trích xuất"""
 
-def grade_calibrator_agent(state: AgentState):
+def extractor_agent(state: AgentState):
     messages = state["messages"]
     memory = memory_manager.get_memory()
-    summary_result = state.get("summary_result", "")
-    summary_type = state.get("summary_type", "extract")
+    processed_text = state.get("processed_text", "")
     grade_level = state.get("grade_level", 3)
     
-    if not summary_result:
-        response = AIMessage(content="Không có bản tóm tắt để điều chỉnh.")
+    if not processed_text:
+        response = AIMessage(content="Không có văn bản để trích xuất.")
         memory.add_message("assistant", response.content)
         return {
             "messages": [response],
@@ -54,10 +53,10 @@ def grade_calibrator_agent(state: AgentState):
             "summary_result": ""
         }
     
-    context = memory_manager.get_context_summary(include_long_term=True, current_input=summary_result)
+    context = memory_manager.get_context_summary(include_long_term=True, current_input=processed_text)
     prompt = [
-        SystemMessage(content=f"{GRADE_CALIBRATOR_SYSTEM}\n\nContext từ memory:\n{context}\n\nBản tóm tắt:\n{summary_result}\n\nLoại: {summary_type}\nKhối lớp: {grade_level}"),
-        HumanMessage(content=f"Hãy điều chỉnh bản tóm tắt {summary_type} cho phù hợp với học sinh lớp {grade_level}")
+        SystemMessage(content=f"{EXTRACTOR_SYSTEM}\n\nContext từ memory:\n{context}\n\nVăn bản cần trích xuất:\n{processed_text}\n\nKhối lớp: {grade_level}"),
+        HumanMessage(content=f"Hãy trích xuất thông tin quan trọng từ văn bản trên cho học sinh lớp {grade_level}")
     ]
     
     response = llm.invoke(prompt)
@@ -65,17 +64,17 @@ def grade_calibrator_agent(state: AgentState):
     
     return {
         "messages": [response],
-        "current_agent": "evaluator_agent",
+        "current_agent": "grade_calibrator_agent",
         "needs_user_input": False,
         "conversation_stage": "processing",
         "original_text": state.get("original_text", ""),
-        "summary_type": summary_type,
+        "summary_type": "extract",
         "grade_level": grade_level,
-        "processed_text": state.get("processed_text", ""),
+        "processed_text": processed_text,
         "summary_result": response.content
     }
-grade_calibrator_tool = Tool(
-    name="GradeCalibratorAgent",
-    func=grade_calibrator_agent,
-    description="Use this to calibrate a given text. Input must be a text."
+extractor_tool = Tool(
+    name="ExtractorAgent",
+    func=extractor_agent,
+    description="Use this to extract a given text. Input must be a text."
 )
