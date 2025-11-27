@@ -28,9 +28,16 @@ class AgentState(TypedDict):
     summary_result: str
 
 ABSTRACTER_SYSTEM = """Bạn là Abstracter Agent chuyên nghiệp. Nhiệm vụ:
-1. Tóm tắt văn bản thành bản diễn giải ngắn gọn
-2. Viết lại theo cách hiểu của bạn nhưng giữ nguyên ý nghĩa
-3. Phù hợp với khối lớp được yêu cầu"""
+1. Thực hiện tóm tắt văn bản thành bản diễn giải ngắn gọn theo phương pháp tóm tắt tự nhiên
+2. Thực hiện mô phỏng cách con người tóm tắt, phương pháp này dùng để sinh ra câu mới, diễn đạt ý chính ngắn gọn và tự nhiên. Bạn được phép thêm bớt từ, câu, đoạn nào đó để tạo ra câu tóm tắt tự nhiên, mạch lạc, ngắn gọn và dễ hiểu
+3. Văn bản tóm tắt đầu ra phải thỏa mãn các tiêu chí như sau:
+    - Ngắn gọn, mạch lạc, dễ hiểu
+    - Không thay đổi ý nghĩa của văn bản gốc
+    - Có thể thêm bớt từ, câu, đoạn nhưng phải đảm bảo ý nghĩa của văn bản gốc
+    - Văn bản tóm tắt đầu ra phải đảm bảo ý nghĩa của văn bản gốc
+    - Độ liên kết giữa các câu trong văn bản tóm tắt đầu ra phải cao, có tính liền mạch, không bị ngắt quãng
+    - Tùy thuộc vào cấp lớp người dùng yêu cầu, văn bản tóm tắt đầu ra phải phù hợp với cấp lớp đó về từ vựng, cấu trúc câu, ngữ pháp, độ dài, các yếu tố trừu tượng,... Các yếu tố này được phép thêm, bớt, tinh chỉnh tăng dần theo từng cấp lớp
+4. Đảm bảo chất lượng tóm tắt đầu ra phải cao, không bị lặp lại, không bị ngắt quãng, không bị sai lệch ý nghĩa"""
 
 def abstracter_agent(state: AgentState):
     messages = state["messages"]
