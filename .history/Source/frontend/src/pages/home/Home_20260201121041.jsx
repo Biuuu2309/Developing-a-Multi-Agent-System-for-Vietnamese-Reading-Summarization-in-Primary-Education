@@ -30,7 +30,7 @@ export default function Home() {
           { id: 'help', label: 'Help', href: '#help', icon: <HelpCircle size={30} /> }
         ]}
         theme="custom"
-        backgroundColor="rgba(59, 130, 246, 0.08)"
+        backgroundColor="rgba(59, 130, 246, 0.1)"
         textColor="#dfdee0d9"
         borderColor="rgba(59, 130, 246, 0.3)"
         scrollThreshold={150}

@@ -1,7 +1,6 @@
 import Iridescence from '../../components/Iridescence.jsx'
-import { MorphingNavigation } from "../../components/lightswind/morphing-navigation.tsx"
+import { MorphingNavigation } from "@/components/ui/morphing-navigation"
 import { Home as HomeIcon, ShoppingBag, Info, HelpCircle } from "lucide-react";
-import './Home.css'
 
 export default function Home() {
   return (
@@ -24,19 +23,19 @@ export default function Home() {
 
       <MorphingNavigation
         links={[
-          { id: 'home', label: 'Home', href: '#home', icon: <HomeIcon size={30} /> },
-          { id: 'shop', label: 'Shop', href: '#shop', icon: <ShoppingBag size={30} /> },
-          { id: 'about', label: 'About', href: '#about', icon: <Info size={30} /> },
-          { id: 'help', label: 'Help', href: '#help', icon: <HelpCircle size={30} /> }
+          { id: 'home', label: 'Home', href: '#home', icon: <HomeIcon size={14} /> },
+          { id: 'shop', label: 'Shop', href: '#shop', icon: <ShoppingBag size={14} /> },
+          { id: 'about', label: 'About', href: '#about', icon: <Info size={14} /> },
+          { id: 'help', label: 'Help', href: '#help', icon: <HelpCircle size={14} /> }
         ]}
         theme="custom"
-        backgroundColor="rgba(59, 130, 246, 0.08)"
-        textColor="#dfdee0d9"
+        backgroundColor="rgba(59, 130, 246, 0.1)"
+        textColor="#3b82f6"
         borderColor="rgba(59, 130, 246, 0.3)"
         scrollThreshold={150}
         animationDuration={1.5}
         enablePageBlur={true}
-        onLinkClick={(link) => console.log('Clicked:', link)}
+        onLinkClick={(link) => handleNavigation(link)}
         onMenuToggle={(isOpen) => console.log('Menu:', isOpen)}
       />
     </div>

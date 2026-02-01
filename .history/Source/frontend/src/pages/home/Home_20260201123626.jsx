@@ -14,7 +14,7 @@ export default function Home() {
       />
       <MorphingNavigation
         links={[
-          { id: 'home', label: 'Home', href: '#home' },
+          { id: 'Home', label: 'Home', href: '#home' },
           { id: 'shop', label: 'Shop', href: '#shop' },
           { id: 'about', label: 'About', href: '#about' },
           { id: 'help', label: 'Help', href: '#help' }

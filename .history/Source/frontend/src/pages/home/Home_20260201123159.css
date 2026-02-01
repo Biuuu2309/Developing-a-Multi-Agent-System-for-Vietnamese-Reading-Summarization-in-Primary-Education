@@ -1,6 +1,6 @@
 .border {
     --bs-border-color: #093e7200 !important;
-    box-shadow: 0 0 10px 0 rgba(41, 43, 168, 0.178);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -10,4 +10,5 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
