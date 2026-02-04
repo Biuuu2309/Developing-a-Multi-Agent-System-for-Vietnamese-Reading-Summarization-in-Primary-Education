@@ -10,6 +10,9 @@
 *.jpeg
 *.env
 *.yaml
+*.safetensors
+*.pth
+
 # Log file
 *.log
 *.docx

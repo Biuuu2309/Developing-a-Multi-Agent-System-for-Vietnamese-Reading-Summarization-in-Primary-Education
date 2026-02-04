@@ -1,0 +1,36 @@
+.HOME1 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0;
+}
+
+.border {
+    --bs-border-color: #093e7200 !important;
+    box-shadow: 0 0 10px 0 rgba(88, 47, 8, 0.281);
+}
+
+a {
+    color: #5222069f !important;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+nav {
+    margin-top: 1%;
+    z-index: 3 !important;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
