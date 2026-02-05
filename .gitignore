@@ -12,6 +12,7 @@
 *.yaml
 *.safetensors
 *.pth
+*.env*
 
 # Log file
 *.log
