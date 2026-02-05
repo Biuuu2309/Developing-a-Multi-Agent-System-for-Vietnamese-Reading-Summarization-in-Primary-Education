@@ -19,10 +19,6 @@ export default function Home() {
 
   return (
     <div style={{ width: '100%', minHeight: '100vh', position: 'relative' }}>
-      <div className="fixed-logo">
-        <img src="/images/logo1.png" alt="" />
-      </div>
-
       <ParticlesBackground
         particleColors={['#00ffff', '#ff00ff', '#ffaa00', '#0000ff', '#00ff00', '#ff0000']}
         particleBaseSize={400}
@@ -50,14 +46,25 @@ export default function Home() {
         onLinkClick={(link) => console.log('Clicked:', link)}
         onMenuToggle={(isOpen) => console.log('Menu:', isOpen)}
       />
-      <section style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', height: 500, overflow: 'hidden' }}>
         <div style={{ height: '100%', overflowY: 'auto', padding: '6rem 2rem' }}>
-          <div className="container-fluid" style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginTop: '4%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+          <div className="container-fluid" style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginTop: '7%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
             <div className="container-fluid HOME1" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0' }}>
-              <div className="container" style={{ padding: '0', backgroundColor: 'transparent'}}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: '1000px' }}>
                 <h1>Home</h1>
               </div>
-              <div className="container" style={{ padding: '0', backgroundColor: 'transparent' }}>
+            </div>
+          </div>
+          <div className="container-fluid" style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginTop: '7%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+            <div className="container-fluid HOME1" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0' }}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: '1000px' }}>
+                <h1>Home</h1>
+              </div>
+            </div>
+          </div>
+          <div className="container-fluid" style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginTop: '7%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+            <div className="container-fluid HOME1" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0' }}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: '1000px' }}>
                 <h1>Home</h1>
               </div>
             </div>

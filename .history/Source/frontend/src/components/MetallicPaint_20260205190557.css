@@ -1,0 +1,11 @@
+.paint-container {
+  display: flex;
+  width: 20%;
+  object-fit: contain;
+  position: fixed;
+  top: 1.5%;
+  left: 1.5rem;
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+}

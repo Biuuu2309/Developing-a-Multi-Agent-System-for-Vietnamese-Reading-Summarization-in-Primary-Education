@@ -1,0 +1,6 @@
+.paint-container {
+  display: block;
+  height: 400%;
+  width: 100%;
+  object-fit: contain;
+}

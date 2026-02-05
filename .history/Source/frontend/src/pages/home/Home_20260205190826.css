@@ -58,8 +58,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
+    width: 80px;
     height: 80px;
+    overflow: hidden;
 }
 
 .fixed-logo img {

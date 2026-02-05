@@ -4,6 +4,7 @@ import { Home as HomeIcon, ShoppingBag, Info, HelpCircle } from "lucide-react";
 import './Home.css'
 import { useEffect, useState } from "react";
 import GradualBlur from '../../components/GradualBlur';
+import MetallicPaint from "../../components/MetallicPaint";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +21,7 @@ export default function Home() {
   return (
     <div style={{ width: '100%', minHeight: '100vh', position: 'relative' }}>
       <div className="fixed-logo">
-        <img src="/images/logo1.png" alt="" />
+        <img src="/images/logo.png" alt="" />
       </div>
 
       <ParticlesBackground
@@ -52,12 +53,12 @@ export default function Home() {
       />
       <section style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
         <div style={{ height: '100%', overflowY: 'auto', padding: '6rem 2rem' }}>
-          <div className="container-fluid" style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginTop: '4%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+          <div className="container-fluid" style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginTop: '7%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
             <div className="container-fluid HOME1" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0' }}>
-              <div className="container" style={{ padding: '0', backgroundColor: 'transparent'}}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: '1000px' }}>
                 <h1>Home</h1>
               </div>
-              <div className="container" style={{ padding: '0', backgroundColor: 'transparent' }}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: '1000px' }}>
                 <h1>Home</h1>
               </div>
             </div>

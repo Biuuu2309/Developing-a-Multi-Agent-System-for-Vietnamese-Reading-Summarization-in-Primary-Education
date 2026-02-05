@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
-import '../lightswind/morphing-navigation.css'
 
 export interface MorphingNavigationLink {
   id: string;
@@ -262,7 +261,7 @@ export const MorphingNavigation: React.FC<MorphingNavigationProps> = ({
           <motion.button
             onClick={handleMenuToggle}
             className={cn(
-              "absolute w-[60px] h-[60px] rounded-full outline-none border cursor-pointer border-4",
+              "absolute w-[60px] h-[60px] rounded-full outline-none border cursor-pointer border-4 border-t-transparent",
               themeStyles.button,
               {
                 hidden: !isSticky && !isMobile,
