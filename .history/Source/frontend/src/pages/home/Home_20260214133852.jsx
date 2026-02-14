@@ -367,15 +367,9 @@ export default function Home() {
                 />
                 <ScrollList
                   data={[
-                    { title: 'Step 1: Hệ thống đa tác tử', description: 'Hệ thống đa tác tử sẽ xử lý hầu hết tất cả các nhiệm vụ chính của hệ thống. Đặc biệt, sử dụng đa tác tử giúp tăng tính linh hoạt, khả năng xử lý và đáp ứng nhu cầu người dùng một cách hiệu quả. Điều này đã được chứng minh và thực nghiệm qua rất cơ sở khoa học và ứng dụng thực tiễn như: OpenAI, Anthropic, Google, Meta, Microsoft, Nvidia, và nhiều tổ chức và công ty lớn khác.' },
-                    { title: 'Step 2: Giới thiệu chung về hệ thống', description: 'Hệ thống đề cập về chức năng chính, lợi ích mang lại và quy trình hoạt động của hệ thống.' },
-                    { title: 'Step 3: Lời chào', description: 'Hệ thống gửi lời chào thân thiện, cởi mở và đề cập về chức năng chính của hệ thống để người dùng hiểu và tiếp cận hệ thống một cách dễ dàng.' },
-                    { title: 'Step 4: Phân loại yêu cầu của người dùng (Input Classifier Agent)', description: 'Phân loại yêu cầu của người dùng, chọn lọc phản hồi của người dùng và đưa ra câu trả lời phù hợp và hướng dẫn người dùng để hệ thống có thể hiểu và xử lý yêu cầu một cách chính xác.' },
-                    { title: 'Step 5: Phân loại đầu vào văn bản (OCR và Spell Checker Agent)', description: 'Người dùng sẽ có những trường hợp và nhu cầu định dạng khác nhau. Việc thiết kế ứng dụng đa dạng góp phần trải nghiệm người dùng một cách tốt nhất. Bên cạnh đó sẽ được OCR và Spell Checker Agent xử lý để đảm bảo độ chính xác và độ tin cậy cao.' },
-                    { title: 'Step 6: Tác tử điều phối', description: 'Coordinator Agent là tác tử chuyên điều phối và quản lý các tác tử con, xử lý các nhiệm vụ chính của hệ thống. Sau đó chọn lọc và đưa ra kết quả phản hồi tốt nhất cho người dùng.' },
-                    { title: 'Step 7: Tác tử trích xuất và diễn giải', description: 'Extractor và Abstracter là 2 tác tử cốt lõi của hệ thống chuyên tạo bản tóm tắt trích xuất và diễn giải. Tác tử được liên kết với Coordinator Agent để xử lý nhiệm vụ trích xuất văn bản và diễn giải. Bên cạnh đó, các tác tử được liên kết và tích hợp với hai mô hình cốt lõi đã được huấn luyện và tinh chỉnh.' },
-                    { title: 'Step 8: Quá trình phản hồi bản tóm tắt', description: 'Bản tóm tắt được tạo ra sẽ được kiểm tra, chọn lọc và đánh giá bởi Grade Calibrator Agent, Evaluator Agent. Bản tóm tắt đạt chuẩn được Aggregator Agent tổng hợp và đưa ra kết quả cuối cùng đáp ứng cả về chất lượng, độ dài, từ vựng và nội dung văn bản. Thêm vào đó để bản tóm tắt được rõ ràng, minh bạch và thuyết phục, kết quả sẽ được kiểm nghiệm qua các thang đo như: F1, ROUGE-1, ROUGE-L, BERTScore,...' },
-                    { title: 'Step 9: Kết quả', description: 'Người dùng sẽ nhận được kết quả là bản tóm tắt cùng với các hình ảnh minh họa tiếp diễn theo mạch truyện. Vừa đáp ứng được nhu cầu người dùng, vừa đảm bảo độ chính xác, độ tin cậy và độ khách quan cao.' },
+                    { title: 'Step 1', description: 'Description for Step 1' },
+                    { title: 'Step 2', description: 'Description for Step 2' },
+                    { title: 'Step 3', description: 'Description for Step 3' },
                   ]}
                   renderItem={(item) => (
                     <div className="p-4 bg-white rounded-xl shadow-md">
