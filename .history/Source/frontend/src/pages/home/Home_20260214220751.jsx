@@ -329,7 +329,7 @@ export default function Home() {
                   </GlowingCard>
                 </GlowingCards>
               </div>
-              <div className="container-fluid" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2%', marginBottom: '3%' }}>
+              <div className="container-fluid" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2%', marginBottom: '3 %' }}>
                 <GlowingCards>
                   <GlowingCard glowColor="#ff1493" className="space-y-4">
                     <InteractiveGradient
@@ -372,7 +372,7 @@ export default function Home() {
               </div>
             </div>
             <div className="container-fluid HOME3" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0', flexDirection: 'column' }}>
-              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '4%', fontFamily: 'Merriweather', fontSize: '3rem', fontWeight: 'bold', flexDirection: 'row', marginBottom: '4%', position: 'relative', paddingBottom: '4%' }}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '4%', fontFamily: 'Merriweather', fontSize: '3rem', fontWeight: 'bold', flexDirection: 'row', marginBottom: '4%', position: 'relative', paddingBottom: '10%' }}>
                 <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 1, marginRight: '70%' }}>
                   <MetaBalls
                     color={metaBallsColor}
@@ -387,7 +387,7 @@ export default function Home() {
                     speed={0.3}
                   />
                 </div>
-                <div style={{ position: 'relative', zIndex: 2, width: '38%' }}>
+                <div style={{ position: 'relative', zIndex: 2 }}>
                   <ShinyText
                     text="Quy trình hoạt động của hệ thống"
                     speed={3.3}
@@ -422,20 +422,8 @@ export default function Home() {
                     )}
                     itemSpacing={24}
                   />
-                  <div style={{ position: 'absolute', width: '100%', zIndex: 1, marginTop: '5%', display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'normal', fontSize: '1.5rem', fontFamily: 'sans-serif', color: '#000000', flexDirection: 'column' }}>
-                    <ShinyText
-                      text="Scroll down to see more"
-                      speed={3.3}
-                      delay={0}
-                      color="#000000"
-                      shineColor="#ffffff"
-                      spread={120}
-                      direction="left"
-                      yoyo={false}
-                      pauseOnHover={false}
-                      disabled={false}
-                    />
-                    <img src="/images/arrow.png" alt="" style={{ width: '3%', height: '3%' }} />
+                  <div style={{ position: 'absolute', width: '100%', zIndex: 1 }}>
+                    heheheh
                   </div>
                 </div>
               </div>

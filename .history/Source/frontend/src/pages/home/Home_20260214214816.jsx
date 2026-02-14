@@ -29,28 +29,9 @@ function throttle(func, wait) {
   };
 }
 
-// Function to generate random color
-const generateRandomColor = () => {
-  // Generate random RGB values for light/pastel colors
-  const r = Math.floor(Math.random() * 100) + 150; // 150-250 (light colors)
-  const g = Math.floor(Math.random() * 100) + 150;
-  const b = Math.floor(Math.random() * 100) + 150;
-  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-};
-
-// Function to generate a complementary/light color for cursor
-const generateCursorColor = () => {
-  // Return white or a very light color for cursor
-  return '#ffffff';
-};
-
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLogoHidden, setIsLogoHidden] = useState(false);
-
-  // Generate random colors for MetaBalls (memoized to keep them consistent)
-  const metaBallsColor = useMemo(() => generateRandomColor(), []);
-  const metaBallsCursorColor = useMemo(() => generateCursorColor(), []);
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 20);
@@ -329,7 +310,7 @@ export default function Home() {
                   </GlowingCard>
                 </GlowingCards>
               </div>
-              <div className="container-fluid" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2%', marginBottom: '3%' }}>
+              <div className="container-fluid" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2%', marginBottom: '3 %' }}>
                 <GlowingCards>
                   <GlowingCard glowColor="#ff1493" className="space-y-4">
                     <InteractiveGradient
@@ -372,14 +353,14 @@ export default function Home() {
               </div>
             </div>
             <div className="container-fluid HOME3" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0', flexDirection: 'column' }}>
-              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '4%', fontFamily: 'Merriweather', fontSize: '3rem', fontWeight: 'bold', flexDirection: 'row', marginBottom: '4%', position: 'relative', paddingBottom: '4%' }}>
+              <div className="container" style={{ padding: '0', backgroundColor: 'transparent', height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '4%', fontFamily: 'Merriweather', fontSize: '3rem', fontWeight: 'bold', flexDirection: 'row', marginBottom: '4%', position: 'relative' }}>
                 <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 1, marginRight: '70%' }}>
                   <MetaBalls
-                    color={metaBallsColor}
-                    cursorBallColor={metaBallsCursorColor}
+                    color="#ffffff"
+                    cursorBallColor="#ffffff"
                     cursorBallSize={2}
-                    ballCount={15}
-                    animationSize={25}
+                    ballCount={20}
+                    animationSize={50}
                     enableMouseInteraction
                     enableTransparency={true}
                     hoverSmoothness={0.15}
@@ -387,7 +368,7 @@ export default function Home() {
                     speed={0.3}
                   />
                 </div>
-                <div style={{ position: 'relative', zIndex: 2, width: '38%' }}>
+                <div style={{ position: 'relative', zIndex: 2 }}>
                   <ShinyText
                     text="Quy trình hoạt động của hệ thống"
                     speed={3.3}
@@ -401,43 +382,26 @@ export default function Home() {
                     disabled={false}
                   />
                 </div>
-                <div style={{ position: 'relative', zIndex: 2 }}>
-                  <ScrollList
-                    data={[
-                      { title: 'Step 1: Hệ thống đa tác tử', description: 'Hệ thống đa tác tử sẽ xử lý hầu hết tất cả các nhiệm vụ chính của hệ thống. Đặc biệt, sử dụng đa tác tử giúp tăng tính linh hoạt, khả năng xử lý và đáp ứng nhu cầu người dùng một cách hiệu quả. Điều này đã được chứng minh và thực nghiệm qua rất cơ sở khoa học và ứng dụng thực tiễn như: OpenAI, Anthropic, Google, Meta, Microsoft, Nvidia, và nhiều tổ chức và công ty lớn khác.' },
-                      { title: 'Step 2: Giới thiệu chung về hệ thống', description: 'Hệ thống đề cập về chức năng chính, lợi ích mang lại và quy trình hoạt động của hệ thống.' },
-                      { title: 'Step 3: Lời chào', description: 'Hệ thống gửi lời chào thân thiện, cởi mở và đề cập về chức năng chính của hệ thống để người dùng hiểu và tiếp cận hệ thống một cách dễ dàng.' },
-                      { title: 'Step 4: Phân loại yêu cầu của người dùng (Input Classifier Agent)', description: 'Phân loại yêu cầu của người dùng, chọn lọc phản hồi của người dùng và đưa ra câu trả lời phù hợp và hướng dẫn người dùng để hệ thống có thể hiểu và xử lý yêu cầu một cách chính xác.' },
-                      { title: 'Step 5: Phân loại đầu vào văn bản (OCR và Spell Checker Agent)', description: 'Người dùng sẽ có những trường hợp và nhu cầu định dạng khác nhau. Việc thiết kế ứng dụng đa dạng góp phần trải nghiệm người dùng một cách tốt nhất. Bên cạnh đó sẽ được OCR và Spell Checker Agent xử lý để đảm bảo độ chính xác và độ tin cậy cao.' },
-                      { title: 'Step 6: Tác tử điều phối', description: 'Coordinator Agent là tác tử chuyên điều phối và quản lý các tác tử con, xử lý các nhiệm vụ chính của hệ thống. Sau đó chọn lọc và đưa ra kết quả phản hồi tốt nhất cho người dùng.' },
-                      { title: 'Step 7: Tác tử trích xuất và diễn giải', description: 'Extractor và Abstracter là 2 tác tử cốt lõi của hệ thống chuyên tạo bản tóm tắt trích xuất và diễn giải. Tác tử được liên kết với Coordinator Agent để xử lý nhiệm vụ trích xuất văn bản và diễn giải. Bên cạnh đó, các tác tử được liên kết và tích hợp với hai mô hình cốt lõi đã được huấn luyện và tinh chỉnh.' },
-                      { title: 'Step 8: Quá trình phản hồi bản tóm tắt', description: 'Bản tóm tắt được tạo ra sẽ được kiểm tra, chọn lọc và đánh giá bởi Grade Calibrator Agent, Evaluator Agent. Bản tóm tắt đạt chuẩn được Aggregator Agent tổng hợp và đưa ra kết quả cuối cùng đáp ứng cả về chất lượng, độ dài, từ vựng và nội dung văn bản. Thêm vào đó để bản tóm tắt được rõ ràng, minh bạch và thuyết phục, kết quả sẽ được kiểm nghiệm qua các thang đo như: F1, ROUGE-1, ROUGE-L, BERTScore,...' },
-                      { title: 'Step 9: Kết quả', description: 'Người dùng sẽ nhận được kết quả là bản tóm tắt cùng với các hình ảnh minh họa tiếp diễn theo mạch truyện. Vừa đáp ứng được nhu cầu người dùng, vừa đảm bảo độ chính xác, độ tin cậy và độ khách quan cao.' },
-                    ]}
-                    renderItem={(item) => (
-                      <div>
-                        <h3 className="font-semibold text-justify" style={{ fontSize: '1.2rem', fontFamily: 'sans-serif', fontWeight: 'bold', color: '#000000' }}>{item.title}</h3>
-                        <p className="text-justify" style={{ fontSize: '1rem', fontFamily: 'sans-serif', fontWeight: 'normal', color: '#000000' }}>{item.description}</p>
-                      </div>
-                    )}
-                    itemSpacing={24}
-                  />
-                  <div style={{ position: 'absolute', width: '100%', zIndex: 1, marginTop: '5%', display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'normal', fontSize: '1.5rem', fontFamily: 'sans-serif', color: '#000000', flexDirection: 'column' }}>
-                    <ShinyText
-                      text="Scroll down to see more"
-                      speed={3.3}
-                      delay={0}
-                      color="#000000"
-                      shineColor="#ffffff"
-                      spread={120}
-                      direction="left"
-                      yoyo={false}
-                      pauseOnHover={false}
-                      disabled={false}
-                    />
-                    <img src="/images/arrow.png" alt="" style={{ width: '3%', height: '3%' }} />
-                  </div>
-                </div>
+                <ScrollList
+                  data={[
+                    { title: 'Step 1: Hệ thống đa tác tử', description: 'Hệ thống đa tác tử sẽ xử lý hầu hết tất cả các nhiệm vụ chính của hệ thống. Đặc biệt, sử dụng đa tác tử giúp tăng tính linh hoạt, khả năng xử lý và đáp ứng nhu cầu người dùng một cách hiệu quả. Điều này đã được chứng minh và thực nghiệm qua rất cơ sở khoa học và ứng dụng thực tiễn như: OpenAI, Anthropic, Google, Meta, Microsoft, Nvidia, và nhiều tổ chức và công ty lớn khác.' },
+                    { title: 'Step 2: Giới thiệu chung về hệ thống', description: 'Hệ thống đề cập về chức năng chính, lợi ích mang lại và quy trình hoạt động của hệ thống.' },
+                    { title: 'Step 3: Lời chào', description: 'Hệ thống gửi lời chào thân thiện, cởi mở và đề cập về chức năng chính của hệ thống để người dùng hiểu và tiếp cận hệ thống một cách dễ dàng.' },
+                    { title: 'Step 4: Phân loại yêu cầu của người dùng (Input Classifier Agent)', description: 'Phân loại yêu cầu của người dùng, chọn lọc phản hồi của người dùng và đưa ra câu trả lời phù hợp và hướng dẫn người dùng để hệ thống có thể hiểu và xử lý yêu cầu một cách chính xác.' },
+                    { title: 'Step 5: Phân loại đầu vào văn bản (OCR và Spell Checker Agent)', description: 'Người dùng sẽ có những trường hợp và nhu cầu định dạng khác nhau. Việc thiết kế ứng dụng đa dạng góp phần trải nghiệm người dùng một cách tốt nhất. Bên cạnh đó sẽ được OCR và Spell Checker Agent xử lý để đảm bảo độ chính xác và độ tin cậy cao.' },
+                    { title: 'Step 6: Tác tử điều phối', description: 'Coordinator Agent là tác tử chuyên điều phối và quản lý các tác tử con, xử lý các nhiệm vụ chính của hệ thống. Sau đó chọn lọc và đưa ra kết quả phản hồi tốt nhất cho người dùng.' },
+                    { title: 'Step 7: Tác tử trích xuất và diễn giải', description: 'Extractor và Abstracter là 2 tác tử cốt lõi của hệ thống chuyên tạo bản tóm tắt trích xuất và diễn giải. Tác tử được liên kết với Coordinator Agent để xử lý nhiệm vụ trích xuất văn bản và diễn giải. Bên cạnh đó, các tác tử được liên kết và tích hợp với hai mô hình cốt lõi đã được huấn luyện và tinh chỉnh.' },
+                    { title: 'Step 8: Quá trình phản hồi bản tóm tắt', description: 'Bản tóm tắt được tạo ra sẽ được kiểm tra, chọn lọc và đánh giá bởi Grade Calibrator Agent, Evaluator Agent. Bản tóm tắt đạt chuẩn được Aggregator Agent tổng hợp và đưa ra kết quả cuối cùng đáp ứng cả về chất lượng, độ dài, từ vựng và nội dung văn bản. Thêm vào đó để bản tóm tắt được rõ ràng, minh bạch và thuyết phục, kết quả sẽ được kiểm nghiệm qua các thang đo như: F1, ROUGE-1, ROUGE-L, BERTScore,...' },
+                    { title: 'Step 9: Kết quả', description: 'Người dùng sẽ nhận được kết quả là bản tóm tắt cùng với các hình ảnh minh họa tiếp diễn theo mạch truyện. Vừa đáp ứng được nhu cầu người dùng, vừa đảm bảo độ chính xác, độ tin cậy và độ khách quan cao.' },
+                  ]}
+                  renderItem={(item) => (
+                    <div>
+                      <h3 className="font-semibold text-justify" style={{ fontSize: '1.2rem', fontFamily: 'sans-serif', fontWeight: 'bold', color: '#000000' }}>{item.title}</h3>
+                      <p className="text-justify" style={{ fontSize: '1rem', fontFamily: 'sans-serif', fontWeight: 'normal', color: '#000000' }}>{item.description}</p>
+                    </div>
+                  )}
+                  itemSpacing={24}
+                />
               </div>
             </div>
           </div>

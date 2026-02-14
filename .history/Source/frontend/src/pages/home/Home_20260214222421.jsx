@@ -427,8 +427,8 @@ export default function Home() {
                       text="Scroll down to see more"
                       speed={3.3}
                       delay={0}
-                      color="#000000"
-                      shineColor="#ffffff"
+                      color="#f9a967"
+                      shineColor="#ff55da"
                       spread={120}
                       direction="left"
                       yoyo={false}

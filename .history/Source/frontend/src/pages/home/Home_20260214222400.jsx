@@ -424,11 +424,11 @@ export default function Home() {
                   />
                   <div style={{ position: 'absolute', width: '100%', zIndex: 1, marginTop: '5%', display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'normal', fontSize: '1.5rem', fontFamily: 'sans-serif', color: '#000000', flexDirection: 'column' }}>
                     <ShinyText
-                      text="Scroll down to see more"
+                      text="Quy trình hoạt động của hệ thống"
                       speed={3.3}
                       delay={0}
-                      color="#000000"
-                      shineColor="#ffffff"
+                      color="#f9a967"
+                      shineColor="#ff55da"
                       spread={120}
                       direction="left"
                       yoyo={false}

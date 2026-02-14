@@ -11,30 +11,30 @@ interface ScrollListProps<T> {
   minItemHeight?: number; // Optional: Minimum height for each item in pixels.
 }
 
-// Function to generate a random gradient with light/pastel colors
+// Function to generate a random gradient
 const generateRandomGradient = (): string => {
-  // Predefined beautiful light/pastel gradient color combinations
+  // Predefined beautiful gradient color combinations
   const gradients = [
-    'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', // Light mint to pink
-    'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', // Light peach
-    'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)', // Light pink
-    'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)', // Light green to blue
-    'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)', // Light blue
-    'linear-gradient(135deg, #ffd1dc 0%, #ffe4e1 100%)', // Very light pink
-    'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)', // Light purple to blue
-    'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)', // Light purple to yellow
-    'linear-gradient(135deg, #89f7fe 0%, #b5f8ff 100%)', // Light cyan
-    'linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)', // Light coral to pink
-    'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)', // Light pink to blue
-    'linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%)', // Light peach to pink
-    'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', // Light orange
-    'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', // Light aqua to pink
-    'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)', // Light green
-    'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)', // Light pink to blue
-    'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', // Light peach
-    'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)', // Light sky blue
-    'linear-gradient(135deg, #ffd1dc 0%, #ffe4e1 100%)', // Very light rose
-    'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)', // Light lavender to blue
+    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+    'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+    'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+    'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    'linear-gradient(135deg, #ff8a80 0%, #ea6100 100%)',
+    'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
+    'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+    'linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%)',
+    'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)',
+    'linear-gradient(135deg, #fad961 0%, #f76b1c 100%)',
+    'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)',
+    'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
+    'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
+    'linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%)',
+    'linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)',
   ];
 
   // Return a random gradient from the array
@@ -178,18 +178,7 @@ const ScrollList = <T,>({
               marginTop: index === 0 ? 0 : undefined, // No top margin for first item
             }}
           >
-            <div
-              style={{
-                background: itemGradients[index],
-                borderRadius: '0.75rem', // rounded-xl equivalent
-                padding: '1rem', // p-4 equivalent
-                height: '100%',
-                width: '100%',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // shadow-md equivalent
-              }}
-            >
-              {renderItem(item, index)}
-            </div>
+            {renderItem(item, index)}
           </motion.div>
         );
       })}

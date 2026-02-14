@@ -423,18 +423,7 @@ export default function Home() {
                     itemSpacing={24}
                   />
                   <div style={{ position: 'absolute', width: '100%', zIndex: 1, marginTop: '5%', display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'normal', fontSize: '1.5rem', fontFamily: 'sans-serif', color: '#000000', flexDirection: 'column' }}>
-                    <ShinyText
-                      text="Scroll down to see more"
-                      speed={3.3}
-                      delay={0}
-                      color="#000000"
-                      shineColor="#ffffff"
-                      spread={120}
-                      direction="left"
-                      yoyo={false}
-                      pauseOnHover={false}
-                      disabled={false}
-                    />
+                    <h3>Scroll down to see more</h3>
                     <img src="/images/arrow.png" alt="" style={{ width: '3%', height: '3%' }} />
                   </div>
                 </div>
