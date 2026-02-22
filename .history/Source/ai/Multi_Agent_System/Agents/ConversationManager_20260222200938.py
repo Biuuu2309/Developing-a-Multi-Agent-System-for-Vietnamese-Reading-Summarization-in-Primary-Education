@@ -46,15 +46,14 @@ class ConversationManager:
         
         # 3️⃣ Plan task
         plan = self.planning_agent.plan(intent_result)
+        response = self.coordinator.execute(plan, user_input)
+        
         print("Plan:", plan)
-
-        # 4️⃣ Execution
-        result_state = self.coordinator_agent.execute(
-            plan,
-            user_input
+        # 4️⃣ Execute task
+        response = self.coordinator.execute(plan, user_input)
+        # 5️⃣ Save assistant response
+        self.session_memory.add_message(
+            session_id, "assistant", response
         )
 
-        print("Execution state:", result_state)
-
-        # 5️⃣ Trả output chính
-        return result_state.get("current_output")
+        return response
