@@ -75,7 +75,7 @@ class ClarificationAgent:
 
         return intent_result
 
-    def _has_text_content(self, user_input: str, _intent_result: dict) -> bool:
+    def _has_text_content(self, user_input: str, intent_result: dict) -> bool:
         """
         Kiểm tra xem user_input có chứa văn bản cần tóm tắt không
         (không phải chỉ là câu hỏi hoặc yêu cầu)

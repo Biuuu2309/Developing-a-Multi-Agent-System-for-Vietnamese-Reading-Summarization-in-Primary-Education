@@ -70,41 +70,33 @@
 #         # 6️⃣ Trả output chính
 #         return result_state.get("current_output")
 
+from mas_main import graph
+from session_memory import SessionMemory
+
+
 class ConversationManager:
-    
-    def __init__(self, graph, session_memory):
-        self.graph = graph
-        self.session_memory = session_memory
 
-    # =========================
-    # Session Handling
-    # =========================
-
-    def create_session(self):
-        return self.session_memory.create_session()
-
-    # =========================
-    # Main Chat Entry Point
-    # =========================
+    def __init__(self):
+        self.memory = SessionMemory()
 
     def chat(self, session_id: str, user_input: str):
 
-        # 1️⃣ Lấy history trước khi thêm message mới
-        history = self.session_memory.get_history(session_id)
+        # 1️⃣ lấy history
+        history = self.memory.get_history(session_id)
 
-        # 2️⃣ Tạo graph state
+        # 2️⃣ tạo state cho graph
         state = {
             "user_input": user_input,
             "history": history
         }
 
-        # 3️⃣ Gọi LangGraph
-        result = self.graph.invoke(state)
+        # 3️⃣ gọi LangGraph
+        result = graph.invoke(state)
 
         output = result.get("final_output")
 
-        # 4️⃣ Lưu memory sau khi graph hoàn thành
-        self.session_memory.add_message(session_id, "user", user_input)
-        self.session_memory.add_message(session_id, "assistant", output)
+        # 4️⃣ lưu memory
+        self.memory.append(session_id, "user", user_input)
+        self.memory.append(session_id, "assistant", output)
 
         return output

@@ -50,32 +50,23 @@ class ClarificationAgent:
         """
         Parse câu trả lời của user để cập nhật intent_result
         """
-        user_lower = user_input.lower().strip()
+        user_lower = user_input.lower()
 
-        # Kiểm tra strategy - hỗ trợ nhiều cách trả lời
-        if any(keyword in user_lower for keyword in ["trích xuất", "extract", "extractive"]):
+        # Kiểm tra strategy
+        if "trích xuất" in user_lower or "extract" in user_lower:
             intent_result["summarization_type"] = "extractive"
-        elif any(keyword in user_lower for keyword in ["diễn giải", "abstract", "abstractive"]):
+        elif "diễn giải" in user_lower or "abstract" in user_lower:
             intent_result["summarization_type"] = "abstractive"
 
-        # Kiểm tra grade_level - hỗ trợ nhiều format
+        # Kiểm tra grade_level
         import re
-        # Format: "lớp 1", "lớp1", "lớp 5"
         grade_match = re.search(r'lớp\s*(\d+)', user_lower)
         if grade_match:
             intent_result["grade_level"] = int(grade_match.group(1))
-        else:
-            # Format: chỉ số đơn lẻ (1-5) nếu input ngắn
-            if len(user_lower.split()) <= 2:
-                single_digit = re.search(r'^(\d)$', user_lower.strip())
-                if single_digit:
-                    grade = int(single_digit.group(1))
-                    if 1 <= grade <= 5:
-                        intent_result["grade_level"] = grade
 
         return intent_result
 
-    def _has_text_content(self, user_input: str, _intent_result: dict) -> bool:
+    def _has_text_content(self, user_input: str, intent_result: dict) -> bool:
         """
         Kiểm tra xem user_input có chứa văn bản cần tóm tắt không
         (không phải chỉ là câu hỏi hoặc yêu cầu)
@@ -90,8 +81,7 @@ class ClarificationAgent:
         short_responses = [
             "trích xuất", "extract", "extractive",
             "diễn giải", "abstract", "abstractive",
-            "lớp 1", "lớp 2", "lớp 3", "lớp 4", "lớp 5",
-            "1", "2", "3", "4", "5"
+            "lớp 1", "lớp 2", "lớp 3", "lớp 4", "lớp 5"
         ]
         if user_lower in short_responses or len(user_lower.split()) <= 3:
             return False
@@ -115,10 +105,6 @@ class ClarificationAgent:
         
         # Nếu có ít nhất 2 câu hoặc nhiều hơn 20 từ, có thể là văn bản
         if sentence_count >= 2 or word_count >= 20:
-            return True
-        
-        # Nếu input dài (> 100 ký tự) và không phải là câu trả lời ngắn
-        if len(user_lower) > 100:
             return True
 
         return False

@@ -52,6 +52,8 @@ class Orchestrator:
     # ==========================================
     def run(self, user_input: str, strategy: str = None, grade_level: int = None):
         if strategy == "extractive":
-            return self.extractor.run(user_input, grade_level)
+            return self.extractor.run(user_input, ratio=0.5)
 
+        if grade_level is None:
+            grade_level = 5
         return self.abstracter.run(user_input, grade_level)
