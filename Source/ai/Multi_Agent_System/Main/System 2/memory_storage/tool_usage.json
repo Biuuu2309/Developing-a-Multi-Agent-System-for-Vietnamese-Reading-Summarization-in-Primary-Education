@@ -1,0 +1,46 @@
+{
+  "usage": {
+    "mas_graph": [
+      {
+        "timestamp": "2026-02-28T16:48:33.033656",
+        "input": {
+          "user_input_length": 708,
+          "history_length": 0
+        },
+        "output": "Níc Vu-gic là một diễn giả truyền cảm hứng người Úc, sinh năm 1982 và có một bàn chân với hai ngón chân nhỏ. Sự khác biệt về ngoại hình khiến Níc từng bị bạn bè chê cười và trêu chọc, khiến anh học cá",
+        "success": true,
+        "execution_time": 35.27777457237244,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "30a83bc6-f637-469e-8541-1cbe87df23e0"
+        }
+      },
+      {
+        "timestamp": "2026-02-28T16:58:59.159027",
+        "input": {
+          "user_input_length": 591,
+          "history_length": 0
+        },
+        "output": "Gần trưa, các công nhân xây dựng vẫn phải làm việc dưới cái nóng 36 - 37 độ C, khiến việc làm việc này trở nên vất vả hơn. Một bìa giấy và nắp hộp được sử dụng để quạt cho người trông xe và cô bán hàn",
+        "success": true,
+        "execution_time": 37.729923248291016,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "65e14909-3b9b-483b-9f4a-969311e6d5fa"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "mas_graph": {
+      "total_uses": 2,
+      "successful": 2,
+      "failed": 0,
+      "success_rate": 1.0,
+      "recent_success_rate": 1.0,
+      "avg_execution_time": 36.503848910331726,
+      "last_used": "2026-02-28T16:58:59.159027"
+    }
+  },
+  "updated_at": "2026-02-28T16:58:59.159027"
+}
