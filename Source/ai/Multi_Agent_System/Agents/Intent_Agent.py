@@ -17,7 +17,7 @@ class IntentResult(TypedDict):
     grade_level: Optional[int]
 
 
-class IntentClassifier:
+class IntentAgent:
 
     def __init__(self):
         self.llm = ChatOllama(model="qwen2.5:7b")

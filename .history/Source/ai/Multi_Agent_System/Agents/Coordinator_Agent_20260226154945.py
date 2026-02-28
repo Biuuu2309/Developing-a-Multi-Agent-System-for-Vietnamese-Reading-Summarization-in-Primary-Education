@@ -50,7 +50,7 @@ class CoordinatorAgent:
 
     def _run_summarization(self, user_input, strategy, grade_level):
         return self.system1_engine.run(
-            user_input,
+            user_input=user_input,
             strategy=strategy,
             grade_level=grade_level
         )
