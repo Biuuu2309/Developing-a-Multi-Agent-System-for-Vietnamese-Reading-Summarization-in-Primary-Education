@@ -28,19 +28,173 @@
         "context": {
           "session_id": "65e14909-3b9b-483b-9f4a-969311e6d5fa"
         }
+      },
+      {
+        "timestamp": "2026-03-01T15:28:18.876352",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 39.237876653671265,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3b002e09-9202-4a1d-8049-b1c1875c356c"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T15:28:55.399465",
+        "input": {
+          "user_input_length": 12,
+          "history_length": 2
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 9.078604698181152,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3b002e09-9202-4a1d-8049-b1c1875c356c"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T15:33:03.764705",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 30.527114629745483,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a8001ea4-4136-4869-a4d4-e5523ade983a"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T15:34:50.409801",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 2
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 21.587017059326172,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a8001ea4-4136-4869-a4d4-e5523ade983a"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T15:38:56.827637",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 28.95299744606018,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "57bb3803-bc7b-428d-b4a1-2fbd23cbe56c"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T15:46:52.976534",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 39.99887990951538,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "520a971e-63ba-4d3c-9942-9e76e160bd35"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T15:53:04.860970",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Ở học kỳ 1, chúng ta thấy mỗi màu có các độ đậm, nhạt khác nhau và có thể sử dụng chúng để thực hành, sáng tạo sản phẩm theo ý thích. Có thể nhận ra màu nóng, màu lạnh trong tự nhiên và tác phẩm mi th",
+        "success": true,
+        "execution_time": 171.15804934501648,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7dd9d86c-f938-446c-b52f-c952f6c501b3"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T16:05:14.240792",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Hoàng Long và Hoàng lần là hai anh em song sinh, sinh ngày 18/06/1942 ở Vĩnh Phúc và lớn lên ở Hà Tây, có nhiều tác phẩm phát hành trên Đài Tiếng nói Việt Nam. Trong nhiều năm, hai ông tham gia các ho",
+        "success": true,
+        "execution_time": 211.59929776191711,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "209a0cf7-3560-498d-a0a5-52af0fd52cac"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T16:18:49.662991",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Hoàng Lan là một anh em sinh đôi, sinh ngày 18/06/1942 ở Vĩnh Yên, Vĩnh Phúc và lên ở Sơn Tây, Hà Tây. Năm 14, hai ông bắt đầu sáng tác âm nhạc khi 14 tuổi và có nhiều tác phẩm phát sóng trên Đài Tiến",
+        "success": true,
+        "execution_time": 143.46282696723938,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "9f8a743b-6e51-4ed2-b7b7-7e8851a5de17"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T16:31:07.630805",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Nhạc sĩ Hoàng Long và Hoàng Lân là hai anh em song sinh, sinh ngày 18/06/1942 ở Vĩnh Phúc và lớn lên ở Hà Tây, sống cùng nhau. Hai ông sáng tác nhiều tác phẩm khác nhau với nhiều thể loại như ca khúc,",
+        "success": true,
+        "execution_time": 201.40998458862305,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b47527ae-468c-45b3-8a8b-3ccbd3711b2d"
+        }
+      },
+      {
+        "timestamp": "2026-03-01T16:42:16.973178",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Nhà nhạc sĩ Hoàng Long - Hoàng Lân là hai anh em song sinh, sinh ngày 18/06/1942 ở Vĩnh Yên và lớn lên ở Hà Tây, được sinh ra từ năm 18 tháng 06/2012 ở thị xã Sơn Tây, Hà Tây. Họ đã sáng tác hàng trăm",
+        "success": true,
+        "execution_time": 251.07448315620422,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "9eae59d2-9993-442a-ad14-b154e14581cb"
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 2,
-      "successful": 2,
+      "total_uses": 13,
+      "successful": 13,
       "failed": 0,
       "success_rate": 1.0,
       "recent_success_rate": 1.0,
-      "avg_execution_time": 36.503848910331726,
-      "last_used": "2026-02-28T16:58:59.159027"
+      "avg_execution_time": 93.93037154124333,
+      "last_used": "2026-03-01T16:42:16.973178"
     }
   },
-  "updated_at": "2026-02-28T16:58:59.159027"
+  "updated_at": "2026-03-01T16:42:16.973178"
 }
