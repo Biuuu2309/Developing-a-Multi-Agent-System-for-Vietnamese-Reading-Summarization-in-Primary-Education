@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MyBeApplication",
+            "request": "launch",
+            "mainClass": "com.example.my_be.MyBeApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-MyBeApplication<my-be>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

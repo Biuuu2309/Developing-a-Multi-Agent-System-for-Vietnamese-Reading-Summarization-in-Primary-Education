@@ -11,8 +11,8 @@ public class AppConfig {
     @Bean
     public RestTemplate restTemplate() {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
-        factory.setConnectTimeout(5000); // 5 seconds connection timeout
-        factory.setReadTimeout(120000); // 120 seconds read timeout (MAS có thể cần thời gian xử lý)
+        factory.setConnectTimeout(5000);
+        factory.setReadTimeout(120000);
         return new RestTemplate(factory);
     }
 }

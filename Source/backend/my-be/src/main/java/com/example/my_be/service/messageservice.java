@@ -1,5 +1,7 @@
 package com.example.my_be.service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +23,10 @@ public class MessageService {
         message.setUserId(request.getUser_id());
         message.setRole(Message.MessageRole.valueOf(request.getRole().toUpperCase()));
         message.setContent(request.getMessage());
-        message.setCreatedAt(request.getCreated_at());
+        if (request.getCreated_at() != null && !request.getCreated_at().isEmpty()) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            message.setCreatedAt(LocalDateTime.parse(request.getCreated_at(), formatter));
+        }
         return messagerepository.save(message);
     }
     public List<Message> getMessages() {
