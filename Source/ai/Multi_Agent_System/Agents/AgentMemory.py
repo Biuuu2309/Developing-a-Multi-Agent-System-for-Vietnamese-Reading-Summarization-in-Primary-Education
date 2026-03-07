@@ -69,18 +69,39 @@ class AgentMemory:
         # Cập nhật average metrics
         if metrics:
             for key, value in metrics.items():
-                if key not in pattern["avg_metrics"]:
-                    pattern["avg_metrics"][key] = value
-                    pattern["best_metrics"][key] = value
-                else:
-                    # Moving average
-                    pattern["avg_metrics"][key] = (
-                        pattern["avg_metrics"][key] * (pattern["count"] - 1) + value
-                    ) / pattern["count"]
+                # Chỉ xử lý metrics là số
+                try:
+                    # Convert value sang float nếu có thể
+                    if isinstance(value, str):
+                        # Bỏ qua nếu là string không phải số
+                        continue
+                    value_float = float(value)
                     
-                    # Best metrics
-                    if value > pattern["best_metrics"][key]:
-                        pattern["best_metrics"][key] = value
+                    if key not in pattern["avg_metrics"]:
+                        pattern["avg_metrics"][key] = value_float
+                        pattern["best_metrics"][key] = value_float
+                    else:
+                        # Đảm bảo avg_metrics[key] là số
+                        current_avg = pattern["avg_metrics"][key]
+                        if isinstance(current_avg, str):
+                            # Nếu đã lưu là string, reset về value hiện tại
+                            pattern["avg_metrics"][key] = value_float
+                            pattern["best_metrics"][key] = value_float
+                        else:
+                            # Moving average
+                            pattern["avg_metrics"][key] = (
+                                float(current_avg) * (pattern["count"] - 1) + value_float
+                            ) / pattern["count"]
+                            
+                            # Best metrics
+                            current_best = pattern["best_metrics"][key]
+                            if isinstance(current_best, str):
+                                pattern["best_metrics"][key] = value_float
+                            elif value_float > float(current_best):
+                                pattern["best_metrics"][key] = value_float
+                except (ValueError, TypeError):
+                    # Bỏ qua nếu không convert được sang số
+                    continue
     
     def _update_failed_pattern(self, task_type: str, input_data: Dict):
         """Cập nhật failed patterns"""
