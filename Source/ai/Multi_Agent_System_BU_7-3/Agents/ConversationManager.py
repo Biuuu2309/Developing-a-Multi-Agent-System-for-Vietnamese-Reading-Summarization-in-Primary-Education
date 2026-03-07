@@ -91,6 +91,11 @@ class ConversationManager:
 
         # 1️⃣ Lấy history trước khi thêm message mới
         history = self.session_memory.get_history(session_id)
+        
+        # Advanced Memory: Semantic recall - tìm similar conversations
+        if hasattr(self.session_memory, 'recall_semantic'):
+            similar_memories = self.session_memory.recall_semantic(user_input, top_k=3)
+            # Có thể sử dụng similar_memories để cải thiện context
 
         # 2️⃣ Tạo graph state
         state = {
@@ -98,13 +103,33 @@ class ConversationManager:
             "history": history
         }
 
-        # 3️⃣ Gọi LangGraph
+        # 3️⃣ Gọi LangGraph với tool usage tracking
+        import time
+        start_time = time.time()
         result = self.graph.invoke(state)
+        execution_time = time.time() - start_time
 
         output = result.get("final_output")
+        
+        # Advanced Memory: Record tool usage cho graph execution
+        if hasattr(self.session_memory, 'advanced_memory') and self.session_memory.advanced_memory:
+            self.session_memory.advanced_memory.record_tool_usage(
+                tool_name="mas_graph",
+                input_data={"user_input_length": len(user_input), "history_length": len(history)},
+                output=output[:200] if output else "",
+                success=output is not None and not (isinstance(output, str) and output.startswith("Lỗi")),
+                execution_time=execution_time,
+                agent_name="mas_system",
+                context={"session_id": session_id}
+            )
 
         # 4️⃣ Lưu memory sau khi graph hoàn thành
-        self.session_memory.add_message(session_id, "user", user_input)
-        self.session_memory.add_message(session_id, "assistant", output)
+        self.session_memory.add_message(session_id, "user", user_input, save_to_long_term=True)
+        self.session_memory.add_message(session_id, "assistant", output, save_to_long_term=True)
+        
+        # 5️⃣ Save session to long-term memory khi kết thúc
+        # (Có thể optimize bằng cách batch save)
+        if len(self.session_memory.get_history(session_id)) % 20 == 0:
+            self.session_memory.save_session_to_long_term(session_id)
 
         return output

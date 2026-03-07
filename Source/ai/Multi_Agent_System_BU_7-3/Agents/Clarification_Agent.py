@@ -3,7 +3,7 @@ class ClarificationAgent:
     def __init__(self):
         pass
 
-    def analyze(self, user_input: str, intent_result: dict) -> dict:
+    def analyze(self, user_input: str, intent_result: dict, history: list = None) -> dict:
         """
         Kiểm tra xem có cần hỏi lại user không
         """
@@ -26,7 +26,8 @@ class ClarificationAgent:
                 missing_fields.append("grade_level")
 
         # Kiểm tra văn bản (chỉ khi đã có đủ thông tin strategy và grade_level nếu cần)
-        if not self._has_text_content(user_input, intent_result):
+        # Truyền history để tìm văn bản đã được cung cấp trước đó
+        if not self._has_text_content(user_input, intent_result, history):
             missing_fields.append("text")
 
         if missing_fields:
@@ -75,15 +76,48 @@ class ClarificationAgent:
 
         return intent_result
 
-    def _has_text_content(self, user_input: str, _intent_result: dict) -> bool:
+    def _has_text_content(self, user_input: str, _intent_result: dict, history: list = None) -> bool:
         """
         Kiểm tra xem user_input có chứa văn bản cần tóm tắt không
         (không phải chỉ là câu hỏi hoặc yêu cầu)
+        Nếu không tìm thấy trong user_input, tìm trong history
         """
         user_lower = user_input.lower().strip()
         
         # Nếu input quá ngắn (< 50 ký tự), có thể chỉ là câu trả lời
+        # Nhưng trước tiên kiểm tra xem có văn bản trong history không
         if len(user_lower) < 50:
+            # Kiểm tra history trước khi return False
+            if history:
+                for msg in reversed(history):
+                    if msg.get("role") == "user":
+                        content = msg.get("content", "")
+                        content_lower = content.lower()
+                        content_stripped = content.strip()
+                        
+                        # Nếu có văn bản dài trong history (có thể là text đã cung cấp)
+                        if len(content_stripped) > 100:
+                            # Kiểm tra xem có phải là văn bản thực sự không
+                            word_count = len(content_stripped.split())
+                            sentence_count = content_stripped.count('.') + content_stripped.count('!') + content_stripped.count('?')
+                            
+                            # Nếu có nhiều từ (> 20) hoặc nhiều câu (> 1)
+                            if word_count > 20 or sentence_count > 1:
+                                # Kiểm tra xem có phải là văn bản thực sự (có thể có prompt ở đầu)
+                                # Tìm phần sau các marker như "sau:", "đây:", ":"
+                                has_text_after_marker = False
+                                markers = ["sau:", "đây:", ":"]
+                                for marker in markers:
+                                    if marker in content_lower:
+                                        idx = content_lower.find(marker)
+                                        text_after = content_stripped[idx + len(marker):].strip()
+                                        if len(text_after) > 50:
+                                            has_text_after_marker = True
+                                            break
+                                
+                                # Nếu có text sau marker hoặc toàn bộ message dài và có văn bản thực sự
+                                if has_text_after_marker or (word_count > 30 or sentence_count > 2):
+                                    return True
             return False
 
         # Loại bỏ các câu trả lời ngắn chỉ về strategy/grade
@@ -94,6 +128,20 @@ class ClarificationAgent:
             "1", "2", "3", "4", "5"
         ]
         if user_lower in short_responses or len(user_lower.split()) <= 3:
+            # Kiểm tra history trước khi return False
+            if history:
+                for msg in reversed(history):
+                    if msg.get("role") == "user":
+                        content = msg.get("content", "")
+                        if len(content.strip()) > 100:
+                            word_count = len(content.split())
+                            sentence_count = content.count('.') + content.count('!') + content.count('?')
+                            if (word_count > 20 or sentence_count > 1):
+                                content_lower = content.lower()
+                                # Không phải là câu trả lời ngắn về strategy/grade
+                                if not any(kw in content_lower[:50] for kw in 
+                                          ["trích xuất", "diễn giải", "extract", "abstract", "tôi muốn"]):
+                                    return True
             return False
 
         # Nếu input chỉ chứa các từ khóa về strategy/grade và không có văn bản thực sự
@@ -107,6 +155,16 @@ class ClarificationAgent:
         # Nếu có strategy keyword nhưng không có text indicator và quá ngắn
         if has_strategy_keyword and not has_text_indicator:
             if len(user_lower.split()) < 15:
+                # Kiểm tra history
+                if history:
+                    for msg in reversed(history):
+                        if msg.get("role") == "user":
+                            content = msg.get("content", "")
+                            if len(content.strip()) > 100:
+                                word_count = len(content.split())
+                                sentence_count = content.count('.') + content.count('!') + content.count('?')
+                                if (word_count > 20 or sentence_count > 1):
+                                    return True
                 return False
 
         # Nếu có nhiều câu (dấu chấm) hoặc nhiều từ, có thể là văn bản

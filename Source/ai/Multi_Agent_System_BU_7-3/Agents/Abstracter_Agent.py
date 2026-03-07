@@ -57,7 +57,8 @@ class AbstracterAgent:
         content: str,
         grade: int,
         max_input_len: Optional[int] = None,
-        max_target_len: Optional[int] = None
+        max_target_len: Optional[int] = None,
+        mode: str = "sample"
     ) -> str:
 
         if not content or len(content.strip()) == 0:
@@ -76,11 +77,22 @@ class AbstracterAgent:
         ).to(self.device)
 
         with torch.no_grad():
-            output_ids = self.model.generate(
+            if mode == "beam":
+                output_ids = self.model.generate(
+                    **inputs,
+                    max_length=max_target_len,
+                    num_beams=self.num_beams,
+                    early_stopping=True,
+                    no_repeat_ngram_size=self.no_repeat_ngram_size
+                )
+            elif mode == "sample":
+                output_ids = self.model.generate(
                 **inputs,
                 max_length=max_target_len,
-                num_beams=self.num_beams,
-                early_stopping=True,
+                do_sample=True,
+                top_k=50,
+                top_p=0.9,
+                temperature=0.8,
                 no_repeat_ngram_size=self.no_repeat_ngram_size
             )
 
@@ -95,13 +107,13 @@ class AbstracterAgent:
     # UNIFIED INTERFACE FOR COORDINATOR
     # =====================================
 
-    def run(self, content: str, grade: int = 5) -> str:
+    def run(self, content: str, grade: int = 5, mode: str = "sample") -> str:
         """
         Unified interface used by Coordinator
         """
 
         try:
-            summary = self.summarize(content, grade)
+            summary = self.summarize(content, grade, mode=mode)
             return summary
 
         except Exception as e:
