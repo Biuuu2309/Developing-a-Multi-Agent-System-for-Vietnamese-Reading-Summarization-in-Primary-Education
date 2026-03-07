@@ -259,25 +259,25 @@ CREATE TABLE mas_agent_confidences (
     INDEX idx_agent_confidence (agent_id, task_type)
 );
 
-DROP TABLE IF EXISTS mas_agent_confidences;
-DROP TABLE IF EXISTS mas_agent_memories;
-DROP TABLE IF EXISTS mas_negotiations;
-DROP TABLE IF EXISTS mas_goals;
-DROP TABLE IF EXISTS mas_evaluations;
-DROP TABLE IF EXISTS mas_plans;
-DROP TABLE IF EXISTS agent_logs;
-DROP TABLE IF EXISTS mas_states;
-DROP TABLE IF EXISTS messages;
-DROP TABLE IF EXISTS mas_sessions;
 DROP TABLE IF EXISTS summary_history;
 DROP TABLE IF EXISTS summary_session;
 DROP TABLE IF EXISTS read_history;
+DROP TABLE IF EXISTS mas_plans;
+DROP TABLE IF EXISTS mas_evaluations;
+DROP TABLE IF EXISTS mas_states;
+DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS mas_goals;
+DROP TABLE IF EXISTS mas_negotiations;
+DROP TABLE IF EXISTS mas_agent_confidences;
+DROP TABLE IF EXISTS mas_agent_memories;
+DROP TABLE IF EXISTS mas_sessions;
+DROP TABLE IF EXISTS conversations;
 DROP TABLE IF EXISTS summary_tags;
 DROP TABLE IF EXISTS summaries;
-DROP TABLE IF EXISTS conversations;
 DROP TABLE IF EXISTS tags;
-DROP TABLE IF EXISTS agents;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS agents;
+DROP TABLE IF EXISTS agent_logs;
 
 SELECT * FROM users
 SELECT * FROM summary_history
