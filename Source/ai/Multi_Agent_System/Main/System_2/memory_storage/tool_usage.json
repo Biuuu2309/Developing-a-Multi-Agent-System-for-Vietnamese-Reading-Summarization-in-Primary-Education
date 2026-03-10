@@ -336,19 +336,47 @@
         "context": {
           "session_id": "d7a75928-152b-4591-86b4-5078dbec7bc0"
         }
+      },
+      {
+        "timestamp": "2026-03-10T16:36:56.297027",
+        "input": {
+          "user_input_length": 912,
+          "history_length": 0
+        },
+        "output": "Nhà họ Mạc ở Lũng Động có một người con trai tên là Mạc Đĩnh Chi, cậu bé thông minh và chăm chỉ học hành. Khi về kinh dự thi, vua thấy cậu không đẹp nên muốn thử tài một lần. Nhà vua hỏi ông về những ",
+        "success": true,
+        "execution_time": 72.74789237976074,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "d58a23b3-7725-46a5-8e11-63ca64fd3b04"
+        }
+      },
+      {
+        "timestamp": "2026-03-10T16:37:20.404605",
+        "input": {
+          "user_input_length": 11,
+          "history_length": 2
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo dạng trích xuất hay diễn giải?",
+        "success": true,
+        "execution_time": 16.47902512550354,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "d58a23b3-7725-46a5-8e11-63ca64fd3b04"
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 24,
-      "successful": 24,
+      "total_uses": 26,
+      "successful": 26,
       "failed": 0,
       "success_rate": 1.0,
       "recent_success_rate": 1.0,
-      "avg_execution_time": 71.68772807717323,
-      "last_used": "2026-03-05T00:31:02.992972"
+      "avg_execution_time": 69.60509197528546,
+      "last_used": "2026-03-10T16:37:20.404605"
     }
   },
-  "updated_at": "2026-03-05T00:31:02.992972"
+  "updated_at": "2026-03-10T16:37:20.404605"
 }

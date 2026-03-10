@@ -68,11 +68,11 @@ image2text_agent = Image2TextAgent(
 )
 
 abstracter = AbstracterAgent(
-    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_DG\vit5_grade_summary"
+    model_path="../../../Model Train/Model_DG/vit5_grade_summary"
 )
 
 extractor = ExtractorAgent(
-    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_TX\vubert_summary_model.pth"
+    model_path="../../../Model Train/Model_TX/vubert_summary_model.pth"
 )
 
 system1_engine = Orchestrator(

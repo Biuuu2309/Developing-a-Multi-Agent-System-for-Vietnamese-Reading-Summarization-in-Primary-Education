@@ -1,6 +1,5 @@
 # Abstracter_Agent.py
 import re
-import unicodedata
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from typing import Optional, Literal
@@ -82,7 +81,7 @@ class AbstracterAgent:
             summary = summary[: last_period + 1]
         return summary.strip()
     
-    def vietnamese_text_normalization(self, text, vncore=None):
+    def vietnamese_text_normalization(text, vncore=None):
         """
         Vietnamese Text Normalization Layer
         Works for ANY Vietnamese text
@@ -172,7 +171,7 @@ class AbstracterAgent:
         grade: int,
         max_input_len: Optional[int] = None,
         max_target_len: Optional[int] = None,
-        mode: str = "sample",
+        mode: str = "beam",
         length_option: Literal["short", "medium", "long"] = "medium",
     ) -> str:
 
@@ -260,7 +259,6 @@ class AbstracterAgent:
         )
 
         summary = self._clean_summary(summary)
-        summary = self.vietnamese_text_normalization(summary)
         return summary.strip()
 
     # =====================================

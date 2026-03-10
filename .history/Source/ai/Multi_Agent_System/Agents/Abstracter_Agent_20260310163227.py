@@ -172,7 +172,7 @@ class AbstracterAgent:
         grade: int,
         max_input_len: Optional[int] = None,
         max_target_len: Optional[int] = None,
-        mode: str = "sample",
+        mode: str = "beam",
         length_option: Literal["short", "medium", "long"] = "medium",
     ) -> str:
 

@@ -68,11 +68,11 @@ image2text_agent = Image2TextAgent(
 )
 
 abstracter = AbstracterAgent(
-    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_DG\vit5_grade_summary"
+    model_path="../../../Model Train/Model_DG/vit5_grade_summary"
 )
 
 extractor = ExtractorAgent(
-    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_TX\vubert_summary_model.pth"
+    model_path="../../../Model Train/Model_TX/vubert_summary_model.pth"
 )
 
 system1_engine = Orchestrator(
@@ -1100,32 +1100,3 @@ builder.add_conditional_edges(
 
 graph = builder.compile()
 
-def run_mas(user_input: str):
-    initial_state = {
-        "user_input": user_input
-    }
-
-    result = graph.invoke(initial_state)
-    return result.get("final_output")
-
-if __name__ == "__main__":
-    # Initialize SessionMemory với Advanced Memory (long-term, semantic, tool, knowledge)
-    memory = SessionMemory(use_advanced_memory=True, storage_path="memory_storage")
-    # Semantic recall
-    similar = memory.recall_semantic("tóm tắt văn bản", top_k=5)
-
-    # Tool recommendations
-    tools = memory.get_tool_recommendations("summarization")
-
-    # Search knowledge
-    knowledge = memory.search_knowledge("Nick Vujicic")
-    
-    cm = ConversationManager(graph, memory)
-
-    session_id = cm.create_session()
-    print("Session id: ", session_id)
-    while True:
-        user_input = input("You: ")
-        response = cm.chat(session_id, user_input)
-        print("You:", user_input)
-        print("Bot:", response)

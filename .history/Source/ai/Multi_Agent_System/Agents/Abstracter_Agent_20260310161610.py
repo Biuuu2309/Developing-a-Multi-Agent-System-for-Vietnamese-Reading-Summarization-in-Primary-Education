@@ -1,6 +1,5 @@
 # Abstracter_Agent.py
-import re
-import unicodedata
+
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from typing import Optional, Literal
@@ -14,7 +13,7 @@ class AbstracterAgent:
 
     def __init__(
         self,
-        model_path: str = "E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_DG\vit5_grade_summary",
+        model_path: str = "../../../Model Train/Model_DG/vit5_grade_summary",
         max_input_len: int = 512,
         max_target_len: int = 256,
         num_beams: int = 5,
@@ -81,86 +80,6 @@ class AbstracterAgent:
         if last_period != -1:
             summary = summary[: last_period + 1]
         return summary.strip()
-    
-    def vietnamese_text_normalization(self, text, vncore=None):
-        """
-        Vietnamese Text Normalization Layer
-        Works for ANY Vietnamese text
-        """
-
-        # ====================================
-        # 1. Unicode normalization
-        # ====================================
-        text = unicodedata.normalize("NFC", text)
-
-        # ====================================
-        # 2. Remove duplicated spaces
-        # ====================================
-        text = re.sub(r"\s+", " ", text)
-
-        # ====================================
-        # 3. Fix spacing around punctuation
-        # ====================================
-        text = re.sub(r"\s+([,.!?;:])", r"\1", text)
-        text = re.sub(r"([,.!?;:])([^\s])", r"\1 \2", text)
-
-        # ====================================
-        # 4. Fix glued words
-        # Example: Đĩnhchi -> Đĩnh Chi
-        # ====================================
-        text = re.sub(
-            r"([a-zàáạảãăắằẳẵặâấầẩẫậđèéẹẻẽêếềểễệìíịỉĩòóọỏõôốồổỗộơớờởỡợùúụủũưứừửữựỳýỵỷỹ])([A-ZÀÁẠẢÃĂẮẰẲẴẶÂẤẦẨẪẬĐ])",
-            r"\1 \2",
-            text
-        )
-
-        # ====================================
-        # 5. Fix ALL CAPS words
-        # ====================================
-        words = text.split()
-
-        fixed_words = []
-        for w in words:
-            if w.isupper() and len(w) > 2:
-                fixed_words.append(w.capitalize())
-            else:
-                fixed_words.append(w)
-
-        text = " ".join(fixed_words)
-
-        # ====================================
-        # 6. Capitalize sentences
-        # ====================================
-        sentences = re.split(r'(?<=[.!?]) +', text)
-
-        def capitalize_first_letter(sentence):
-            if not sentence:
-                return sentence
-            return sentence[0].upper() + sentence[1:]
-
-        sentences = [capitalize_first_letter(s) for s in sentences]
-
-        text = " ".join(sentences)
-
-        # ====================================
-        # 7. Use NER to fix proper names
-        # ====================================
-        if vncore is not None:
-
-            annotated = vncore.annotate(text)
-
-            entities = set()
-
-            for sent in annotated['sentences']:
-                for token in sent:
-                    if token['nerLabel'] != 'O':
-                        entities.add(token['form'])
-
-            for ent in entities:
-                pattern = re.compile(ent, re.IGNORECASE)
-                text = pattern.sub(ent, text)
-
-        return text.strip()
 
     # =====================================
     # CORE SUMMARIZATION
@@ -172,7 +91,7 @@ class AbstracterAgent:
         grade: int,
         max_input_len: Optional[int] = None,
         max_target_len: Optional[int] = None,
-        mode: str = "sample",
+        mode: str = "beam",
         length_option: Literal["short", "medium", "long"] = "medium",
     ) -> str:
 
@@ -260,7 +179,6 @@ class AbstracterAgent:
         )
 
         summary = self._clean_summary(summary)
-        summary = self.vietnamese_text_normalization(summary)
         return summary.strip()
 
     # =====================================

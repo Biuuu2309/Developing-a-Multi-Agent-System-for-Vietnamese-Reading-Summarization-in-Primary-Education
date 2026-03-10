@@ -23,7 +23,7 @@ public class AgentController {
     private AgentService agentService;
 
     @PostMapping
-    public ResponseEntity<Agent> x(@RequestBody Agent agent) {
+    public ResponseEntity<Agent> createAgent(@RequestBody Agent agent) {
         return new ResponseEntity<>(agentService.createAgent(agent), HttpStatus.CREATED);
     }
 
