@@ -21,6 +21,9 @@ public class AgentLog {
     @Column(name = "log_id")
     private String logId;
 
+    @Column(name = "session_id")
+    private String sessionId;
+
     @Column(name = "message_id")
     private String messageId;
 
@@ -54,6 +57,9 @@ public class AgentLog {
     public void setLogId(String logId) {
         this.logId = logId;
     }
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -77,6 +83,9 @@ public class AgentLog {
     }
     public String getLogId() {
         return logId;
+    }
+    public String getSessionId() {
+        return sessionId;
     }
     public String getMessageId() {
         return messageId;

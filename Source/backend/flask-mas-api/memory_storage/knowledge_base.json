@@ -1,0 +1,174 @@
+{
+  "facts": {
+    "user_info": [
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T12:39:01.458726",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T12:39:01.458726",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T12:39:01.468661",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T12:39:01.473590",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T12:39:01.474393",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.274941",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.276488",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.277525",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.278046",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.279089",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em vi",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.280098",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em vi",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.281187",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.282389",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em vi",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.283437",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em vi",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T14:01:30.283982",
+        "metadata": {}
+      }
+    ]
+  },
+  "relationships": {},
+  "patterns": {
+    "summarization_response": [
+      {
+        "pattern": {
+          "content_length": 543
+        },
+        "frequency": 4,
+        "timestamp": "2026-03-13T14:01:30.284505",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 919
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-13T14:01:30.275444",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 931
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-13T14:01:30.277014",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 860
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-13T14:01:30.277525",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 844
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-13T14:01:30.278570",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 473
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-13T14:01:30.279089",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 537
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-13T14:01:30.282913",
+        "metadata": {}
+      }
+    ]
+  },
+  "domain_knowledge": {},
+  "updated_at": "2026-03-13T14:01:30.284505"
+}

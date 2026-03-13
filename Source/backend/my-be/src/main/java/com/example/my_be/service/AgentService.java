@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.my_be.model.Agent;
+import com.example.my_be.model.Agent.AgentType;
 import com.example.my_be.repository.AgentRepository;
 
 @Service
@@ -28,6 +29,10 @@ public class AgentService {
 
     public Optional<Agent> getAgentById(String agentId) {
         return agentRepository.findById(agentId);
+    }
+
+    public Optional<Agent> getAgentByType(AgentType agentType) {
+        return agentRepository.findByAgentTypeAndIsActiveTrue(agentType);
     }
 
     public void deleteAgent(String agentId) {

@@ -20,6 +20,7 @@ public class AgentLogService {
     public AgentLog createAgentLog(CreateAgentLogRequest request) {
         AgentLog log = new AgentLog();
         log.setLogId(UUID.randomUUID().toString());
+        log.setSessionId(request.getSessionId());
         log.setMessageId(request.getMessageId());
         log.setAgentId(request.getAgentId());
         log.setInput(request.getInput());

@@ -50,10 +50,28 @@ class Orchestrator:
     # ==========================================
     # Main Execution
     # ==========================================
-    def run(self, user_input: str, strategy: str = None, grade_level: int = None):
+    def run(
+        self,
+        user_input: str,
+        strategy: str = None,
+        grade_level: int = None,
+        length_option: str = "medium",
+    ):
+        """
+        Thực thi tóm tắt với chiến lược đã chọn.
+        - Extractive: bỏ qua length_option, dùng ratio cố định.
+        - Abstractive: truyền length_option xuống AbstracterAgent
+          để điều khiển độ dài (short / medium / long).
+        """
         if strategy == "extractive":
             return self.extractor.run(user_input, ratio=0.5)
 
         if grade_level is None:
             grade_level = 5
-        return self.abstracter.run(user_input, grade_level)
+
+        return self.abstracter.run(
+            content=user_input,
+            grade=grade_level,
+            mode="sample",
+            length_option=length_option or "medium",
+        )
