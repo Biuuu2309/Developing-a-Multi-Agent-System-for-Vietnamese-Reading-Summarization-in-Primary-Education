@@ -588,19 +588,47 @@
         "context": {
           "session_id": "1439a345-eab9-41f7-a761-7eeff96e40f5"
         }
+      },
+      {
+        "timestamp": "2026-03-13T17:55:03.359437",
+        "input": {
+          "user_input_length": 898,
+          "history_length": 0
+        },
+        "output": "Nhà họ Mạc ở Lũng Động có một người con trai tên là Mạc Đĩnh Chi, rất thông minh, chăm chỉ học tập và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu, nhưng vua thấy không đẹp nên",
+        "success": true,
+        "execution_time": 52.0481390953064,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "876ceb92-8e1b-4e7c-b420-36ffb4d0bf36"
+        }
+      },
+      {
+        "timestamp": "2026-03-13T17:55:38.322684",
+        "input": {
+          "user_input_length": 11,
+          "history_length": 2
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo dạng trích xuất hay diễn giải?",
+        "success": true,
+        "execution_time": 11.486091613769531,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "876ceb92-8e1b-4e7c-b420-36ffb4d0bf36"
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 42,
-      "successful": 39,
+      "total_uses": 44,
+      "successful": 41,
       "failed": 3,
-      "success_rate": 0.9285714285714286,
+      "success_rate": 0.9318181818181818,
       "recent_success_rate": 0.85,
-      "avg_execution_time": 52.59534017812638,
-      "last_used": "2026-03-11T16:56:41.479074"
+      "avg_execution_time": 51.64860268614509,
+      "last_used": "2026-03-13T17:55:38.322684"
     }
   },
-  "updated_at": "2026-03-11T16:56:41.479074"
+  "updated_at": "2026-03-13T17:55:38.323687"
 }

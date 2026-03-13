@@ -13,12 +13,6 @@ CREATE TABLE users (
     PRIMARY KEY (user_id)
 );
 
-CREATE TABLE tags (
-	tag_id VARCHAR(255),
-    name VARCHAR(255) NOT NULL,
-    PRIMARY KEY (tag_id)
-);
-
 CREATE TABLE summaries (
 	summary_id VARCHAR(255),
     approved_at TIMESTAMP NOT NULL,
@@ -36,7 +30,7 @@ CREATE TABLE summaries (
     FOREIGN KEY (created_by) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE summary_session (
+CREATE TABLE summary_sessions (
 	session_id BIGINT AUTO_INCREMENT,
     content MEDIUMTEXT NOT NULL,
     created_by VARCHAR(255),
@@ -64,15 +58,6 @@ CREATE TABLE read_history (
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (summary_id) REFERENCES summaries(summary_id) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE summary_tags (
-	summary_tag_id VARCHAR(255),
-    summary_id VARCHAR(255),
-    tag_id VARCHAR(255),
-    PRIMARY KEY (summary_tag_id),
-    FOREIGN KEY (summary_id) REFERENCES summaries(summary_id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (tag_id) REFERENCES tags(tag_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE conversations (
@@ -140,7 +125,6 @@ CREATE TABLE mas_states (
 CREATE TABLE messages (
     message_id VARCHAR(255) PRIMARY KEY,
     session_id VARCHAR(255),
-    state_id VARCHAR(255),
     conversation_id VARCHAR(255),
     user_id VARCHAR(255),
     agent_id VARCHAR(255),
@@ -151,8 +135,7 @@ CREATE TABLE messages (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (agent_id) REFERENCES agents(agent_id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (session_id) REFERENCES mas_sessions(session_id) ON UPDATE CASCADE ON DELETE SET NULL,
-    FOREIGN KEY (state_id) REFERENCES mas_states(state_id) ON UPDATE CASCADE ON DELETE SET NULL
+    FOREIGN KEY (session_id) REFERENCES mas_sessions(session_id) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 ALTER TABLE mas_states 
@@ -196,6 +179,23 @@ CREATE TABLE mas_evaluations (
     rouge1_f1 DECIMAL(5,4),
     rougeL_f1 DECIMAL(5,4),
     bertscore_f1 DECIMAL(5,4),
+    -- Text difficulty features
+    difficulty_level VARCHAR(50),
+    total_words INT,
+    unique_words INT,
+    type_token_ratio DECIMAL(5,4),
+    rare_word_ratio DECIMAL(5,4),
+    unknown_word_ratio DECIMAL(5,4),
+    avg_word_grade DECIMAL(6,3),
+    num_sentences INT,
+    avg_sentence_length DECIMAL(6,2),
+    max_sentence_length INT,
+    min_sentence_length INT,
+    long_sentence_ratio DECIMAL(5,4),
+    avg_word_length DECIMAL(6,3),
+    words_per_sentence DECIMAL(6,2),
+    lexical_density DECIMAL(5,4),
+    matched_rules TEXT,
     comment TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (state_id) REFERENCES mas_states(state_id) ON UPDATE CASCADE ON DELETE CASCADE
@@ -270,22 +270,19 @@ DROP TABLE IF EXISTS mas_states;
 DROP TABLE IF EXISTS messages;
 DROP TABLE IF EXISTS mas_sessions;
 DROP TABLE IF EXISTS summary_history;
-DROP TABLE IF EXISTS summary_session;
+DROP TABLE IF EXISTS summary_sessions;
 DROP TABLE IF EXISTS read_history;
-DROP TABLE IF EXISTS summary_tags;
 DROP TABLE IF EXISTS summaries;
 DROP TABLE IF EXISTS conversations;
-DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS agents;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS message_user_ai;
 
 SELECT * FROM users
 SELECT * FROM summary_history
 SELECT * FROM summary_session
 SELECT * FROM read_history
 SELECT * FROM conversations
-SELECT * FROM summary_tags
 SELECT * FROM summaries
-SELECT * FROM tags
 SELECT * FROM messages
 SELECT * FROM agents

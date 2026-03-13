@@ -105,6 +105,41 @@
         "confidence": 0.3,
         "timestamp": "2026-03-13T14:01:30.283982",
         "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T17:15:00.794724",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T17:15:00.798724",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T17:15:00.799725",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T17:15:00.801231",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-13T17:15:00.803237",
+        "metadata": {}
       }
     ]
   },
@@ -161,14 +196,46 @@
       },
       {
         "pattern": {
+          "content_length": 886
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-13T17:15:00.801231",
+        "metadata": {}
+      },
+      {
+        "pattern": {
           "content_length": 537
         },
         "frequency": 1,
         "timestamp": "2026-03-13T14:01:30.282913",
         "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 903
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-13T17:15:00.796720",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 915
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-13T17:15:00.802236",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 878
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-13T17:15:00.804742",
+        "metadata": {}
       }
     ]
   },
   "domain_knowledge": {},
-  "updated_at": "2026-03-13T14:01:30.284505"
+  "updated_at": "2026-03-13T17:15:00.804742"
 }

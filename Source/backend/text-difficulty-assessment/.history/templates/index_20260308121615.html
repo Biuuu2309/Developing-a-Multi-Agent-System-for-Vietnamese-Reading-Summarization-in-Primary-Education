@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đánh Giá Độ Khó Đọc Hiểu Văn Bản Tiếng Việt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Hệ Thống Đánh Giá Độ Khó Đọc Hiểu</h1>
+            <p class="subtitle">Phân tích và đánh giá độ khó của văn bản tiếng Việt theo 5 cấp độ</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Nhập văn bản cần đánh giá</h2>
+                <textarea 
+                    id="textInput" 
+                    placeholder="Nhập hoặc dán văn bản tiếng Việt cần đánh giá độ khó đọc hiểu..."
+                    rows="8"
+                ></textarea>
+                <button id="analyzeBtn" onclick="analyzeText()">
+                    <span class="btn-text">Phân Tích</span>
+                    <span class="btn-loader" style="display: none;">⏳ Đang xử lý...</span>
+                </button>
+            </div>
+
+            <div id="resultSection" class="result-section" style="display: none;">
+                <div class="result-header">
+                    <h2>Kết Quả Đánh Giá</h2>
+                    <div id="difficultyBadge" class="difficulty-badge"></div>
+                </div>
+
+                <div class="features-grid" id="featuresGrid">
+                    <!-- Features will be inserted here -->
+                </div>
+
+                <div class="rules-section">
+                    <h3>Quy Tắc Áp Dụng</h3>
+                    <div id="matchedRules" class="rules-list"></div>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Hệ thống sử dụng VnCoreNLP và các thang đo ngôn ngữ học để đánh giá độ khó</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

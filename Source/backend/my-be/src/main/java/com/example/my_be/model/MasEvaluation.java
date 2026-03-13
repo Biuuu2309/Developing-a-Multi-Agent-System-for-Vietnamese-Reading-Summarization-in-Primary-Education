@@ -38,6 +38,55 @@ public class MasEvaluation {
     @Column(name = "bertscore_f1", precision = 5, scale = 4)
     private BigDecimal bertscoreF1;
 
+    // Text difficulty features (map 1-1 với mas_evaluations table)
+    @Column(name = "difficulty_level", length = 50)
+    private String difficultyLevel;
+
+    @Column(name = "total_words")
+    private Integer totalWords;
+
+    @Column(name = "unique_words")
+    private Integer uniqueWords;
+
+    @Column(name = "type_token_ratio", precision = 5, scale = 4)
+    private BigDecimal typeTokenRatio;
+
+    @Column(name = "rare_word_ratio", precision = 5, scale = 4)
+    private BigDecimal rareWordRatio;
+
+    @Column(name = "unknown_word_ratio", precision = 5, scale = 4)
+    private BigDecimal unknownWordRatio;
+
+    @Column(name = "avg_word_grade", precision = 6, scale = 3)
+    private BigDecimal avgWordGrade;
+
+    @Column(name = "num_sentences")
+    private Integer numSentences;
+
+    @Column(name = "avg_sentence_length", precision = 6, scale = 2)
+    private BigDecimal avgSentenceLength;
+
+    @Column(name = "max_sentence_length")
+    private Integer maxSentenceLength;
+
+    @Column(name = "min_sentence_length")
+    private Integer minSentenceLength;
+
+    @Column(name = "long_sentence_ratio", precision = 5, scale = 4)
+    private BigDecimal longSentenceRatio;
+
+    @Column(name = "avg_word_length", precision = 6, scale = 3)
+    private BigDecimal avgWordLength;
+
+    @Column(name = "words_per_sentence", precision = 6, scale = 2)
+    private BigDecimal wordsPerSentence;
+
+    @Column(name = "lexical_density", precision = 5, scale = 4)
+    private BigDecimal lexicalDensity;
+
+    @Column(name = "matched_rules", columnDefinition = "TEXT")
+    private String matchedRules;
+
     @Column(name = "comment", columnDefinition = "TEXT")
     private String comment;
 

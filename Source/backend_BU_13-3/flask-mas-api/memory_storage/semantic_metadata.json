@@ -1,0 +1,302 @@
+{
+  "user_message_1773380341.418592_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T12:39:01.424206",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773380341.424206_3243": {
+    "content": "Nhà họ Mạc ở Lũng Động có một cậu con trai tên là Mạc Đĩnh Chi, cậu bé rất thông minh và chăm chỉ học hành. Khi về kinh dự thi, vua thấy Mạc Đĩnh Chi không đẹp nên muốn thử tài. Nhà vua muốn thử thách cậu và yêu nước. Mạc Đĩnh Li xin được trả lời bằng giấy bút, nhưng Mạc Đĩnh Mĩ từ chối vì thấy không đẹp. Vua Trần Anh Tông chọn Mạc Đĩnh Chi làm trạng nguyên và dâng vua một bài phú về \"Bông sen trong giếng ngọc\". Chữ của Mạc Đĩnh Chi đẹp, thể hiện tài năng và tài năng của cậu.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.5788288288288288, 'rouge1_f1': 0.7332382310984308, 'rougeL_precision': 0.7587548638132295, 'rougeL_recall': 0.4391891891891892, 'rougeL_f1': 0.5563480741797432, 'bertscore_precision': 0.797332763671875, 'bertscore_recall': 0.7842207551002502, 'bertscore_f1': 0.7907224297523499, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T12:39:01.424206",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773380341.440828_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T12:39:01.440828",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773380341.445028_8070": {
+    "content": "Nhà họ Mạc ở Lũng Động có một cậu bé tên là Mạc Đĩnh Chi, cậu bé thông minh và chăm chỉ học hành. Khi về kinh dự thi, Mạc Đĩnh Chi đỗ đầu và được vua thử tài một lần. Khi vào chầu, vua thấy cậu không đẹp nên muốn thử tài. Mạc Đĩnh Chi tâu vua về những điều cần có của một người thi đỗ. Vua Trần Anh Tông quyết định chọn Mạc Đĩnh Quân làm trạng nguyên cho khoa thi. Bài phú của Mạc Đĩnh Chi nêu rõ tài năng và tài năng của cậu. Chữ đẹp và hay, làm cho giếng trở thành giếng quý.\n\nĐánh giá:\n{'rouge1_precision': 0.9920318725099602, 'rouge1_recall': 0.5608108108108109, 'rouge1_f1': 0.716546762589928, 'rougeL_precision': 0.749003984063745, 'rougeL_recall': 0.42342342342342343, 'rougeL_f1': 0.5410071942446043, 'bertscore_precision': 0.7981816530227661, 'bertscore_recall': 0.7838417291641235, 'bertscore_f1': 0.7909467220306396, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T12:39:01.445028",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773380341.445717_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T12:39:01.445717",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773380341.446602_9006": {
+    "content": "Nhà họ Mạc ở Lũng Động có một người con trai tên là Mạc Đĩnh Chi, cậu bé thông minh và chăm chỉ học hành. Năm đó, Mạc Đĩnh Li về kinh dự thi và đỗ đầu, vua thấy không đẹp nên muốn thử tài. Nhà vua muốn thử vận may của cậu, nên đã hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua và được trả lời bằng giấy bút, rồi dâng vua một bài phú về \"Bông sen trong giếng ngọc\" để chứng minh tài năng của mình.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.4864864864864865, 'rouge1_f1': 0.6545454545454547, 'rougeL_precision': 0.9074074074074074, 'rougeL_recall': 0.44144144144144143, 'rougeL_f1': 0.593939393939394, 'bertscore_precision': 0.8058929443359375, 'bertscore_recall': 0.7873417139053345, 'bertscore_f1': 0.796509325504303, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T12:39:01.446602",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773380341.446602_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T12:39:01.446602",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773380341.451947_7320": {
+    "content": "Nhà họ Mạc ở Lũng Động có một người con trai tên là Mạc Đĩnh Chi, thông minh, chăm chỉ học hành và có tài ứng đối nhanh lẹ. Khi về kinh dự thi, Mạc Đĩnh Cước đỗ đầu và được vua hỏi về điều cần có của một người thi đỗ. Vua muốn thử tài cậu, nhưng Mạc Đĩnh Chi tâu vua và xin trả lời bằng giấy bút. Sau đó, Mạcomela Chi dâng vua một bài phú mang tên 'Bông sen trong giếng ngọc', thể hiện tài năng của cậu.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.4797297297297297, 'rouge1_f1': 0.6484018264840182, 'rougeL_precision': 0.8403755868544601, 'rougeL_recall': 0.40315315315315314, 'rougeL_f1': 0.5449010654490106, 'bertscore_precision': 0.7940202355384827, 'bertscore_recall': 0.7749555110931396, 'bertscore_f1': 0.7843720316886902, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T12:39:01.451947",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773380341.458726_9220": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T12:39:01.458726",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773380341.458726_466": {
+    "content": "Lớp Hà có tiết tập viết, Hà viết cẩn thận.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.19444444444444445, 'rouge1_f1': 0.32558139534883723, 'rougeL_precision': 1.0, 'rougeL_recall': 0.19444444444444445, 'rougeL_f1': 0.32558139534883723, 'bertscore_precision': 0.7984254956245422, 'bertscore_recall': 0.6741759777069092, 'bertscore_f1': 0.7310590744018555, 'comment': 'Tóm tắt còn thiếu nhiều thông tin quan trọng. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T12:39:01.458726",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.158625_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.169995",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.184171_3243": {
+    "content": "Nhà họ Mạc ở Lũng Động có một cậu con trai tên là Mạc Đĩnh Chi, cậu bé rất thông minh và chăm chỉ học hành. Khi về kinh dự thi, vua thấy Mạc Đĩnh Chi không đẹp nên muốn thử tài. Nhà vua muốn thử thách cậu và yêu nước. Mạc Đĩnh Li xin được trả lời bằng giấy bút, nhưng Mạc Đĩnh Mĩ từ chối vì thấy không đẹp. Vua Trần Anh Tông chọn Mạc Đĩnh Chi làm trạng nguyên và dâng vua một bài phú về \"Bông sen trong giếng ngọc\". Chữ của Mạc Đĩnh Chi đẹp, thể hiện tài năng và tài năng của cậu.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.5788288288288288, 'rouge1_f1': 0.7332382310984308, 'rougeL_precision': 0.7587548638132295, 'rougeL_recall': 0.4391891891891892, 'rougeL_f1': 0.5563480741797432, 'bertscore_precision': 0.797332763671875, 'bertscore_recall': 0.7842207551002502, 'bertscore_f1': 0.7907224297523499, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.185171",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.194697_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.194697",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.209784_8070": {
+    "content": "Nhà họ Mạc ở Lũng Động có một cậu bé tên là Mạc Đĩnh Chi, cậu bé thông minh và chăm chỉ học hành. Khi về kinh dự thi, Mạc Đĩnh Chi đỗ đầu và được vua thử tài một lần. Khi vào chầu, vua thấy cậu không đẹp nên muốn thử tài. Mạc Đĩnh Chi tâu vua về những điều cần có của một người thi đỗ. Vua Trần Anh Tông quyết định chọn Mạc Đĩnh Quân làm trạng nguyên cho khoa thi. Bài phú của Mạc Đĩnh Chi nêu rõ tài năng và tài năng của cậu. Chữ đẹp và hay, làm cho giếng trở thành giếng quý.\n\nĐánh giá:\n{'rouge1_precision': 0.9920318725099602, 'rouge1_recall': 0.5608108108108109, 'rouge1_f1': 0.716546762589928, 'rougeL_precision': 0.749003984063745, 'rougeL_recall': 0.42342342342342343, 'rougeL_f1': 0.5410071942446043, 'bertscore_precision': 0.7981816530227661, 'bertscore_recall': 0.7838417291641235, 'bertscore_f1': 0.7909467220306396, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.209784",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.211236_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.211236",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.216909_9006": {
+    "content": "Nhà họ Mạc ở Lũng Động có một người con trai tên là Mạc Đĩnh Chi, cậu bé thông minh và chăm chỉ học hành. Năm đó, Mạc Đĩnh Li về kinh dự thi và đỗ đầu, vua thấy không đẹp nên muốn thử tài. Nhà vua muốn thử vận may của cậu, nên đã hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua và được trả lời bằng giấy bút, rồi dâng vua một bài phú về \"Bông sen trong giếng ngọc\" để chứng minh tài năng của mình.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.4864864864864865, 'rouge1_f1': 0.6545454545454547, 'rougeL_precision': 0.9074074074074074, 'rougeL_recall': 0.44144144144144143, 'rougeL_f1': 0.593939393939394, 'bertscore_precision': 0.8058929443359375, 'bertscore_recall': 0.7873417139053345, 'bertscore_f1': 0.796509325504303, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.216909",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.218911_6548": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối mau lẹ. Năm đó, Mạc Đĩnh Chi về kinh dự thi và đỗ đầu. Khi vào chầu, vua thấy dung mạo của ông không đẹp nên muốn thử tài một lần nữa. Nhà vua ướm hỏi ông về những điều cần có của một người thi đỗ. Mạc Đĩnh Chi tâu vua xin được trả lời bằng giấy bút. Giây lát sau, ông dâng vua một bài phú có nhan đề 'Bông sen trong giếng ngọc' để tỏ rõ chỉ hướng và tài năng của mình. Chữ Mạc Đĩnh Chi rất đẹp, bài phú lại hay, phô bày vẻ đẹp, hương thơm của bông sen trong giếng nước. Nhờ bông hoa mà giếng trờ thành giếng quý. Xem xong bài phú, vua Trần Anh Tông quyết định chọn Mạc Đĩnh Chi làm trạng nguyên của khoa thi ấy. Với lòng yêu nước, thương dân, Mạc Đĩnh Chi đã làm được nhiều việc lớn cho đất nước.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.218911",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.220414_7320": {
+    "content": "Nhà họ Mạc ở Lũng Động có một người con trai tên là Mạc Đĩnh Chi, thông minh, chăm chỉ học hành và có tài ứng đối nhanh lẹ. Khi về kinh dự thi, Mạc Đĩnh Cước đỗ đầu và được vua hỏi về điều cần có của một người thi đỗ. Vua muốn thử tài cậu, nhưng Mạc Đĩnh Chi tâu vua và xin trả lời bằng giấy bút. Sau đó, Mạcomela Chi dâng vua một bài phú mang tên 'Bông sen trong giếng ngọc', thể hiện tài năng của cậu.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.4797297297297297, 'rouge1_f1': 0.6484018264840182, 'rougeL_precision': 0.8403755868544601, 'rougeL_recall': 0.40315315315315314, 'rougeL_f1': 0.5449010654490106, 'bertscore_precision': 0.7940202355384827, 'bertscore_recall': 0.7749555110931396, 'bertscore_f1': 0.7843720316886902, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.220414",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.222419_9220": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.222419",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.223418_466": {
+    "content": "Lớp Hà có tiết tập viết, Hà viết cẩn thận.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.19444444444444445, 'rouge1_f1': 0.32558139534883723, 'rougeL_precision': 1.0, 'rougeL_recall': 0.19444444444444445, 'rougeL_f1': 0.32558139534883723, 'bertscore_precision': 0.7984254956245422, 'bertscore_recall': 0.6741759777069092, 'bertscore_f1': 0.7310590744018555, 'comment': 'Tóm tắt còn thiếu nhiều thông tin quan trọng. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.223418",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.224925_820": {
+    "content": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.225933",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.22709_4218": {
+    "content": "Lớp Hà có tiết tập viết. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.5648148148148148, 'rouge1_f1': 0.7218934911242603, 'rougeL_precision': 1.0, 'rougeL_recall': 0.5648148148148148, 'rougeL_f1': 0.7218934911242603, 'bertscore_precision': 0.8597760796546936, 'bertscore_recall': 0.8034971952438354, 'bertscore_f1': 0.8306844830513, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa rất cao.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.227090",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.238127_820": {
+    "content": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.238127",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.245646_4218": {
+    "content": "Lớp Hà có tiết tập viết. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.5648148148148148, 'rouge1_f1': 0.7218934911242603, 'rougeL_precision': 1.0, 'rougeL_recall': 0.5648148148148148, 'rougeL_f1': 0.7218934911242603, 'bertscore_precision': 0.8597760796546936, 'bertscore_recall': 0.8034971952438354, 'bertscore_f1': 0.8306844830513, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa rất cao.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.246840",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.24884_9220": {
+    "content": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.248840",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.254351_9848": {
+    "content": "Lớp Hà có tiết tập viết và Hà viết cẩn thận. Nhưng bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi.\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.4444444444444444, 'rouge1_f1': 0.6153846153846153, 'rougeL_precision': 0.9166666666666666, 'rougeL_recall': 0.4074074074074074, 'rougeL_f1': 0.5641025641025641, 'bertscore_precision': 0.7961207628250122, 'bertscore_recall': 0.7406162023544312, 'bertscore_f1': 0.7673661112785339, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa ở mức trung bình.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.254351",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.260422_820": {
+    "content": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.260422",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.262016_4218": {
+    "content": "Lớp Hà có tiết tập viết. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.5648148148148148, 'rouge1_f1': 0.7218934911242603, 'rougeL_precision': 1.0, 'rougeL_recall': 0.5648148148148148, 'rougeL_f1': 0.7218934911242603, 'bertscore_precision': 0.8597760796546936, 'bertscore_recall': 0.8034971952438354, 'bertscore_f1': 0.8306844830513, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa rất cao.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.262016",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  },
+  "user_message_1773385290.270359_820": {
+    "content": "Hãy tóm tắt trích xuất văn bản sau: Lớp Hà có tiết tập viết. Hà viết rất cẩn thận. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Kiên thì thầm: 'Tớ lỡ mà.'. Hà chả giận bạn. Em viết thêm chữ 'biển' thật đẹp. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!'.",
+    "content_type": "user_message",
+    "timestamp": "2026-03-13T14:01:30.270878",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "user"
+    }
+  },
+  "assistant_response_1773385290.273043_4218": {
+    "content": "Lớp Hà có tiết tập viết. Thế mà bạn Kiên xô bàn làm chữ 'biển' của Hà xiên đi, Hà nhăn mặt. Cô nhìn chữ em, khen: 'Chữ Hà đẹp lắm!\n\nĐánh giá:\n{'rouge1_precision': 1.0, 'rouge1_recall': 0.5648148148148148, 'rouge1_f1': 0.7218934911242603, 'rougeL_precision': 1.0, 'rougeL_recall': 0.5648148148148148, 'rougeL_f1': 0.7218934911242603, 'bertscore_precision': 0.8597760796546936, 'bertscore_recall': 0.8034971952438354, 'bertscore_f1': 0.8306844830513, 'comment': 'Tóm tắt có mức độ bao phủ nội dung khá tốt. Mức độ tương đồng ngữ nghĩa rất cao.'}",
+    "content_type": "assistant_response",
+    "timestamp": "2026-03-13T14:01:30.273043",
+    "metadata": {
+      "session_id": "763800c0-422c-4d24-a2bf-f29f4035ec26",
+      "user_id": "default_user",
+      "role": "assistant"
+    }
+  }
+}

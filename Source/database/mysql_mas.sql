@@ -1,5 +1,5 @@
 USE mydatabase;
-
+       SELECT * FROM agent_logs ORDER BY created_at DESC;
 -- ============================================
 -- MAS SYSTEM DATABASE SCHEMA
 -- ============================================
