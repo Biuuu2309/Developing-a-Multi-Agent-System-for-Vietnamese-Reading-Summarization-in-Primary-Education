@@ -132,7 +132,8 @@ export const MorphingNavigation: React.FC<MorphingNavigationProps> = ({
     e.preventDefault();
     setIsMenuOpen(false);
     onLinkClick?.(link);
-    if (enableSmoothTransitions) {
+    // Only scroll if href is a hash link (starts with #)
+    if (enableSmoothTransitions && link.href.startsWith('#')) {
       const target = document.querySelector(link.href);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
