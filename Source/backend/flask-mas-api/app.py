@@ -47,19 +47,24 @@ def chat():
         if not session_id:
             session_id = cm.create_session(user_id)
         
-        history = memory.get_history(session_id)
+        # Use ConversationManager để có memory integration
+        chat_result = cm.chat(session_id, user_input)
         
-        state = {
-            "user_input": user_input,
-            "history": history
-        }
-        
-        result = graph.invoke(state)
-        
-        output = result.get("final_output", "")
-        
-        memory.add_message(session_id, "user", user_input, save_to_long_term=True)
-        memory.add_message(session_id, "assistant", output, save_to_long_term=True)
+        # Chat result có thể là dict (với memory_data và mas_state) hoặc string (backward compatibility)
+        if isinstance(chat_result, dict):
+            output = chat_result.get("output", "")
+            memory_data = chat_result.get("memory_data", {})
+            result = chat_result.get("mas_state", {})
+        else:
+            # Backward compatibility: nếu trả về string, gọi graph trực tiếp
+            output = chat_result
+            memory_data = {}
+            history = memory.get_history(session_id)
+            state = {
+                "user_input": user_input,
+                "history": history
+            }
+            result = graph.invoke(state)
         
         response_data = {
             'session_id': session_id,
@@ -78,6 +83,10 @@ def chat():
             'agent_memories': json.dumps(result.get('agent_memories', {})),
             # Original text (để lưu vào mas_states / mas_plans / mas_evaluations)
             'original_text': result.get('original_text', ''),
+            # Advanced Memory: semantic recall, tool recommendations, knowledge search
+            'semantic_recall': json.dumps(memory_data.get('semantic_recall', [])),
+            'tool_recommendations': json.dumps(memory_data.get('tool_recommendations', [])),
+            'knowledge_search': json.dumps(memory_data.get('knowledge_search', {})),
             'status': 'COMPLETED'
         }
         

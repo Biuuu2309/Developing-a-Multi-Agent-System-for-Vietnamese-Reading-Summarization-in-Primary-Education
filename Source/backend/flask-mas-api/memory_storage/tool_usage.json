@@ -1,0 +1,96 @@
+{
+  "usage": {
+    "mas_graph": [
+      {
+        "timestamp": "2026-03-14T11:10:36.467884",
+        "input": {
+          "user_input_length": 898,
+          "history_length": 0
+        },
+        "output": "Nhà họ Mạc ở Lũng Động có một cậu con trai tên là Mạc Đĩnh Chi, cậu bé thông minh và chăm chỉ học hành. Năm đó, Mạc Đĩnh Hugu về kinh dự thi và đỗ đầu. Khi vào chầu vua, vua muốn thử tài cậu lần nữa. ",
+        "success": true,
+        "execution_time": 64.99814367294312,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-14T11:29:35.157450",
+        "input": {
+          "user_input_length": 1468,
+          "history_length": 2
+        },
+        "output": "Nhà họ Mạc ở Lũng Động có một cậu bé tên là Mạc Đĩnh Chi, cậu rất thông minh và chăm chỉ học hành. Khi được người chủ đeo chuông, ông đã bắt nó phải kéo khúc gỗ nặng, nhưng Mạc Đĩnh Chil lại không bị ",
+        "success": true,
+        "execution_time": 53.65086841583252,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-14T11:34:08.943201",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 4
+        },
+        "output": "Trong chuyến hành trình, cậu gặp Thượng Đế và muốn gặp Thượng Đế. Cậu mang theo những chiếc bánh Twinkie và sáu hộp nước trái cây để bắt đầu cuộc hành trình. Khi đi qua nhiều dãy phố, cậu thấy một bà ",
+        "success": true,
+        "execution_time": 31.594738006591797,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-14T11:48:26.235224",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 6
+        },
+        "output": "Cậu bé muốn gặp Thượng Đế, nên đã chuẩn bị cho mình những chiếc bánh Twinkie và sáu hộp nước trái cây, để bắt đầu hành trình. Khi đi qua ba dãy phố, cậu gặp một bà lão ngồi trong công viên, nhìn đàn c",
+        "success": true,
+        "execution_time": 55.14886522293091,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "mas_graph": {
+      "total_uses": 4,
+      "successful": 4,
+      "failed": 0,
+      "success_rate": 1.0,
+      "recent_success_rate": 1.0,
+      "avg_execution_time": 51.348153829574585,
+      "last_used": "2026-03-14T11:48:26.235224"
+    }
+  },
+  "updated_at": "2026-03-14T11:48:26.235224"
+}

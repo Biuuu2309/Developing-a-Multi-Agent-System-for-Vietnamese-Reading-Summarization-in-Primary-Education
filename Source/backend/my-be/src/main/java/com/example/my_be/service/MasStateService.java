@@ -55,6 +55,9 @@ public class MasStateService {
         state.setAgentConfidences(request.getAgentConfidences());
         state.setNegotiationResult(request.getNegotiationResult());
         state.setAgentMemories(request.getAgentMemories());
+        state.setSemanticRecall(request.getSemanticRecall());
+        state.setToolRecommendations(request.getToolRecommendations());
+        state.setKnowledgeSearch(request.getKnowledgeSearch());
 
         if (request.getMessageId() != null) {
             Message message = messageRepository.findById(request.getMessageId()).orElse(null);
@@ -106,6 +109,9 @@ public class MasStateService {
         if (request.getAgentConfidences() != null) state.setAgentConfidences(request.getAgentConfidences());
         if (request.getNegotiationResult() != null) state.setNegotiationResult(request.getNegotiationResult());
         if (request.getAgentMemories() != null) state.setAgentMemories(request.getAgentMemories());
+        if (request.getSemanticRecall() != null) state.setSemanticRecall(request.getSemanticRecall());
+        if (request.getToolRecommendations() != null) state.setToolRecommendations(request.getToolRecommendations());
+        if (request.getKnowledgeSearch() != null) state.setKnowledgeSearch(request.getKnowledgeSearch());
 
         MasState updated = masStateRepository.save(state);
         return toResponse(updated);
@@ -136,6 +142,9 @@ public class MasStateService {
         response.setAgentConfidences(state.getAgentConfidences());
         response.setNegotiationResult(state.getNegotiationResult());
         response.setAgentMemories(state.getAgentMemories());
+        response.setSemanticRecall(state.getSemanticRecall());
+        response.setToolRecommendations(state.getToolRecommendations());
+        response.setKnowledgeSearch(state.getKnowledgeSearch());
         response.setCreatedAt(state.getCreatedAt());
         response.setUpdatedAt(state.getUpdatedAt());
         return response;

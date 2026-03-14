@@ -90,6 +90,15 @@ public class MasState {
     @Column(name = "agent_memories", columnDefinition = "JSON")
     private String agentMemories;
 
+    @Column(name = "semantic_recall", columnDefinition = "JSON")
+    private String semanticRecall;
+
+    @Column(name = "tool_recommendations", columnDefinition = "JSON")
+    private String toolRecommendations;
+
+    @Column(name = "knowledge_search", columnDefinition = "JSON")
+    private String knowledgeSearch;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 

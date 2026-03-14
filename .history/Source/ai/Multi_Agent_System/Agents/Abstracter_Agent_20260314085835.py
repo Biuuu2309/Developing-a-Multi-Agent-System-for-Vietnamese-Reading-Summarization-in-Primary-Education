@@ -12,9 +12,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-WORD_LIMIT = 500
-MAX_WORDS  = 500
-
 class AbstracterAgent:
     """
     Abstractive summarization agent
@@ -75,40 +72,23 @@ class AbstracterAgent:
         return text
 
     def sentence_split(self, text: str) -> list[str]:
-        """
-        Split text thành sentences sử dụng VnCoreNLP nếu có, 
-        nếu không thì fallback về regex-based splitting.
-        """
-        if self.vncorenlp is None:
-            # Fallback: split bằng regex khi không có VnCoreNLP
-            import re
-            sentences = re.split(r'(?<=[.!?])\s+', text.strip())
-            return [self.normalize_text(s.strip()) for s in sentences if s.strip()]
-        
         sentences = []
-        try:
-            for sent in self.vncorenlp.annotate(text)["sentences"]:
-                raw = " ".join([w["form"] for w in sent])
-                sentences.append(self.normalize_text(raw))
-        except Exception as e:
-            # Fallback nếu VnCoreNLP lỗi
-            import re
-            sentences = re.split(r'(?<=[.!?])\s+', text.strip())
-            sentences = [self.normalize_text(s.strip()) for s in sentences if s.strip()]
-        
+        for sent in self.vncorenlp.annotate(text)["sentences"]:
+            raw = " ".join([w["form"] for w in sent])
+            sentences.append(self.normalize_text(raw))
         return sentences
     
     
     
     def textrank(self, sentences):
-        tfidf = TfidfVectorizer().fit_transform(sentences)
+        tfidf = self.TfidfVectorizer().fit_transform(sentences)
         sim   = cosine_similarity(tfidf)
         graph = nx.from_numpy_array(sim)
         scores = nx.pagerank(graph)
         return scores
 
     def lexrank(self, sentences):
-        tfidf  = TfidfVectorizer().fit_transform(sentences)
+        tfidf  = self.TfidfVectorizer().fit_transform(sentences)
         sim    = cosine_similarity(tfidf)
         scores = sim.sum(axis=1)
         return dict(enumerate(scores))
@@ -158,19 +138,19 @@ class AbstracterAgent:
         lambda_: float = 0.8,
     ) -> str:
         sentences = self.sentence_split(text)
-
+    
         if len(sentences) < 3:
             result = self.normalize_text(text)
             if max_words and self.count_words(result) > max_words:
                 result = " ".join(result.split()[:max_words])
             return result
-
+    
         filtered = self.filter_by_ratio(sentences, ratio=filter_ratio)
         scores   = self.phobert_scoring(filtered, text)
-
+    
         # --- top_k ban đầu ---
         top_k = max(1, int(len(filtered) * mmr_ratio))
-
+    
         # --- Vòng lặp giảm top_k cho đến khi đạt max_words ---
         if max_words:
             while top_k >= 1:
@@ -185,8 +165,9 @@ class AbstracterAgent:
         else:
             summary_sents = self.mmr(filtered, scores, lambda_=lambda_, top_k=top_k)
             summary       = " ".join(summary_sents)
-
+    
         return summary
+
 
     def _count_words(self, text: str) -> int:
         """
@@ -403,11 +384,6 @@ class AbstracterAgent:
 
         return clean_summary
 
-    def smart_summary(self, text: str) -> str:
-        if self.count_words(text) > WORD_LIMIT:
-            return self.extract_summary(text, max_words=MAX_WORDS)
-        return text
-
     def summarize(
         self,
         content: str,
@@ -527,9 +503,8 @@ class AbstracterAgent:
         """
 
         try:
-            content_smart = self.smart_summary(content)
             summary = self.summarize(
-                content_smart,
+                content,
                 grade,
                 mode=mode,
                 length_option=length_option,

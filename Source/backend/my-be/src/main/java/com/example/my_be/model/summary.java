@@ -32,8 +32,11 @@ public class Summary {
     @Column(nullable = false, columnDefinition = "MEDIUMTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String summaryContent; // New field for summarized content (short version of content)
 
-    @Column(nullable = true)
-    private String imageUrl; // Optional image URL for the summary
+    @Column(nullable = true, columnDefinition = "TEXT")
+    private String imageUrl; // Optional image URL for the summary (JSON array string)
+    
+    @Column(nullable = true, columnDefinition = "TEXT")
+    private String summaryImageUrl; // Mapping between summary parts and image URLs (JSON array of objects: [{"part": "text", "url": "url"}, ...])
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by", nullable = false)

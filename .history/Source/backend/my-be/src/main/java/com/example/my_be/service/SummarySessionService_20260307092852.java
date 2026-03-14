@@ -137,7 +137,7 @@ public class SummarySessionService {
                 JSONObject inlineData = partObject.getJSONObject("inlineData");
                 String base64Content = inlineData.getString("data");
 
-                // System.out.println("Base64 hình ảnh đã được tạo: " + base64Content.substring(0, 100) + "...");
+                System.out.println("Base64 hình ảnh đã được tạo: " + base64Content.substring(0, 100) + "...");
 
                 byte[] decodedBytes = Base64.getDecoder().decode(base64Content);
                 File tempFile = null;

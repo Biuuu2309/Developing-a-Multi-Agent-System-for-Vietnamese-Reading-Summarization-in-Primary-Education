@@ -75,40 +75,23 @@ class AbstracterAgent:
         return text
 
     def sentence_split(self, text: str) -> list[str]:
-        """
-        Split text thành sentences sử dụng VnCoreNLP nếu có, 
-        nếu không thì fallback về regex-based splitting.
-        """
-        if self.vncorenlp is None:
-            # Fallback: split bằng regex khi không có VnCoreNLP
-            import re
-            sentences = re.split(r'(?<=[.!?])\s+', text.strip())
-            return [self.normalize_text(s.strip()) for s in sentences if s.strip()]
-        
         sentences = []
-        try:
-            for sent in self.vncorenlp.annotate(text)["sentences"]:
-                raw = " ".join([w["form"] for w in sent])
-                sentences.append(self.normalize_text(raw))
-        except Exception as e:
-            # Fallback nếu VnCoreNLP lỗi
-            import re
-            sentences = re.split(r'(?<=[.!?])\s+', text.strip())
-            sentences = [self.normalize_text(s.strip()) for s in sentences if s.strip()]
-        
+        for sent in self.vncorenlp.annotate(text)["sentences"]:
+            raw = " ".join([w["form"] for w in sent])
+            sentences.append(self.normalize_text(raw))
         return sentences
     
     
     
     def textrank(self, sentences):
-        tfidf = TfidfVectorizer().fit_transform(sentences)
+        tfidf = self.TfidfVectorizer().fit_transform(sentences)
         sim   = cosine_similarity(tfidf)
         graph = nx.from_numpy_array(sim)
         scores = nx.pagerank(graph)
         return scores
 
     def lexrank(self, sentences):
-        tfidf  = TfidfVectorizer().fit_transform(sentences)
+        tfidf  = self.TfidfVectorizer().fit_transform(sentences)
         sim    = cosine_similarity(tfidf)
         scores = sim.sum(axis=1)
         return dict(enumerate(scores))

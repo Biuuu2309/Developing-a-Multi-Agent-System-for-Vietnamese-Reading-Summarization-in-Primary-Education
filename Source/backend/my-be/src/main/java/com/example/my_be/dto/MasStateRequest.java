@@ -28,6 +28,9 @@ public class MasStateRequest {
     private String agentConfidences;
     private String negotiationResult;
     private String agentMemories;
+    private String semanticRecall;
+    private String toolRecommendations;
+    private String knowledgeSearch;
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
     }
@@ -159,5 +162,23 @@ public class MasStateRequest {
     }
     public String getAgentMemories() {
         return agentMemories;
+    }
+    public void setSemanticRecall(String semanticRecall) {
+        this.semanticRecall = semanticRecall;
+    }
+    public String getSemanticRecall() {
+        return semanticRecall;
+    }
+    public void setToolRecommendations(String toolRecommendations) {
+        this.toolRecommendations = toolRecommendations;
+    }
+    public String getToolRecommendations() {
+        return toolRecommendations;
+    }
+    public void setKnowledgeSearch(String knowledgeSearch) {
+        this.knowledgeSearch = knowledgeSearch;
+    }
+    public String getKnowledgeSearch() {
+        return knowledgeSearch;
     }
 }

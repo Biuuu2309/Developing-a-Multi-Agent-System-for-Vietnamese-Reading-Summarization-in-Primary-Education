@@ -419,43 +419,23 @@ public class MasSystemService {
         if (text == null || text.trim().isEmpty()) {
             return 0;
         }
-        
-        String trimmed = text.trim();
-        // Pattern để tách câu: kết thúc bằng . ! ? và có khoảng trắng sau, hoặc ở cuối text
-        Pattern sentencePattern = Pattern.compile("[.!?]+(\\s+|$)");
-        String[] parts = sentencePattern.split(trimmed);
-        
-        // Đếm số dấu câu trong text
-        int punctuationCount = 0;
-        for (int i = 0; i < trimmed.length(); i++) {
-            char c = trimmed.charAt(i);
-            if (c == '.' || c == '!' || c == '?') {
-                punctuationCount++;
-            }
-        }
-        
-        // Nếu không có dấu câu, coi như 1 câu
-        if (punctuationCount == 0) {
+        // Pattern để tách câu: kết thúc bằng . ! ? và có khoảng trắng sau
+        Pattern sentencePattern = Pattern.compile("[.!?]+\\s+");
+        String[] sentences = sentencePattern.split(text.trim());
+        // Nếu không có dấu câu cuối, vẫn tính là 1 câu
+        if (sentences.length == 0 || (sentences.length == 1 && !text.matches(".*[.!?]+\\s*$"))) {
             return 1;
         }
-        
-        // Số câu = số dấu câu (mỗi dấu câu kết thúc 1 câu)
-        // Nhưng cần xử lý trường hợp nhiều dấu câu liên tiếp (ví dụ: "...")
-        int sentenceCount = 0;
-        boolean inPunctuation = false;
-        for (int i = 0; i < trimmed.length(); i++) {
-            char c = trimmed.charAt(i);
-            if (c == '.' || c == '!' || c == '?') {
-                if (!inPunctuation) {
-                    sentenceCount++;
-                    inPunctuation = true;
-                }
-            } else if (c != ' ') {
-                inPunctuation = false;
-            }
+        // Đếm thêm câu cuối nếu có dấu câu
+        int count = sentences.length;
+        if (text.matches(".*[.!?]+\\s*$")) {
+            // Đã được tính trong split
+        } else if (sentences.length > 0 && !text.trim().endsWith(".") && 
+                   !text.trim().endsWith("!") && !text.trim().endsWith("?")) {
+            // Có thể có câu cuối không có dấu câu
+            count++;
         }
-        
-        return Math.max(1, sentenceCount);
+        return Math.max(1, count);
     }
 
     /**
@@ -486,67 +466,34 @@ public class MasSystemService {
             return parts;
         }
 
-        String trimmed = summaryText.trim();
+        // Tách thành câu
+        Pattern sentencePattern = Pattern.compile("[.!?]+\\s+");
+        String[] sentences = sentencePattern.split(summaryText.trim());
         
-        // Nếu chỉ có 1 hình, trả về toàn bộ
-        if (imageCount == 1) {
-            parts.add(trimmed);
-            return parts;
-        }
-
-        // Tách thành câu bằng cách tìm các dấu câu kết thúc câu
-        List<String> sentences = new ArrayList<>();
-        StringBuilder currentSentence = new StringBuilder();
-        
-        for (int i = 0; i < trimmed.length(); i++) {
-            char c = trimmed.charAt(i);
-            currentSentence.append(c);
-            
-            if (c == '.' || c == '!' || c == '?') {
-                // Kiểm tra xem có phải dấu câu kết thúc câu không (không phải dấu chấm trong số)
-                if (i == trimmed.length() - 1 || 
-                    (i < trimmed.length() - 1 && Character.isWhitespace(trimmed.charAt(i + 1)))) {
-                    String sentence = currentSentence.toString().trim();
-                    if (!sentence.isEmpty()) {
-                        sentences.add(sentence);
-                    }
-                    currentSentence = new StringBuilder();
-                }
-            }
-        }
-        
-        // Thêm câu cuối nếu còn
-        String lastSentence = currentSentence.toString().trim();
-        if (!lastSentence.isEmpty()) {
-            sentences.add(lastSentence);
-        }
-        
-        // Nếu không tách được câu, trả về toàn bộ
-        if (sentences.isEmpty()) {
-            parts.add(trimmed);
-            return parts;
-        }
-        
-        // Nếu chỉ có 1 câu, trả về toàn bộ
-        if (sentences.size() == 1) {
-            parts.add(trimmed);
+        // Nếu chỉ có 1 câu hoặc 1 hình, trả về toàn bộ
+        if (sentences.length <= 1 || imageCount == 1) {
+            parts.add(summaryText.trim());
             return parts;
         }
 
         // Chia đều các câu vào các phần
-        int sentencesPerPart = (int) Math.ceil((double) sentences.size() / imageCount);
+        int sentencesPerPart = (int) Math.ceil((double) sentences.length / imageCount);
         
         for (int i = 0; i < imageCount; i++) {
             int startIdx = i * sentencesPerPart;
-            int endIdx = Math.min(startIdx + sentencesPerPart, sentences.size());
+            int endIdx = Math.min(startIdx + sentencesPerPart, sentences.length);
             
-            if (startIdx < sentences.size()) {
+            if (startIdx < sentences.length) {
                 StringBuilder part = new StringBuilder();
                 for (int j = startIdx; j < endIdx; j++) {
                     if (j > startIdx) {
                         part.append(" ");
                     }
-                    part.append(sentences.get(j));
+                    part.append(sentences[j].trim());
+                    // Thêm dấu câu nếu câu không kết thúc bằng dấu câu
+                    if (!sentences[j].trim().matches(".*[.!?]$")) {
+                        part.append(".");
+                    }
                 }
                 String partText = part.toString().trim();
                 if (!partText.isEmpty()) {
@@ -574,7 +521,6 @@ public class MasSystemService {
 
             List<String> parts = splitSummaryIntoParts(summaryText, imageCount);
             List<String> imageUrls = new ArrayList<>();
-            List<java.util.Map<String, String>> summaryImageMapping = new ArrayList<>();
 
             for (int i = 0; i < parts.size(); i++) {
                 String part = parts.get(i);
@@ -584,13 +530,6 @@ public class MasSystemService {
                     
                     if (result.isSuccess() && result.getImageUrl() != null) {
                         imageUrls.add(result.getImageUrl());
-                        
-                        // Tạo mapping giữa đoạn trích và image URL
-                        java.util.Map<String, String> mapping = new java.util.HashMap<>();
-                        mapping.put("part", part);
-                        mapping.put("url", result.getImageUrl());
-                        summaryImageMapping.add(mapping);
-                        
                         System.out.println("[DEBUG] Image " + (i + 1) + " uploaded successfully: " + result.getImageUrl());
                     } else {
                         System.err.println("[WARN] Failed to generate image " + (i + 1));
@@ -605,13 +544,8 @@ public class MasSystemService {
             if (!imageUrls.isEmpty()) {
                 String imageUrlsJson = objectMapper.writeValueAsString(imageUrls);
                 summary.setImageUrl(imageUrlsJson);
-                
-                // Lưu mapping giữa các đoạn trích và image URLs
-                String summaryImageUrlJson = objectMapper.writeValueAsString(summaryImageMapping);
-                summary.setSummaryImageUrl(summaryImageUrlJson);
-                
                 summaryService.updateSummary(summary);
-                System.out.println("[DEBUG] Saved " + imageUrls.size() + " image URLs and mapping to summary");
+                System.out.println("[DEBUG] Saved " + imageUrls.size() + " image URLs to summary");
             } else {
                 System.err.println("[WARN] No images were generated successfully");
             }
