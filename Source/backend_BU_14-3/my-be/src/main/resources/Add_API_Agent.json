@@ -1,0 +1,57 @@
+
+{
+    "name": "Intent Agent",
+    "description": "Agent phân loại intent từ user input",
+    "agentType": "INTENT",
+    "capabilities": "{\"intent_classification\": true, \"multi_intent\": true, \"confidence_threshold\": 0.7, \"tasks\": [\"intent_detection\", \"strategy_extraction\", \"grade_extraction\"]}",
+    "isActive": true
+}
+{
+  "name": "Clarification Agent",
+  "description": "Kiểm tra xem có cần hỏi lại để làm rõ văn bản hoặc yêu cầu không, sinh câu hỏi làm rõ.",
+  "agentType": "CLARIFICATION",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"clarification_question\", \"missing_field_detection\"]}"
+}
+{
+  "name": "Planning Agent",
+  "description": "Lập kế hoạch pipeline tóm tắt (OCR → summarize → evaluate), hỗ trợ dynamic planning và self-improvement.",
+  "agentType": "PLANNING",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"dynamic_planning\", \"strategy_switching\", \"self_improvement\"]}"
+}
+{
+  "name": "Image2Text Agent",
+  "description": "Trích xuất văn bản tiếng Việt từ ảnh bằng Qwen2.5-VL và trả về text đầy đủ.",
+  "agentType": "IMAGE2TEXT",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"ocr\", \"image_text_extraction\"], \"model\": \"qwen2.5vl:7b-q4_K_M\"}"
+}
+{
+  "name": "Abstracter Agent",
+  "description": "Tóm tắt diễn giải (abstractive) theo trình độ lớp, dùng ViT5 + VnCoreNLP + entity correction.",
+  "agentType": "ABSTRACTER",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"abstractive_summarization\", \"length_control\", \"entity_correction\"], \"model_path\": \"Model_DG/vit5_grade_summary\"}"
+}
+{
+  "name": "Extractor Agent",
+  "description": "Tóm tắt trích xuất (extractive) bằng mô hình PhoBERTSUM / Vubert.",
+  "agentType": "EXTRACTOR",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"extractive_summarization\"], \"model_path\": \"Model_TX/vubert_summary_model.pth\"}"
+}
+{
+  "name": "Evaluation Agent",
+  "description": "Đánh giá chất lượng tóm tắt bằng ROUGE, BERTScore và feature độ khó văn bản (difficulty level, lexical metrics).",
+  "agentType": "EVALUATION",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"summary_evaluation\", \"rouge\", \"bertscore\", \"text_difficulty\"]}"
+}
+{
+  "name": "Coordinator Agent",
+  "description": "Điều phối luồng hội thoại, kết nối các agent trong MAS và trả kết quả cuối cùng cho người dùng.",
+  "agentType": "ORCHESTRATOR",
+  "isActive": true,
+  "capabilities": "{\"tasks\": [\"coordination\", \"routing\", \"aggregation\"]}"
+}
