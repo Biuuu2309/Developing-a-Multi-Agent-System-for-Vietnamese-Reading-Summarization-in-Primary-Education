@@ -1,0 +1,134 @@
+.mas-flow-info-panel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  max-width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.mas-flow-info-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.mas-flow-info-panel-title {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #374151;
+}
+
+.mas-flow-info-panel-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: #6B7280;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.mas-flow-info-panel-close:hover {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+.mas-flow-info-panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mas-flow-info-panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mas-flow-info-panel-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mas-flow-info-panel-value {
+  font-size: 14px;
+  color: #374151;
+}
+
+.mas-flow-info-panel-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mas-flow-info-panel-icon-active {
+  color: #F59E0B;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.mas-flow-info-panel-icon-completed {
+  color: #10B981;
+}
+
+.mas-flow-info-panel-icon-error {
+  color: #EF4444;
+}
+
+.mas-flow-info-panel-confidence {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mas-flow-info-panel-confidence-bar {
+  flex: 1;
+  height: 8px;
+  background: #E5E7EB;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mas-flow-info-panel-confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10B981 0%, #3B82F6 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.mas-flow-info-panel-confidence-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  min-width: 45px;
+  text-align: right;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -78,19 +78,119 @@
             "length_option": "medium"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-15T16:08:20.886612",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 0
+        },
+        "output": "Cậu bé muốn gặp Thượng Đế và muốn gặp người, nên đã mang theo bên mình những chiếc bánh Twinkie và sáu hộp nước trái cây để bắt đầu hành trình. Khi đi qua ba dãy phố, cậu gặp một bà lão ngồi trong côn",
+        "success": true,
+        "execution_time": 76.59335422515869,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6bcb6cb8-0e6c-4ba1-9cdb-c74a07ed50c2",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-15T16:21:32.703786",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 2
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế và muốn gặp người. Cậu mang theo bánh Twinkie và sáu hộp nước trái cây và bắt đầu cuộc hành trình. Cậu gặp một bà lão đang ngồi trong công viên, nhìn đàn chim bồ câu v",
+        "success": true,
+        "execution_time": 46.779789209365845,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6bcb6cb8-0e6c-4ba1-9cdb-c74a07ed50c2",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-15T16:25:54.921455",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 4
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế và muốn gặp Người. Cậu chuẩn bị mang theo bánh Twinkie và sáu hộp nước trái cây để bắt đầu hành trình. Khi đi qua ba dãy phố, cậu gặp một bà lão ngồi trong công viên v",
+        "success": true,
+        "execution_time": 25.11803436279297,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6bcb6cb8-0e6c-4ba1-9cdb-c74a07ed50c2",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-15T16:32:54.046108",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 6
+        },
+        "output": "Cậu bé muốn gặp Thượng Đế, nên đã chuẩn bị cho mình những chiếc bánh Twinkie và sáu hộp nước trái cây. Cậu mang theo bên mình những cỗ bánh Twinkiie và nước trái mía để bắt đầu cuộc hành trình. Khi đi",
+        "success": true,
+        "execution_time": 43.952534437179565,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6bcb6cb8-0e6c-4ba1-9cdb-c74a07ed50c2",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-15T17:25:01.702887",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 8
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế nhưng không thể đi lâu. Cậu mang theo bên mình những chiếc bánh Twinkie và sáu hộp nước trái cây để bắt đầu cuộc hành trình. Khi đi qua ba dãy phố, cậu gặp một bà lão ",
+        "success": true,
+        "execution_time": 65.30551886558533,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6bcb6cb8-0e6c-4ba1-9cdb-c74a07ed50c2",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 4,
-      "successful": 4,
+      "total_uses": 9,
+      "successful": 9,
       "failed": 0,
       "success_rate": 1.0,
       "recent_success_rate": 1.0,
-      "avg_execution_time": 51.348153829574585,
-      "last_used": "2026-03-14T11:48:26.235224"
+      "avg_execution_time": 51.46020515759786,
+      "last_used": "2026-03-15T17:25:01.702887"
     }
   },
-  "updated_at": "2026-03-14T11:48:26.235224"
+  "updated_at": "2026-03-15T17:25:01.702887"
 }

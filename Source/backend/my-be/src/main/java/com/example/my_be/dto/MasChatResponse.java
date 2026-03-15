@@ -18,6 +18,9 @@ public class MasChatResponse {
     private String clarificationQuestion;
     private String agentConfidences;
     private String status;
+    private String summaryId;
+    private String imageUrl;
+    private String summaryImageUrl;
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
     }
@@ -89,5 +92,23 @@ public class MasChatResponse {
     }
     public String getStatus() {
         return status;
+    }
+    public void setSummaryId(String summaryId) {
+        this.summaryId = summaryId;
+    }
+    public String getSummaryId() {
+        return summaryId;
+    }
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+    public String getImageUrl() {
+        return imageUrl;
+    }
+    public void setSummaryImageUrl(String summaryImageUrl) {
+        this.summaryImageUrl = summaryImageUrl;
+    }
+    public String getSummaryImageUrl() {
+        return summaryImageUrl;
     }
 }

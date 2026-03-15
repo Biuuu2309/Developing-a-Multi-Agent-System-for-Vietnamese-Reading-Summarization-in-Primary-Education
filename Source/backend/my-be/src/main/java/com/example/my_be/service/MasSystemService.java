@@ -233,8 +233,15 @@ public class MasSystemService {
             );
 
             // Tạo bản ghi summaries cho người dùng nếu đã có summary cuối cùng (không cần clarification)
+            Summary createdSummary = null;
             if (!clarificationNeeded) {
-                createSummaryFromMas(request, responseJson);
+                createdSummary = createSummaryFromMas(request, responseJson);
+                // Thêm summary info vào response
+                if (createdSummary != null) {
+                    response.setSummaryId(createdSummary.getSummaryId());
+                    response.setImageUrl(createdSummary.getImageUrl());
+                    response.setSummaryImageUrl(createdSummary.getSummaryImageUrl());
+                }
             }
 
             // Ghi AgentLog cơ bản dựa trên thông tin MAS trả về
@@ -323,16 +330,16 @@ public class MasSystemService {
         }
     }
 
-    private void createSummaryFromMas(MasChatRequest request, JsonNode responseJson) {
+    private Summary createSummaryFromMas(MasChatRequest request, JsonNode responseJson) {
         try {
             // Lấy user tạo summary
             String userId = request.getUserId();
             if (userId == null || userId.isEmpty()) {
-                return;
+                return null;
             }
             User user = userService.getUserById(userId).orElse(null);
             if (user == null) {
-                return;
+                return null;
             }
 
             // Lấy original_text (nếu có), fallback userInput
@@ -343,7 +350,7 @@ public class MasSystemService {
 
             String summaryText = responseJson.path("summary").asText();
             if (summaryText == null || summaryText.isBlank()) {
-                return; // Không có summary thì không tạo bản ghi
+                return null; // Không có summary thì không tạo bản ghi
             }
 
             // Parse intent để lấy grade_level và summarization_type
@@ -407,8 +414,12 @@ public class MasSystemService {
             
             // Tự động tạo hình ảnh từ summary content
             generateImagesForSummary(savedSummary, summaryText);
+            
+            // Reload summary để lấy imageUrl và summaryImageUrl sau khi generate images
+            return summaryService.getSummaryById(savedSummary.getSummaryId()).orElse(savedSummary);
         } catch (Exception e) {
             System.err.println("[WARN] Failed to create summary from MAS result: " + e.getMessage());
+            return null;
         }
     }
 

@@ -1,0 +1,75 @@
+.mas-flow-legend {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.mas-flow-legend-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.mas-flow-legend-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mas-flow-legend-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mas-flow-legend-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mas-flow-legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mas-flow-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #374151;
+}
+
+.mas-flow-legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.mas-flow-legend-color-edge {
+  border: 2px solid;
+  background: transparent !important;
+  border-radius: 2px;
+  width: 20px;
+  height: 3px;
+}

@@ -140,6 +140,41 @@
         "confidence": 0.3,
         "timestamp": "2026-03-13T17:15:00.803237",
         "metadata": {}
+      },
+      {
+        "fact": "Tóm tắt diễn giải lớp 5: Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinki",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-15T17:25:01.892508",
+        "metadata": {}
+      },
+      {
+        "fact": "Tóm tắt diễn giải lớp 5: Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinki",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-15T17:25:01.898346",
+        "metadata": {}
+      },
+      {
+        "fact": "Tóm tắt diễn giải lớp 5: Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinki",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-15T17:25:01.901429",
+        "metadata": {}
+      },
+      {
+        "fact": "Tóm tắt diễn giải lớp 5: Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinki",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-15T17:25:01.906725",
+        "metadata": {}
+      },
+      {
+        "fact": "Tóm tắt diễn giải lớp 5: Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinki",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-15T17:25:01.910872",
+        "metadata": {}
       }
     ]
   },
@@ -233,9 +268,49 @@
         "frequency": 1,
         "timestamp": "2026-03-13T17:15:00.804742",
         "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1711
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-15T17:25:01.896315",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1808
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-15T17:25:01.900404",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1687
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-15T17:25:01.903171",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1695
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-15T17:25:01.906725",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1779
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-15T17:25:01.912902",
+        "metadata": {}
       }
     ]
   },
   "domain_knowledge": {},
-  "updated_at": "2026-03-13T17:15:00.804742"
+  "updated_at": "2026-03-15T17:25:01.912902"
 }
