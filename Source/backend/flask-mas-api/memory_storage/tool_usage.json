@@ -178,19 +178,39 @@
             "length_option": "medium"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-16T14:48:42.862072",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 0
+        },
+        "output": "Trong hành trình, cậu gặp Thượng Đế, một cậu bé muốn gặp Thượng Đế và muốn gặp Người, nên đã chuẩn bị những chiếc bánh Twinkie và sáu hộp nước trái cây. Cậu đã mời bà một chiếc bánh và bà lại cười với",
+        "success": true,
+        "execution_time": 65.24926733970642,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6bcb6cb8-0e6c-4ba1-9cdb-c74a07ed50c2",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 9,
-      "successful": 9,
+      "total_uses": 10,
+      "successful": 10,
       "failed": 0,
       "success_rate": 1.0,
       "recent_success_rate": 1.0,
-      "avg_execution_time": 51.46020515759786,
-      "last_used": "2026-03-15T17:25:01.702887"
+      "avg_execution_time": 52.83911137580871,
+      "last_used": "2026-03-16T14:48:42.862072"
     }
   },
-  "updated_at": "2026-03-15T17:25:01.702887"
+  "updated_at": "2026-03-16T14:48:42.862072"
 }
