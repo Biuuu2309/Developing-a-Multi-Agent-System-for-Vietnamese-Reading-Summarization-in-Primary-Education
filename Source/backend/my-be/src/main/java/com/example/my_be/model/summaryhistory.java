@@ -36,8 +36,23 @@ public class SummaryHistory {
 
 
     @Column(nullable = false)
-    private boolean isAccepted; 
-    
+    private boolean isAccepted;
+
+    @Column(columnDefinition = "TEXT")
+    private String userInput;
+
+    @Column(columnDefinition = "TEXT")
+    private String summaryImageUrl;
+
+    @Column(columnDefinition = "TEXT")
+    private String evaluation;
+
+    @Column(length = 255)
+    private String masSessionId;
+
+    @Column(length = 255)
+    private String conversationId;
+
     // Custom getter and setter for isAccepted
     public boolean isAccepted() {
         return isAccepted;

@@ -23,6 +23,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cloudinary.Cloudinary;
@@ -68,7 +70,11 @@ public class SummarySessionService {
     }
 
     public void deleteSummarySession(Long sessionId) {
-        summarySessionRepository.deleteById(sessionId);
+        try {
+            summarySessionRepository.deleteById(sessionId);
+        } catch (EmptyResultDataAccessException | ObjectOptimisticLockingFailureException ex) {
+            // Treat as already deleted (idempotent delete)
+        }
     }
 
     public Optional<SummarySession> getSummarySessionByUserAndContent(User createdBy, String content) {

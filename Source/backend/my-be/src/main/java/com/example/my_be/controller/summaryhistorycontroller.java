@@ -188,4 +188,31 @@ public class SummaryHistoryController {
         private String content;
         private Integer grade;
     }
+
+    @PostMapping("/create-from-mas")
+    public ResponseEntity<SummaryHistoryDTO> createFromMas(@RequestBody CreateFromMasRequest request) {
+        SummaryHistoryDTO dto = summaryHistoryService.createSummaryHistoryFromMas(
+            request.getSummarySessionId(),
+            request.getUserInput(),
+            request.getSummaryContent(),
+            request.getSummaryImageUrl(),
+            request.getEvaluation(),
+            request.getMasSessionId(),
+            request.getConversationId()
+        );
+        return ResponseEntity.ok(dto);
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class CreateFromMasRequest {
+        private Long summarySessionId;
+        private String userInput;
+        private String summaryContent;
+        private String summaryImageUrl;
+        private String evaluation;
+        private String masSessionId;
+        private String conversationId;
+    }
 }

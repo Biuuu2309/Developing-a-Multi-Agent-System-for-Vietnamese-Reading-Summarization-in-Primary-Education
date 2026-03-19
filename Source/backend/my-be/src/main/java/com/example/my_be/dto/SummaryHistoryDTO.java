@@ -5,8 +5,24 @@ public class SummaryHistoryDTO {
     private String method;
     private String summaryContent;
     private boolean isAccepted;
-    private Long sessionId; // Add this
-    private String timestamp; // Add this
+    private Long sessionId;
+    private String timestamp;
+    private String userInput;
+    private String summaryImageUrl;
+    private String evaluation;
+    private String masSessionId;
+    private String conversationId;
+
+    public String getUserInput() { return userInput; }
+    public void setUserInput(String userInput) { this.userInput = userInput; }
+    public String getSummaryImageUrl() { return summaryImageUrl; }
+    public void setSummaryImageUrl(String summaryImageUrl) { this.summaryImageUrl = summaryImageUrl; }
+    public String getEvaluation() { return evaluation; }
+    public void setEvaluation(String evaluation) { this.evaluation = evaluation; }
+    public String getMasSessionId() { return masSessionId; }
+    public void setMasSessionId(String masSessionId) { this.masSessionId = masSessionId; }
+    public String getConversationId() { return conversationId; }
+    public void setConversationId(String conversationId) { this.conversationId = conversationId; }
 
     public Long getSessionId() {
         return sessionId;

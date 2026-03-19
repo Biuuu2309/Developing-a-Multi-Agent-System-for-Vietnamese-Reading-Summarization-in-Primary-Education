@@ -16,6 +16,7 @@ import com.example.my_be.dto.SummaryHistoryDTO;
 import com.example.my_be.model.SummaryHistory;
 import com.example.my_be.model.SummarySession;
 import com.example.my_be.repository.SummaryHistoryRepository;
+import com.example.my_be.repository.SummarySessionRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -25,6 +26,9 @@ public class SummaryHistoryService {
 
     @Autowired
     private SummaryHistoryRepository summaryHistoryRepository;
+
+    @Autowired
+    private SummarySessionRepository summarySessionRepository;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -152,8 +156,17 @@ public class SummaryHistoryService {
     }
 
     public SummaryHistoryDTO updateSummaryHistory(SummaryHistoryDTO historyDTO) {
-        SummaryHistory history = mapToEntity(historyDTO);
-        SummaryHistory updatedHistory = summaryHistoryRepository.save(history);
+        Optional<SummaryHistory> existingOpt = summaryHistoryRepository.findById(historyDTO.getHistoryId());
+        if (existingOpt.isEmpty()) {
+            return null;
+        }
+
+        SummaryHistory existing = existingOpt.get();
+        existing.setMethod(historyDTO.getMethod());
+        existing.setSummaryContent(historyDTO.getSummaryContent());
+        existing.setAccepted(historyDTO.getIsAccepted());
+
+        SummaryHistory updatedHistory = summaryHistoryRepository.save(existing);
         return mapToDTO(updatedHistory);
     }
 
@@ -165,19 +178,40 @@ public class SummaryHistoryService {
         return summaryHistoryRepository.findBySession(session);
     }
 
+    @Transactional
+    public SummaryHistoryDTO createSummaryHistoryFromMas(Long summarySessionId, String userInput,
+            String summaryContent, String summaryImageUrl, String evaluation, String masSessionId, String conversationId) {
+        SummarySession session = summarySessionRepository.findById(summarySessionId)
+                .orElseThrow(() -> new RuntimeException("Summary session not found"));
+        SummaryHistory history = new SummaryHistory();
+        history.setSession(session);
+        history.setMethod("MAS_CHAT");
+        history.setSummaryContent(summaryContent != null ? summaryContent : "");
+        history.setAccepted(false);
+        history.setUserInput(userInput);
+        history.setSummaryImageUrl(summaryImageUrl);
+        history.setEvaluation(evaluation);
+        history.setMasSessionId(masSessionId);
+        history.setConversationId(conversationId);
+        SummaryHistory saved = summaryHistoryRepository.save(history);
+        return mapToDTO(saved);
+    }
+
     public SummaryHistoryDTO mapToDTO(SummaryHistory history) {
         SummaryHistoryDTO dto = new SummaryHistoryDTO();
         dto.setHistoryId(history.getHistoryId());
         dto.setMethod(history.getMethod());
         dto.setSummaryContent(history.getSummaryContent());
         dto.setIsAccepted(history.isAccepted());
-        
-        // Safely access session properties
+        dto.setUserInput(history.getUserInput());
+        dto.setSummaryImageUrl(history.getSummaryImageUrl());
+        dto.setEvaluation(history.getEvaluation());
+        dto.setMasSessionId(history.getMasSessionId());
+        dto.setConversationId(history.getConversationId());
         if (history.getSession() != null) {
             dto.setSessionId(history.getSession().getSessionId());
             dto.setTimestamp(history.getSession().getTimestamp());
         }
-        
         return dto;
     }
 
@@ -187,6 +221,15 @@ public class SummaryHistoryService {
         history.setMethod(historyDTO.getMethod());
         history.setSummaryContent(historyDTO.getSummaryContent());
         history.setAccepted(historyDTO.getIsAccepted());
+        // Important: keep the relation to SummarySession.
+        // If we don't set session, JPA will save with session_id = null, so the row
+        // disappears from "histories by sessionId" queries after update.
+        if (historyDTO.getSessionId() != null) {
+            Optional<SummarySession> sessionOpt = summarySessionRepository.findById(historyDTO.getSessionId());
+            if (sessionOpt.isPresent()) {
+                history.setSession(sessionOpt.get());
+            }
+        }
         return history;
     }
 }

@@ -198,19 +198,402 @@
             "length_option": "medium"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-18T13:39:47.691355",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 0
+        },
+        "output": "Cậu bé muốn gặp Thượng Đế và muốn gặp gỡ Thượng Đế, nên cậu đã mang theo bên mình những chiếc bánh Twinkie và sáu hộp nước trái cây. Cậu mở túi xách và rót cho bà một chiếc bánh. Bà cười với cậu, khiế",
+        "success": true,
+        "execution_time": 46.76039958000183,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "4e1d156d-2e3f-48a6-9bc6-148685bc868c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T13:44:27.941332",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 2
+        },
+        "output": "Cậu bé muốn gặp Thượng Đế và muốn gặp Người. Cậu đã mang theo bên mình những chiếc bánh Twinkie và sáu hộp nước trái cây, rồi bắt đầu cuộc hành trình. Cậu gặp một bà lão ngồi trong công viên và đang n",
+        "success": true,
+        "execution_time": 17.525272369384766,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "4e1d156d-2e3f-48a6-9bc6-148685bc868c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T14:37:58.317851",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 25.632174730300903,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "95ddfd89-27f7-489d-87c3-50d3de624b86",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T15:19:25.325709",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 22.132825136184692,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a9457021-a2c5-4e98-bdae-79ae16b56caa",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T15:33:31.016811",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 2
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 21.329665184020996,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a9457021-a2c5-4e98-bdae-79ae16b56caa",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T15:35:33.923397",
+        "input": {
+          "user_input_length": 11,
+          "history_length": 4
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo dạng trích xuất hay diễn giải? Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 10.261772871017456,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a9457021-a2c5-4e98-bdae-79ae16b56caa",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T15:36:18.177944",
+        "input": {
+          "user_input_length": 19,
+          "history_length": 6
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo lớp mấy? Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 10.582607984542847,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a9457021-a2c5-4e98-bdae-79ae16b56caa",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T16:30:04.234504",
+        "input": {
+          "user_input_length": 3,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 22.696475982666016,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "fee56c17-e4f1-4b75-a7ec-2466a76bf7fe",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T16:32:53.607929",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 8.045323133468628,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c17249f-36c2-4709-9889-c9591d2a9f17",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T16:39:51.091619",
+        "input": {
+          "user_input_length": 3,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 24.033363342285156,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "56e75686-920e-4a48-9252-d7f2a4f14de9",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T16:52:12.250483",
+        "input": {
+          "user_input_length": 26,
+          "history_length": 2
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 21.021639347076416,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "95ddfd89-27f7-489d-87c3-50d3de624b86",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T17:13:50.825400",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 4
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 24.614562511444092,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "95ddfd89-27f7-489d-87c3-50d3de624b86",
+          "intent": {
+            "summarization_type": "abstractive",
+            "intent": "summarize",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T17:27:17.751641",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 16.76370143890381,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6af7e62f-d723-4a49-9286-e209e1c0914d",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T17:39:46.815809",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 16.84495973587036,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "ac7c13ed-b646-4888-aab9-c85d86d26455",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T17:41:41.727826",
+        "input": {
+          "user_input_length": 19,
+          "history_length": 0
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo lớp mấy? Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 10.252068996429443,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "ce50713a-e0f4-4b7d-9101-6c2f104eabba",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T17:52:54.649001",
+        "input": {
+          "user_input_length": 8,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 18.63243007659912,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "21bbfca0-5bbf-4b6f-837e-29715bda627c",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T17:53:58.366013",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 0
+        },
+        "output": "Cậu bé muốn gặp Thượng Đế, nên đã chuẩn bị cho mình những chiếc bánh Twinkie và sáu hộp nước trái cây. Khi đi qua ba dãy phố, cậu gặp một bà lão đang ngồi trong công viên và thấy đàn chim bồ câu đang ",
+        "success": true,
+        "execution_time": 32.0787193775177,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "751ec138-ea2a-4632-9e36-a7b4a2d25edb",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T18:03:09.683587",
+        "input": {
+          "user_input_length": 5,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 21.694095134735107,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "0a2d4a34-344a-4101-9fa1-bed52e7e5431",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-18T18:06:10.576748",
+        "input": {
+          "user_input_length": 25,
+          "history_length": 6
+        },
+        "output": "Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 10.578973531723022,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "95ddfd89-27f7-489d-87c3-50d3de624b86",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": 5,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-19T12:52:06.863657",
+        "input": {
+          "user_input_length": 8,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 22.37156891822815,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "9c3fb074-66dc-4245-8265-59eeb33480a0",
+          "intent": {
+            "intent": "casual_chat",
+            "summarization_type": null,
+            "grade_level": null
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 10,
-      "successful": 10,
-      "failed": 0,
-      "success_rate": 1.0,
-      "recent_success_rate": 1.0,
-      "avg_execution_time": 52.83911137580871,
-      "last_used": "2026-03-16T14:48:42.862072"
+      "total_uses": 30,
+      "successful": 19,
+      "failed": 11,
+      "success_rate": 0.6333333333333333,
+      "recent_success_rate": 0.45,
+      "avg_execution_time": 31.074790438016255,
+      "last_used": "2026-03-19T12:52:06.863657"
     }
   },
-  "updated_at": "2026-03-16T14:48:42.862072"
+  "updated_at": "2026-03-19T12:52:06.863657"
 }

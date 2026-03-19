@@ -1,9 +1,9 @@
 import ParticlesBackground from '../../components/Particles';
 import { MorphingNavigation } from "../../components/lightswind/morphing-navigation.tsx";
-import { Home as HomeIcon, ShoppingBag, Info, HelpCircle, History, BookOpen, BookText } from "lucide-react";
+import { Home as HomeIcon, ShoppingBag, Info, HelpCircle, BookOpen, BookText } from "lucide-react";
 import './Home.css';
 import { useEffect, useState, useCallback, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import GradualBlur from '../../components/GradualBlur';
 import RotatingText from '../../components/RotatingText';
 import SplashCursor from '../../components/SplashCursor';
@@ -19,6 +19,8 @@ import ScrollList from '../../components/lightswind/scroll-list';
 import MetaBalls from '../../components/MetaBalls';
 import { PlusIcon } from 'lucide-react';
 import { RippleButton, RippleButtonRipples } from '../../components/animate-ui/components/buttons/ripple';
+import { getStoredUser, logout } from '../../services/authService';
+import { User as UserIcon, LogOut } from 'lucide-react';
 
 function throttle(func, wait) {
   let timeout;
@@ -48,6 +50,20 @@ const generateCursorColor = () => {
 };
 
 export default function Home() {
+  const [currentUser, setCurrentUser] = useState(() => getStoredUser());
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onStorage = () => setCurrentUser(getStoredUser());
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, []);
+
+  const handleLogout = useCallback(() => {
+    logout();
+    setCurrentUser(null);
+    setIsUserMenuOpen(false);
+  }, []);
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLogoHidden, setIsLogoHidden] = useState(false);
@@ -72,6 +88,8 @@ export default function Home() {
   const handleLinkClick = useCallback((link) => {
     if (link.id === 'summary') {
       navigate('/summary');
+    } else if (link.id === 'story') {
+      navigate('/story');
     } else if (link.id === 'mas-flow') {
       navigate('/mas-flow');
     }
@@ -82,8 +100,7 @@ export default function Home() {
   const navLinks = useMemo(() => [
     { id: 'home', label: 'Home', href: '#home', icon: <HomeIcon size={30} /> },
     { id: 'summary', label: 'Summary', href: '/summary', icon: <BookOpen size={30} /> },
-    { id: 'story', label: 'Story', href: '#story', icon: <BookText size={30} /> },
-    { id: 'history', label: 'History', href: '#history', icon: <History size={30} /> },
+    { id: 'story', label: 'Story', href: '/story', icon: <BookText size={30} /> },
     { id: 'mas-flow', label: 'MAS Flow', href: '/mas-flow', icon: <Zap size={30} /> }
   ], []);
 
@@ -116,15 +133,96 @@ export default function Home() {
             className="aurora-text-effect ml-3"
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginRight: '20px' }}>
-        <RippleButton variant="outline" size="lg" style={{ borderRadius: '10px', height: '40px' }}>
-          Login
-          <RippleButtonRipples />
-        </RippleButton>
-        <RippleButton variant="default" size="lg" style={{ borderRadius: '10px', height: '40px', opacity: '0.8' }}>
-          Register
-          <RippleButtonRipples />
-        </RippleButton>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginRight: '20px', position: 'relative' }}>
+        {currentUser ? (
+          <>
+            <button
+              type="button"
+              onClick={() => setIsUserMenuOpen((v) => !v)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '8px 12px',
+                background: 'rgba(255,255,255,0.95)',
+                border: '1px solid rgba(0,0,0,0.1)',
+                borderRadius: '12px',
+                cursor: 'pointer',
+                backdropFilter: 'blur(10px)',
+              }}
+              title={currentUser.role || 'User'}
+            >
+              {currentUser.avatarUrl ? (
+                <img
+                  src={currentUser.avatarUrl}
+                  alt=""
+                  style={{ width: '28px', height: '28px', borderRadius: '999px', objectFit: 'cover' }}
+                />
+              ) : (
+                <div style={{ width: '28px', height: '28px', borderRadius: '999px', background: '#E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <UserIcon size={16} />
+                </div>
+              )}
+              <span style={{ fontWeight: 600, color: '#374151', fontSize: '14px' }}>{currentUser.username}</span>
+            </button>
+
+            {isUserMenuOpen && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '48px',
+                  right: 0,
+                  width: '220px',
+                  background: 'rgba(255,255,255,0.98)',
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  borderRadius: '12px',
+                  boxShadow: '0 12px 24px rgba(0,0,0,0.12)',
+                  padding: '8px',
+                  zIndex: 1000,
+                }}
+              >
+                <div style={{ padding: '8px 10px', color: '#6B7280', fontSize: '12px' }}>
+                  Role: <b style={{ color: '#374151' }}>{currentUser.role || 'CHILD'}</b>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '10px',
+                    border: 'none',
+                    background: 'transparent',
+                    borderRadius: '10px',
+                    cursor: 'pointer',
+                    color: '#EF4444',
+                    fontWeight: 600,
+                  }}
+                >
+                  <LogOut size={16} />
+                  Đăng xuất
+                </button>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <RippleButton variant="outline" size="lg" style={{ borderRadius: '10px', height: '40px' }}>
+                Login
+                <RippleButtonRipples />
+              </RippleButton>
+            </Link>
+            <Link to="/register">
+              <RippleButton variant="default" size="lg" style={{ borderRadius: '10px', height: '40px', opacity: '0.8' }}>
+                Register
+                <RippleButtonRipples />
+              </RippleButton>
+            </Link>
+          </>
+        )}
         </div>
       </div>
       {/* <SplashCursor /> */}

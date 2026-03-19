@@ -5,6 +5,8 @@ import { submitSummary, parseSummaryResponse } from '../../../services/summarySe
 import { getCurrentUserId, getOrCreateSession } from '../../../services/sessionService';
 import { handleAPIError } from '../../../services/errorHandler';
 import SummaryResult from './SummaryResult';
+import { createSummarySession } from '../../../services/summarySessionApi';
+import { createFromMas } from '../../../services/summaryHistoryApi';
 import './SummaryModes.css';
 
 const summaryOptions = [
@@ -20,7 +22,7 @@ const gradeOptions = [
   { value: '5', label: 'Lớp 5' },
 ];
 
-export default function NormalMode({ onSubmit, initialData }) {
+export default function NormalMode({ onSubmit, initialData, summarySessionId }) {
   const [summaryType, setSummaryType] = useState(null);
   const [gradeLevel, setGradeLevel] = useState(null);
   const [text, setText] = useState('');
@@ -64,6 +66,14 @@ export default function NormalMode({ onSubmit, initialData }) {
 
     try {
       const userId = getCurrentUserId();
+      let currentSummarySessionId = summarySessionId;
+      if (!currentSummarySessionId) {
+        const created = await createSummarySession({ userId, content: text.trim() });
+        currentSummarySessionId = created.sessionId;
+        if (onSubmit) {
+          onSubmit({ kind: 'session_created', summarySessionId: currentSummarySessionId, source: 'normal_submit' });
+        }
+      }
       
       // Get or create session
       let currentSessionId = sessionId;
@@ -90,14 +100,33 @@ export default function NormalMode({ onSubmit, initialData }) {
       const parsedResult = parseSummaryResponse(response);
       setResult(parsedResult);
 
+      // Write to summary_history for this summary session
+      const summaryImageUrl = typeof parsedResult.summaryImageUrl === 'string'
+        ? parsedResult.summaryImageUrl
+        : (parsedResult.summaryImageUrl ? JSON.stringify(parsedResult.summaryImageUrl) : null);
+      const evaluation = typeof parsedResult.evaluation === 'string'
+        ? parsedResult.evaluation
+        : (parsedResult.evaluation ? JSON.stringify(parsedResult.evaluation) : null);
+      await createFromMas({
+        summarySessionId: currentSummarySessionId,
+        userInput: formData.text,
+        summaryContent: parsedResult.summary || '',
+        summaryImageUrl,
+        evaluation,
+        masSessionId: currentSessionId,
+        conversationId: null,
+      });
+
       // Call parent onSubmit callback with full data
       if (onSubmit) {
         onSubmit({
+          kind: 'normal',
           summaryType: formData.summaryType,
           gradeLevel: formData.gradeLevel,
           text: formData.text,
           result: parsedResult,
           sessionId: currentSessionId,
+          summarySessionId: currentSummarySessionId,
         });
       }
     } catch (err) {

@@ -43,7 +43,8 @@ public class SummaryService {
     }
 
     public List<SummaryDTO> getAllSummaries() {
-        List<Summary> summaries = summaryRepository.findByStatus("APPROVED"); // Only APPROVED
+        // For Story/Admin: return all summaries regardless of status
+        List<Summary> summaries = summaryRepository.findAll();
         List<SummaryDTO> summaryDTOs = new ArrayList<>();
         for (Summary summary : summaries) {
             SummaryDTO dto = new SummaryDTO();
@@ -59,6 +60,7 @@ public class SummaryService {
             dto.setCreatedAt(summary.getCreatedAt());
             dto.setApprovedAt(summary.getApprovedAt());
             dto.setImageUrl(summary.getImageUrl());
+            dto.setSummaryImageUrl(summary.getSummaryImageUrl());
             summaryDTOs.add(dto);
         }
         return summaryDTOs;
@@ -110,6 +112,8 @@ public class SummaryService {
                 dto.setCreatedAt(summary.getCreatedAt());
                 dto.setApprovedAt(summary.getApprovedAt());
                 dto.setCreatedByUserId(summary.getCreatedBy().getUserId());
+                dto.setImageUrl(summary.getImageUrl());
+                dto.setSummaryImageUrl(summary.getSummaryImageUrl());
                 summaryDTOs.add(dto);
             }
             return summaryDTOs;
@@ -119,8 +123,8 @@ public class SummaryService {
     }
 
     public List<Summary> searchSummariesByTitleAndGrade(String searchTerm, String grade) {
+        // For Story/Admin: return all statuses
         return summaryRepository.findByTitleContainingIgnoreCaseAndGrade(searchTerm, grade).stream()
-            .filter(summary -> "APPROVED".equals(summary.getStatus()))
             .collect(Collectors.toList());
     }
 
@@ -132,19 +136,16 @@ public class SummaryService {
         return summaryRepository.findByTitleContainingOrContentContainingOrStatusContainingOrMethodContainingOrGradeContaining(
             searchTerm, searchTerm, status, method, grade
         ).stream()
-            .filter(summary -> "APPROVED".equals(summary.getStatus()))
             .collect(Collectors.toList());
     }
 
     public List<Summary> getTop10MostReadSummaries() {
         return summaryRepository.findTop10ByOrderByReadCountDesc().stream()
-            .filter(summary -> "APPROVED".equals(summary.getStatus()))
             .collect(Collectors.toList());
     }
 
     public List<SummaryDTO> getSummariesByGrade(String grade) {
         List<Summary> summaries = summaryRepository.findByGrade(grade).stream()
-            .filter(summary -> "APPROVED".equals(summary.getStatus()))
             .collect(Collectors.toList());
         List<SummaryDTO> summaryDTOs = new ArrayList<>();
         for (Summary summary : summaries) {
@@ -157,6 +158,7 @@ public class SummaryService {
             dto.setMethod(summary.getMethod());
             dto.setGrade(summary.getGrade());
             dto.setImageUrl(summary.getImageUrl());
+            dto.setSummaryImageUrl(summary.getSummaryImageUrl());
             dto.setCreatedAt(summary.getCreatedAt());
             dto.setApprovedAt(summary.getApprovedAt());
             dto.setCreatedByUserId(summary.getCreatedBy().getUserId());
@@ -167,13 +169,11 @@ public class SummaryService {
 
     public List<Summary> searchSummariesByTitle(String searchTerm) {
         return summaryRepository.findByTitleContainingIgnoreCase(searchTerm).stream()
-            .filter(summary -> "APPROVED".equals(summary.getStatus()))
             .collect(Collectors.toList());
     }
 
     public List<Summary> getSummariesByMethod(String method) {
         return summaryRepository.findByMethod(method).stream()
-            .filter(summary -> "APPROVED".equals(summary.getStatus()))
             .collect(Collectors.toList());
     }
 }

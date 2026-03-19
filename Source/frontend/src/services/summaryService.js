@@ -160,11 +160,15 @@ export function parseSummaryResponse(response) {
  */
 export function parseChatResponse(response) {
   try {
-    const content = response.finalOutput || '';
+    const content = response.finalOutput || response.summary || '';
     const clarificationNeeded = response.clarificationNeeded || false;
     const clarificationQuestion = response.clarificationQuestion || '';
 
-    // Parse agent confidences
+    let summaryImageUrl = response.summaryImageUrl;
+    if (!summaryImageUrl && response.imageUrl && response.summary) {
+      summaryImageUrl = [{ url: response.imageUrl, part: response.summary }];
+    }
+
     let agentConfidences = {};
     if (response.agentConfidences) {
       try {
@@ -182,6 +186,11 @@ export function parseChatResponse(response) {
       clarificationQuestion,
       agentConfidences,
       summary: response.summary,
+      summaryImageUrl,
+      imageUrl: response.imageUrl,
+      evaluation: response.evaluation,
+      summaryType: response.summaryType,
+      gradeLevel: response.gradeLevel,
       status: response.status,
       sessionId: response.sessionId,
       messageId: response.messageId,

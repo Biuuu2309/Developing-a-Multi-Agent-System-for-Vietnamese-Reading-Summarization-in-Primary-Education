@@ -391,3 +391,29 @@
   font-size: 0.875rem;
   margin-bottom: 1rem;
 }
+
+.summary-result-container.embedded {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  max-width: 100%;
+}
+
+.summary-result-container.embedded .embedded-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.action-btn-sm {
+  padding: 0.35rem 0.6rem !important;
+  font-size: 0.75rem !important;
+}
+
+.summary-result-container.embedded .result-metadata {
+  margin-bottom: 1rem;
+}
+
+.summary-result-container.embedded .result-evaluation {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+}

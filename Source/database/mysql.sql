@@ -17,7 +17,7 @@ CREATE TABLE summaries (
 	summary_id VARCHAR(255),
     approved_at TIMESTAMP NOT NULL,
     content MEDIUMTEXT NOT NULL,
-    created_at TIMESTAMP NOT NULL,
+    created_at TIMESTAMP NOT NULL,summaries
     grade VARCHAR(255) NOT NULL,
     image_url TEXT,
     summary_image_url TEXT,
@@ -276,7 +276,11 @@ MODIFY COLUMN image_url TEXT;
 ALTER TABLE summaries 
 ADD COLUMN summary_image_url TEXT;
 
-
+ALTER TABLE summary_history ADD COLUMN user_input TEXT;
+ALTER TABLE summary_history ADD COLUMN summary_image_url TEXT;
+ALTER TABLE summary_history ADD COLUMN evaluation TEXT;
+ALTER TABLE summary_history ADD COLUMN mas_session_id VARCHAR(255);
+ALTER TABLE summary_history ADD COLUMN conversation_id VARCHAR(255);
 
 DROP TABLE IF EXISTS mas_agent_confidences;
 DROP TABLE IF EXISTS mas_agent_memories;

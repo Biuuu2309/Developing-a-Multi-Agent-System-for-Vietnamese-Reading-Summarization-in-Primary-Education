@@ -22,6 +22,9 @@ public class UserService {
      * Create a new user with a hashed password.
      */
     public User createUser(User user) {
+        if (user.getPhoneNumber() == null) {
+            user.setPhoneNumber("");
+        }
         // Hash the user's password before saving
         if (user.getPassword() != null && !user.getPassword().isEmpty()) {
             user.setPassword(user.getPassword(), passwordEncoder);

@@ -9,3 +9,56 @@
 .gravity-stars-bg canvas {
   pointer-events: none;
 }
+
+.summary-main-wrap {
+  position: relative;
+  min-height: 100vh;
+  transition: margin-left 0.25s ease;
+}
+
+@media (max-width: 900px) {
+  .summary-main-wrap {
+    margin-left: 0 !important;
+  }
+}
+
+.summary-sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 16px;
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #374151;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.summary-sidebar-toggle:hover {
+  background: #f3f4f6;
+}
+
+@media (max-width: 900px) {
+  .summary-sidebar-toggle {
+    display: flex;
+  }
+}
+
+.summary-bottom-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}

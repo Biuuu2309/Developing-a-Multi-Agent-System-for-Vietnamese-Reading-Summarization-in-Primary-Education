@@ -1,7 +1,7 @@
 // Base API configuration and utilities
 import { APIError } from './errorHandler';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081';
 
 /**
  * Base fetch wrapper with error handling
@@ -39,7 +39,13 @@ async function apiRequest(endpoint, options = {}) {
       );
     }
 
-    return await response.json();
+    const text = await response.text();
+    if (!text || !text.trim()) return null;
+    try {
+      return JSON.parse(text);
+    } catch {
+      throw new APIError('Invalid JSON response', response.status, { raw: text });
+    }
   } catch (error) {
     console.error(`API request failed: ${endpoint}`, error);
     
@@ -81,6 +87,16 @@ export async function apiPut(endpoint, data) {
 }
 
 /**
+ * PATCH request
+ */
+export async function apiPatch(endpoint, data) {
+  return apiRequest(endpoint, {
+    method: 'PATCH',
+    body: JSON.stringify(data),
+  });
+}
+
+/**
  * DELETE request
  */
 export async function apiDelete(endpoint) {
@@ -91,5 +107,6 @@ export default {
   get: apiGet,
   post: apiPost,
   put: apiPut,
+  patch: apiPatch,
   delete: apiDelete,
 };

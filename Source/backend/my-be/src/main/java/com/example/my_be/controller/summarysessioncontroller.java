@@ -1,6 +1,7 @@
 package com.example.my_be.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -11,6 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -55,29 +57,33 @@ public class SummarySessionController {
     // Define the base Gemini API URL
     private static final String GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
 
-    // Create a new summary session
+    // Create a new summary session (content can be empty for "New chat")
     @PostMapping
     public ResponseEntity<SummarySession> createSummarySession(@RequestBody Map<String, Object> request) {
         String userId = (String) request.get("userId");
-        String content = (String) request.get("content");
-        
-        if (userId == null || content == null) {
+        String content = request.get("content") != null ? (String) request.get("content") : "";
+        if (userId == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        
-        // Get user by ID
         Optional<User> userOpt = userService.getUserById(userId);
         if (userOpt.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        
-        // Create session
         SummarySession session = new SummarySession();
         session.setCreatedBy(userOpt.get());
-        session.setContent(content);
-        
+        session.setContent(content != null ? content : "");
         SummarySession createdSession = summarySessionService.createSummarySession(session);
         return new ResponseEntity<>(createdSession, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<SummarySession>> getSessionsByUser(@PathVariable String userId) {
+        Optional<User> userOpt = userService.getUserById(userId);
+        if (userOpt.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        List<SummarySession> sessions = summarySessionService.findSessionsByUser(userOpt.get());
+        return new ResponseEntity<>(sessions, HttpStatus.OK);
     }
 
     // Get a summary session by ID
@@ -322,7 +328,11 @@ public class SummarySessionController {
     // Delete a summary session by ID
     @DeleteMapping("/{sessionId}")
     public ResponseEntity<Void> deleteSummarySession(@PathVariable Long sessionId) {
-        summarySessionService.deleteSummarySession(sessionId);
+        try {
+            summarySessionService.deleteSummarySession(sessionId);
+        } catch (ObjectOptimisticLockingFailureException ex) {
+            // Already deleted by another transaction; treat as success
+        }
         return ResponseEntity.noContent().build();
     }
 

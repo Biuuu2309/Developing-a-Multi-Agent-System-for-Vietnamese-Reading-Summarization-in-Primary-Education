@@ -207,6 +207,7 @@ private SummaryDTO mapToSummaryDTO(Summary summary) {
     summaryDTO.setReadCount(summary.getReadCount());
     summaryDTO.setCreatedByUserId(summary.getCreatedBy().getUserId());
     summaryDTO.setImageUrl(summary.getImageUrl()); // Assuming you're using a User object for createdBy
+    summaryDTO.setSummaryImageUrl(summary.getSummaryImageUrl());
 
     // Add createdAt and approvedAt
     summaryDTO.setCreatedAt(summary.getCreatedAt());

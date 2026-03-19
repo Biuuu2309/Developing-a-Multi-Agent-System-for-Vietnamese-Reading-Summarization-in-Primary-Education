@@ -12,6 +12,7 @@ public class SummaryDTO {
     private String grade;
     private String createdByUserId;
     private String imageUrl;
+    private String summaryImageUrl;
     private int readCount;
 
     // New fields for tracking creation and approval times
@@ -27,6 +28,14 @@ public class SummaryDTO {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }   
+
+    public String getSummaryImageUrl() {
+        return summaryImageUrl;
+    }
+
+    public void setSummaryImageUrl(String summaryImageUrl) {
+        this.summaryImageUrl = summaryImageUrl;
+    }
     public String getSummaryId() {
         return summaryId;
     }

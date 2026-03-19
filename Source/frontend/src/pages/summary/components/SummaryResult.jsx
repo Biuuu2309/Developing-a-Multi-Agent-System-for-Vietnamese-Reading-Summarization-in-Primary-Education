@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { Copy, Check, Download, Image as ImageIcon, Star } from 'lucide-react';
 import './SummaryResult.css';
 
-export default function SummaryResult({ result }) {
+export default function SummaryResult({ result, embedded = false }) {
   const [copied, setCopied] = useState(false);
 
   if (!result) {
     return null;
   }
-  
-  // Check if we have summary text or summary_image_url
+
   const hasSummary = result.summary || result.summaryImageUrl;
-  if (!hasSummary) {
+  const hasEvaluationOnly = embedded && result.evaluation;
+  if (!hasSummary && !hasEvaluationOnly) {
     return null;
   }
 
@@ -216,43 +216,52 @@ export default function SummaryResult({ result }) {
   };
 
   return (
-    <div className="summary-result-container">
-      <div className="result-header">
-        <h3>Kết quả tóm tắt</h3>
-        <div className="result-actions">
-          <button 
-            onClick={handleCopy} 
-            className="action-btn"
-            title="Sao chép"
-          >
-            {copied ? <Check size={18} /> : <Copy size={18} />}
+    <div className={`summary-result-container ${embedded ? 'embedded' : ''}`}>
+      {!embedded ? (
+        <div className="result-header">
+          <h3>Kết quả tóm tắt</h3>
+          <div className="result-actions">
+            <button onClick={handleCopy} className="action-btn" title="Sao chép">
+              {copied ? <Check size={18} /> : <Copy size={18} />}
+              <span>{copied ? 'Đã sao chép' : 'Sao chép'}</span>
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="embedded-actions">
+          <button onClick={handleCopy} className="action-btn action-btn-sm" title="Sao chép">
+            {copied ? <Check size={14} /> : <Copy size={14} />}
             <span>{copied ? 'Đã sao chép' : 'Sao chép'}</span>
           </button>
         </div>
-      </div>
+      )}
 
-      <div className="result-metadata">
-        <div className="metadata-item">
-          <span className="metadata-label">Loại tóm tắt:</span>
-          <span className="metadata-value">
-            {result.summaryType === 'abstractive' ? 'Tóm tắt diễn giải' : 'Tóm tắt trích xuất'}
-          </span>
+      {(result.summaryType || result.gradeLevel || result.status) && (
+        <div className="result-metadata">
+          {result.summaryType && (
+            <div className="metadata-item">
+              <span className="metadata-label">Loại tóm tắt:</span>
+              <span className="metadata-value">
+                {result.summaryType === 'abstractive' ? 'Tóm tắt diễn giải' : 'Tóm tắt trích xuất'}
+              </span>
+            </div>
+          )}
+          {result.gradeLevel && (
+            <div className="metadata-item">
+              <span className="metadata-label">Cấp lớp:</span>
+              <span className="metadata-value">Lớp {result.gradeLevel}</span>
+            </div>
+          )}
+          {result.status && (
+            <div className="metadata-item">
+              <span className="metadata-label">Trạng thái:</span>
+              <span className={`metadata-value status-${result.status.toLowerCase()}`}>
+                {result.status}
+              </span>
+            </div>
+          )}
         </div>
-        {result.gradeLevel && (
-          <div className="metadata-item">
-            <span className="metadata-label">Cấp lớp:</span>
-            <span className="metadata-value">Lớp {result.gradeLevel}</span>
-          </div>
-        )}
-        {result.status && (
-          <div className="metadata-item">
-            <span className="metadata-label">Trạng thái:</span>
-            <span className={`metadata-value status-${result.status.toLowerCase()}`}>
-              {result.status}
-            </span>
-          </div>
-        )}
-      </div>
+      )}
 
       {/* Summary Cards */}
       {summaryCards.length > 0 && (
