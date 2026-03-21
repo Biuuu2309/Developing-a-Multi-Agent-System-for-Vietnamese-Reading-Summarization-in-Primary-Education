@@ -1,0 +1,66 @@
+{
+  "facts": {
+    "user_info": [
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-11T16:53:40.328529",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Trước đây, ba nó là công chức. Vì bất đồng với cung cách làm ăn bất chính của lãnh đạo cơ quan, ba nó xin nghỉ. Về nhà, ba nó sắm một chiếc xích lô: Đạp x",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-11T16:53:40.344823",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Nhà họ Mạc ở Lũng Động sinh được một người con trai, đặt tên là Mạc Đĩnh Chi. Cậu bé càng lớn càng thông minh, lại rất chăm chỉ học hành và có tài ứng đối",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-11T16:53:40.358528",
+        "metadata": {}
+      }
+    ]
+  },
+  "relationships": {},
+  "patterns": {
+    "summarization_response": [
+      {
+        "pattern": {
+          "content_length": 60
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-11T16:53:40.357461",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 863
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-11T16:53:40.344823",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 935
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-11T16:53:40.345835",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 912
+        },
+        "frequency": 1,
+        "timestamp": "2026-03-11T16:53:40.358528",
+        "metadata": {}
+      }
+    ]
+  },
+  "domain_knowledge": {},
+  "updated_at": "2026-03-11T16:53:40.358528"
+}

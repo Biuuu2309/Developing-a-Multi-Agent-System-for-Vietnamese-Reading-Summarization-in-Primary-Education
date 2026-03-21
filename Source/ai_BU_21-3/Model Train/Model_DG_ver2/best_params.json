@@ -1,0 +1,11 @@
+{
+  "max_target_len": 256,
+  "learning_rate": 0.00014854565680664033,
+  "batch_size": 8,
+  "grad_acc": 2,
+  "num_train_epochs": 5,
+  "weight_decay": 0.0016483963466136164,
+  "warmup_ratio": 0.1,
+  "label_smoothing": 0.1,
+  "best_avg_rouge": 0.67486423957986
+}
