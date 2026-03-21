@@ -21,6 +21,566 @@
         "confidence": 0.3,
         "timestamp": "2026-03-11T16:53:40.358528",
         "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:26:14.752483",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:26:14.759099",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. L",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:26:14.761973",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:26:14.764983",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:26:14.769500",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.119575",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.121087",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. L",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.122087",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.124087",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.125087",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.125087",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.128005",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.131643",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, t",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.133207",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.134315",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.207152",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.210156",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. L",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.211156",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.213163",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.215623",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.216609",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.218817",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.220823",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, t",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.229487",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:33:04.243317",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.952074",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.954692",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. L",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.955698",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.956698",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.959279",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.961381",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.965379",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.966884",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, t",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.970059",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.972068",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa ra ánh sá",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.973068",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp cơ thể ti",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.975077",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. Lá cây có m",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.976582",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có lông mao b",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.978587",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử hơn 1.000 ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:38:15.980096",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.253524",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.255521",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. L",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.258030",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.260029",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.261030",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.264032",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.266033",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.269552",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, t",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.271555",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.273553",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa ra ánh sá",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.276553",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp cơ thể ti",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.279064",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. Lá cây có m",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.281066",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có lông mao b",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.283063",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử hơn 1.000 ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.286067",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia là Trung ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.290588",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em sinh ra ở ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.292590",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều có vai tr",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.296588",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, thường rơi ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.300108",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân khác nhau.",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.302111",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.511489",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.515316",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. L",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.517821",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.520824",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 3 văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.522911",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.524912",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 4 văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.527966",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 1 văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.530976",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 2 văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, t",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.536477",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.544199",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa ra ánh sá",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.548997",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp cơ thể ti",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.551995",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Cây xanh là những sinh vật rất kỳ diệu. Chúng có thể tự tạo ra thức ăn cho mình từ ánh sáng mặt trời, nước và không khí. Quá trình này gọi là quang hợp. Lá cây có m",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.555995",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có lông mao b",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.560088",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam. Đây là thành phố lớn thứ hai của Việt Nam, chỉ sau Thành phố Hồ Chí Minh. Hà Nội có lịch sử hơn 1.000 ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.565094",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia là Trung ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.567603",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em sinh ra ở ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.570610",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ, anh chị em cùng sống với nhau. Mỗi người trong gia đình đều có vai tr",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.573610",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Tết thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch, thường rơi ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.577800",
+        "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt trích xuất văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân khác nhau.",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-03-21T13:42:44.580888",
+        "metadata": {}
       }
     ]
   },
@@ -29,10 +589,170 @@
     "summarization_response": [
       {
         "pattern": {
+          "content_length": 1131
+        },
+        "frequency": 6,
+        "timestamp": "2026-03-21T13:42:44.513330",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1235
+        },
+        "frequency": 6,
+        "timestamp": "2026-03-21T13:42:44.516818",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1145
+        },
+        "frequency": 6,
+        "timestamp": "2026-03-21T13:42:44.518822",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1164
+        },
+        "frequency": 6,
+        "timestamp": "2026-03-21T13:42:44.521840",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1191
+        },
+        "frequency": 6,
+        "timestamp": "2026-03-21T13:42:44.523910",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1465
+        },
+        "frequency": 5,
+        "timestamp": "2026-03-21T13:42:44.526418",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1227
+        },
+        "frequency": 5,
+        "timestamp": "2026-03-21T13:42:44.529972",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1287
+        },
+        "frequency": 5,
+        "timestamp": "2026-03-21T13:42:44.533970",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1218
+        },
+        "frequency": 5,
+        "timestamp": "2026-03-21T13:42:44.540483",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1252
+        },
+        "frequency": 5,
+        "timestamp": "2026-03-21T13:42:44.545483",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1225
+        },
+        "frequency": 3,
+        "timestamp": "2026-03-21T13:42:44.550997",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1373
+        },
+        "frequency": 3,
+        "timestamp": "2026-03-21T13:42:44.553994",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1328
+        },
+        "frequency": 3,
+        "timestamp": "2026-03-21T13:42:44.557500",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1334
+        },
+        "frequency": 3,
+        "timestamp": "2026-03-21T13:42:44.562095",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1307
+        },
+        "frequency": 3,
+        "timestamp": "2026-03-21T13:42:44.566096",
+        "metadata": {}
+      },
+      {
+        "pattern": {
           "content_length": 60
         },
         "frequency": 2,
         "timestamp": "2026-03-11T16:53:40.357461",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1432
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-21T13:42:44.569615",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1381
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-21T13:42:44.572608",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1416
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-21T13:42:44.576269",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1273
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-21T13:42:44.578814",
+        "metadata": {}
+      },
+      {
+        "pattern": {
+          "content_length": 1404
+        },
+        "frequency": 2,
+        "timestamp": "2026-03-21T13:42:44.582906",
         "metadata": {}
       },
       {
@@ -62,5 +782,5 @@
     ]
   },
   "domain_knowledge": {},
-  "updated_at": "2026-03-11T16:53:40.358528"
+  "updated_at": "2026-03-21T13:42:44.582906"
 }

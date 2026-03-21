@@ -694,19 +694,419 @@
             "intent": "summarize"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-21T13:20:58.548960",
+        "input": {
+          "user_input_length": 712,
+          "history_length": 0
+        },
+        "output": "Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta và rất nóng, có nhiệt độ lên đến 5. 500 độ C. Ánh sáng từ Mặt Trời giúp cây cối phát triển và con người và động vật sống được. Mỗi ngày, Mặt T",
+        "success": true,
+        "execution_time": 45.07207655906677,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 2
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:22:40.288931",
+        "input": {
+          "user_input_length": 805,
+          "history_length": 2
+        },
+        "output": "Nước là thứ rất cần thiết cho sự sống của con người, động vật và thực vật. Mỗi ngày, chúng ta cần uống khoảng 2 lít nước để cơ thể hoạt động tốt. Nước giúp cơ thể tiêu hóa thức ăn, điều hòa nhiệt độ v",
+        "success": true,
+        "execution_time": 29.6187961101532,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 3,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:24:01.559135",
+        "input": {
+          "user_input_length": 727,
+          "history_length": 4
+        },
+        "output": "Cây xanh là những sinh vật kỳ diệu, chúng có thể tự tạo thức ăn từ ánh sáng mặt trời, nước và không khí. Quá trình quang hợp gọi là quang hợp, với lá màu xanh nhờ chất diệp lục giúp hấp thụ ánh sáng.\n",
+        "success": true,
+        "execution_time": 32.4517936706543,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 4,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:25:02.174415",
+        "input": {
+          "user_input_length": 779,
+          "history_length": 6
+        },
+        "output": "Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú là động vật nuôi con bằng sữa, có lông mao bao phủ cơ thể như chó, mèo, voi, cá voi. Nhóm chim có lông vũ và cánh th",
+        "success": true,
+        "execution_time": 26.31723976135254,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 4,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:26:14.373575",
+        "input": {
+          "user_input_length": 818,
+          "history_length": 8
+        },
+        "output": "Hà Nội là thủ đô của nước Cộng hòa xã hội chủ nghĩa Việt Nam, là thành phố lớn thứ hai của Việt Nam chỉ sau Hồ Chí Minh. Hà Nội có lịch sử hơn 1. 000 năm, được vua Lý Thái Tổ đặt tên là Thăng Long, có",
+        "success": true,
+        "execution_time": 25.87245750427246,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 3,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:27:32.145529",
+        "input": {
+          "user_input_length": 874,
+          "history_length": 10
+        },
+        "output": "Sông Mê Kông là con sông dài nhất ở châu Á, bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc và chảy qua sáu quốc gia là Trung Quốc, Myanmar, Lào, Thái Lan, Campuchia. Sông dài khoảng 4. 880 km và được",
+        "success": true,
+        "execution_time": 41.29823088645935,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "long"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:28:47.609048",
+        "input": {
+          "user_input_length": 869,
+          "history_length": 12
+        },
+        "output": "Hai Bà Trưng là hai anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị sinh ra ở huyện Mê Linh, Hà Nội. Năm 40 sau Công nguyên, hai bà đã",
+        "success": true,
+        "execution_time": 28.945167064666748,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 4,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:30:03.280461",
+        "input": {
+          "user_input_length": 834,
+          "history_length": 14
+        },
+        "output": "Gia đình là tổ ấm đầu tiên và quan trọng nhất của mỗi người. Trong gia đình có ông bà, cha mẹ và anh chị em sống cùng nhau. Mỗi người đều có vai trò và trách nhiệm riêng. Ông bà là người lớn tuổi và c",
+        "success": true,
+        "execution_time": 26.566044092178345,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 1,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:32:07.676358",
+        "input": {
+          "user_input_length": 863,
+          "history_length": 16
+        },
+        "output": "Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất của người Việt Nam, thường diễn ra vào cuối tháng Chạp và đầu tháng Giêng âm lịch. Trước Tết, mọi người dọn dẹp và trang trí nhà cửa với hoa đào",
+        "success": true,
+        "execution_time": 28.976080417633057,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 2,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:33:03.748924",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 18
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 26.7964346408844,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:34:11.890307",
+        "input": {
+          "user_input_length": 702,
+          "history_length": 20
+        },
+        "output": "Mặt Trời là ngôi sao ở trung tâm hệ mặt trời của chúng ta. Mặt Trời rất lớn và rất nóng, bề mặt của nó có nhiệt độ lên đến khoảng 5.500 độ C. Mặt Trời tỏa ra ánh sáng và nhiệt giúp cho cây cối phát tr",
+        "success": true,
+        "execution_time": 18.880587577819824,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:35:23.350816",
+        "input": {
+          "user_input_length": 795,
+          "history_length": 22
+        },
+        "output": "Nước tồn tại ở ba dạng khác nhau: dạng lỏng như nước uống, nước sông, nước biển; dạng rắn là nước đá và tuyết; dạng hơi là hơi nước trong không khí. Khi gặp lạnh, hơi nước sẽ ngưng tụ thành nước lỏng,",
+        "success": true,
+        "execution_time": 16.39609122276306,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:36:29.175055",
+        "input": {
+          "user_input_length": 717,
+          "history_length": 24
+        },
+        "output": "Lá cây có màu xanh là vì trong lá có chất diệp lục, chất này giúp cây hấp thụ ánh sáng mặt trời. Rễ cây hút nước và chất khoáng từ đất, sau đó vận chuyển lên lá qua thân cây. Với ánh sáng mặt trời, câ",
+        "success": true,
+        "execution_time": 14.618469715118408,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:37:38.130541",
+        "input": {
+          "user_input_length": 769,
+          "history_length": 26
+        },
+        "output": "Động vật được chia thành nhiều nhóm khác nhau dựa trên đặc điểm của chúng. Nhóm thú hay còn gọi là động vật có vú là những động vật nuôi con bằng sữa, có lông mao bao phủ cơ thể như chó, mèo, voi, cá ",
+        "success": true,
+        "execution_time": 17.18435263633728,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:38:15.541441",
+        "input": {
+          "user_input_length": 808,
+          "history_length": 28
+        },
+        "output": "Năm 1010, vua Lý Thái Tổ dời đô từ Hoa Lư về đây và đặt tên là Thăng Long, có nghĩa là rồng bay lên. Qua nhiều thời kỳ lịch sử, thành phố có nhiều tên gọi khác nhau và đến năm 1831 được đổi tên thành ",
+        "success": true,
+        "execution_time": 19.151856422424316,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:39:41.993469",
+        "input": {
+          "user_input_length": 864,
+          "history_length": 30
+        },
+        "output": "Sông Mê Kông là một trong những con sông dài nhất và quan trọng nhất ở châu Á. Sông bắt nguồn từ cao nguyên Tây Tạng của Trung Quốc, chảy qua sáu quốc gia là Trung Quốc, Myanmar, Lào, Thái Lan, Campuc",
+        "success": true,
+        "execution_time": 16.23954439163208,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:40:29.176075",
+        "input": {
+          "user_input_length": 859,
+          "history_length": 32
+        },
+        "output": "Hai Bà Trưng là hai vị anh hùng dân tộc đầu tiên trong lịch sử Việt Nam, được nhân dân ta kính trọng và tôn thờ. Bà Trưng Trắc và Trưng Nhị là hai chị em sinh ra ở huyện Mê Linh, nay thuộc Hà Nội. Năm",
+        "success": true,
+        "execution_time": 15.76471734046936,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:41:05.158089",
+        "input": {
+          "user_input_length": 824,
+          "history_length": 34
+        },
+        "output": "Ông bà là người nhiều tuổi nhất, có nhiều kinh nghiệm sống và thường kể cho con cháu nghe những câu chuyện hay, dạy bảo những điều tốt đẹp. Anh chị em trong nhà phải yêu thương, giúp đỡ và nhường nhịn",
+        "success": true,
+        "execution_time": 19.18264937400818,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": 5,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:42:10.430492",
+        "input": {
+          "user_input_length": 853,
+          "history_length": 36
+        },
+        "output": "Lễ Tết Nguyên Đán là ngày lễ quan trọng và ý nghĩa nhất trong năm của người Việt Nam. Trước Tết, mọi nhà đều dọn dẹp sạch sẽ, trang trí nhà cửa với hoa đào ở miền Bắc, hoa mai ở miền Nam và câu đối đỏ",
+        "success": true,
+        "execution_time": 17.40449047088623,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:42:43.757547",
+        "input": {
+          "user_input_length": 885,
+          "history_length": 38
+        },
+        "output": "Khói từ các nhà máy và phương tiện giao thông làm ô nhiễm không khí. Việc chặt phá rừng bừa bãi làm mất đi mái nhà của nhiều loài động vật và làm trái đất nóng lên. Mỗi chúng ta có thể làm nhiều việc ",
+        "success": true,
+        "execution_time": 17.89339327812195,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": "extractive",
+            "grade_level": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T13:42:58.806562",
+        "input": {
+          "user_input_length": 2,
+          "history_length": 40
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 9.620587825775146,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2db7ce36-95b6-4502-b91f-c310c815ca2f",
+          "intent": {
+            "summarization_type": null,
+            "grade_level": null,
+            "intent": "unknown"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 48,
-      "successful": 45,
-      "failed": 3,
-      "success_rate": 0.9375,
-      "recent_success_rate": 0.85,
-      "avg_execution_time": 49.64007090032101,
-      "last_used": "2026-03-14T09:16:54.826086"
+      "total_uses": 69,
+      "successful": 65,
+      "failed": 4,
+      "success_rate": 0.9420289855072463,
+      "recent_success_rate": 0.95,
+      "avg_execution_time": 41.69528208953747,
+      "last_used": "2026-03-21T13:42:58.806562"
     }
   },
-  "updated_at": "2026-03-14T09:16:54.826086"
+  "updated_at": "2026-03-21T13:42:58.806562"
 }

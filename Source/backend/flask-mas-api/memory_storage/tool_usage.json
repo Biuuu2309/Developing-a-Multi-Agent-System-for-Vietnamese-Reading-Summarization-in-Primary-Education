@@ -581,19 +581,159 @@
             "grade_level": null
           }
         }
+      },
+      {
+        "timestamp": "2026-03-21T08:43:28.013977",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 60.178306579589844,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T08:45:34.799972",
+        "input": {
+          "user_input_length": 1646,
+          "history_length": 2
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 30.539303302764893,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "short"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T09:18:52.728222",
+        "input": {
+          "user_input_length": 1646,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 56.5653440952301,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "short"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T09:20:49.241486",
+        "input": {
+          "user_input_length": 1645,
+          "history_length": 2
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 35.114726066589355,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T09:22:34.099252",
+        "input": {
+          "user_input_length": 1646,
+          "history_length": 4
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 33.616925954818726,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "short"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T09:28:22.240272",
+        "input": {
+          "user_input_length": 1646,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 54.48405647277832,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "short"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-21T09:29:58.742959",
+        "input": {
+          "user_input_length": 1645,
+          "history_length": 2
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 33.59202480316162,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize",
+            "length_option": "medium"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 30,
-      "successful": 19,
+      "total_uses": 37,
+      "successful": 26,
       "failed": 11,
-      "success_rate": 0.6333333333333333,
-      "recent_success_rate": 0.45,
-      "avg_execution_time": 31.074790438016255,
-      "last_used": "2026-03-19T12:52:06.863657"
+      "success_rate": 0.7027027027027027,
+      "recent_success_rate": 0.6,
+      "avg_execution_time": 33.414443254470825,
+      "last_used": "2026-03-21T09:29:58.742959"
     }
   },
-  "updated_at": "2026-03-19T12:52:06.863657"
+  "updated_at": "2026-03-21T09:29:58.742959"
 }
