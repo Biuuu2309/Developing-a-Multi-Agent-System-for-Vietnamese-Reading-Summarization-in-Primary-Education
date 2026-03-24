@@ -3,6 +3,7 @@ from bert_score import score as bertscore
 from underthesea import word_tokenize
 import torch
 import re
+from pathlib import Path
 
 # ---------------------------
 # Tiền xử lý tiếng Việt
@@ -79,7 +80,95 @@ def evaluate_summary(candidate, reference):
     return results
 
 class EvaluationAgent:
-    
+    _vocab_cache: dict[int, set[str]] = {}
+
+    def _default_vocab_dir(self) -> Path:
+        # Evaluation_Agent.py nằm trong: Source/ai/Multi_Agent_System/Agents/
+        # Vocab nằm tại: Source/datasets/grade_vocab/
+        this_file = Path(__file__).resolve()
+        for parent in this_file.parents:
+            candidate = parent / "Source" / "datasets" / "grade_vocab"
+            if candidate.exists():
+                return candidate
+        # Fallback (nếu không tìm được)
+        return this_file.parent / "grade_vocab"
+
+    def _load_grade_vocab(self, grade: int) -> set[str]:
+        grade = int(grade)
+        if grade in self._vocab_cache:
+            return self._vocab_cache[grade]
+
+        vocab_dir = self._default_vocab_dir()
+        vocab_path = vocab_dir / f"grade_{grade}.txt"
+
+        if not vocab_path.exists():
+            vocab: set[str] = set()
+            self._vocab_cache[grade] = vocab
+            return vocab
+
+        with open(vocab_path, "r", encoding="utf-8") as f:
+            # Mỗi dòng là 1 token trong vocab
+            vocab = {line.strip() for line in f if line.strip()}
+
+        self._vocab_cache[grade] = vocab
+        return vocab
+
+    def grade_vocab_match_ratio(
+        self,
+        summary: str,
+        grade_level: int,
+        *,
+        min_word_char_pattern: str = r"[0-9A-Za-zÀ-ỹ_]",
+    ) -> dict:
+        """
+        ratio = matched_tokens / total_valid_tokens
+        """
+        if not isinstance(summary, str) or not summary.strip():
+            return {
+                "grade_level": grade_level,
+                "vocab_match_ratio": 0.0,
+                "matched_tokens": 0,
+                "total_valid_tokens": 0,
+            }
+
+        vocab = self._load_grade_vocab(grade_level)
+        tokens = preprocess_vi(summary)
+
+        valid_tokens: list[str] = []
+        for tok in tokens:
+            tok_clean = tok.strip().lower()
+            # Loại bỏ ký tự không phải word (giữ '_' và ký tự tiếng Việt)
+            tok_clean = re.sub(
+                r"^[^\wÀ-ỹ]+|[^\wÀ-ỹ]+$",
+                "",
+                tok_clean,
+                flags=re.UNICODE,
+            )
+            if not tok_clean:
+                continue
+            if not re.search(min_word_char_pattern, tok_clean):
+                continue
+            valid_tokens.append(tok_clean)
+
+        total = len(valid_tokens)
+        if total == 0:
+            return {
+                "grade_level": grade_level,
+                "vocab_match_ratio": 0.0,
+                "matched_tokens": 0,
+                "total_valid_tokens": 0,
+            }
+
+        matched = sum(1 for t in valid_tokens if t in vocab)
+        ratio = matched / total
+
+        return {
+            "grade_level": grade_level,
+            "vocab_match_ratio": ratio,
+            "matched_tokens": matched,
+            "total_valid_tokens": total,
+        }
+
     def __init__(self):
         pass
 

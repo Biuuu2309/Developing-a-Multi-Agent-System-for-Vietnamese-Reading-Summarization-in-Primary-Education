@@ -17,6 +17,12 @@ class MASState(TypedDict):
     strategy_changed: Optional[bool]
     improvement_count: Optional[int]
     needs_improvement: Optional[bool]
+    # Retry theo ràng buộc grade_vocab
+    vocab_retry_count: Optional[int]
+    vocab_best_ratio: Optional[float]
+    vocab_best_summary: Optional[str]
+    vocab_best_eval_result: Optional[dict]
+    improvement_reason: Optional[str]
     # Image OCR support
     image_path: Optional[str]
     extracted_text: Optional[str]
@@ -563,6 +569,14 @@ def planning_node(state: MASState):
     
     # Nếu đang trong self-improvement loop
     if needs_improvement and previous_evaluation and previous_plan:
+        # Nếu retry do vi phạm grade_vocab, giữ nguyên plan để chỉ sinh lại tóm tắt
+        if state.get("improvement_reason") == "vocab":
+            return {
+                "plan": previous_plan,
+                "plan_revision_count": state.get("plan_revision_count", 0) + 1,
+                "needs_improvement": False,
+            }
+
         rouge_f1 = previous_evaluation.get("rougeL_f1", 1.0)
         bert_f1 = previous_evaluation.get("bertscore_f1", 1.0)
         
@@ -993,25 +1007,74 @@ def evaluation_node(state: MASState):
                 metrics=step.get("metrics", [])
             )
             
-            # Kiểm tra xem có cần self-improvement không (chỉ cho abstractive)
+            # ==========================================
+            # Grade vocab constraint + retry (max 3)
+            # ==========================================
+            vocab_threshold = 0.8
+            chosen_summary = state["summary"]
+
             needs_improvement = False
             improvement_count = state.get("improvement_count", 0)
-            
-            # Lấy strategy từ plan
+            improvement_reason = None
+
+            # Lấy grade_level và strategy từ plan
+            grade_level = None
             strategy = None
             for plan_step in pipeline:
                 if plan_step.get("step") == "summarize":
+                    grade_level = plan_step.get("grade_level")
                     strategy = plan_step.get("strategy", "abstractive")
                     break
-            
-            # Chỉ self-improve cho abstractive và nếu chưa quá 2 lần
-            if strategy == "abstractive" and improvement_count < 2:
-                rouge_f1 = eval_result.get("rougeL_f1", 1.0)
-                bert_f1 = eval_result.get("bertscore_f1", 1.0)
-                
-                # Điều kiện: f1 < 0.6 và rouge_f1 < 0.3
-                if bert_f1 < 0.6 and rouge_f1 < 0.3:
+
+            if grade_level is None:
+                grade_level = 5
+            if strategy is None:
+                strategy = "abstractive"
+
+            vocab_check = evaluation_agent.grade_vocab_match_ratio(state["summary"], grade_level)
+            vocab_ratio = vocab_check.get("vocab_match_ratio", 0.0)
+
+            eval_result["grade_level"] = grade_level
+            eval_result["vocab_match_ratio"] = vocab_ratio
+            eval_result["vocab_threshold"] = vocab_threshold
+            eval_result["vocab_ok"] = vocab_ratio >= vocab_threshold
+
+            vocab_retry_count = state.get("vocab_retry_count", 0) or 0
+            vocab_best_ratio = state.get("vocab_best_ratio", -1.0) or -1.0
+            vocab_best_summary = state.get("vocab_best_summary") or state["summary"]
+            vocab_best_eval_result = state.get("vocab_best_eval_result")
+
+            if vocab_ratio < vocab_threshold:
+                # Cập nhật bản tóm tắt có % vocab cao nhất
+                if vocab_ratio > vocab_best_ratio or vocab_best_eval_result is None:
+                    vocab_best_ratio = vocab_ratio
+                    vocab_best_summary = state["summary"]
+                    vocab_best_eval_result = eval_result
+
+                vocab_retry_count = vocab_retry_count + 1
+
+                if vocab_retry_count < 3:
                     needs_improvement = True
+                    improvement_reason = "vocab"
+                else:
+                    # Đủ 3 lần mà vẫn dưới 80% -> lấy bản có % lớn nhất
+                    chosen_summary = vocab_best_summary or state["summary"]
+                    eval_result = vocab_best_eval_result or eval_result
+            else:
+                # Nếu đã đạt threshold, vẫn cho phép self-improve theo rouge/bert như cũ
+                if strategy == "abstractive" and improvement_count < 2:
+                    rouge_f1 = eval_result.get("rougeL_f1", 1.0)
+                    bert_f1 = eval_result.get("bertscore_f1", 1.0)
+
+                    # Điều kiện: f1 < 0.6 và rouge_f1 < 0.3
+                    if bert_f1 < 0.6 and rouge_f1 < 0.3:
+                        needs_improvement = True
+
+                # Update best (để trace nếu cần)
+                if vocab_ratio >= vocab_best_ratio:
+                    vocab_best_ratio = vocab_ratio
+                    vocab_best_summary = state["summary"]
+                    vocab_best_eval_result = eval_result
             
             # Advanced MAS: Calculate confidence cho evaluation
             eval_confidence = confidence_manager.calculate_confidence(
@@ -1055,10 +1118,16 @@ def evaluation_node(state: MASState):
             
             return {
                 "evaluation": eval_result,
+                "summary": chosen_summary,
                 "needs_improvement": needs_improvement,
                 "improvement_count": improvement_count + (1 if needs_improvement else 0),
+                "improvement_reason": improvement_reason,
+                "vocab_retry_count": vocab_retry_count,
+                "vocab_best_ratio": vocab_best_ratio,
+                "vocab_best_summary": vocab_best_summary,
+                "vocab_best_eval_result": vocab_best_eval_result,
                 "agent_confidences": current_confidences,
-                "final_output": f"{state['summary']}\n\nĐánh giá:\n{eval_result}" if not needs_improvement else None
+                "final_output": f"{chosen_summary}\n\nĐánh giá:\n{eval_result}" if not needs_improvement else None
             }
 
     return {

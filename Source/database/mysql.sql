@@ -16,7 +16,7 @@ CREATE TABLE users (
 CREATE TABLE summaries (
 	summary_id VARCHAR(255),
     approved_at TIMESTAMP NOT NULL,
-    content MEDIUMTEXT NOT NULL,
+    content MEDIUMTEXT NOT NULL,summaries
     created_at TIMESTAMP NOT NULL,summaries
     grade VARCHAR(255) NOT NULL,
     image_url TEXT,
