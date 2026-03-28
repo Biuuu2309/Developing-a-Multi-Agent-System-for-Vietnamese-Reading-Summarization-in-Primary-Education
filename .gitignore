@@ -18,6 +18,7 @@
 *.log
 *.db
 *.
+*.pt
 # Log file
 *.log
 *.docx

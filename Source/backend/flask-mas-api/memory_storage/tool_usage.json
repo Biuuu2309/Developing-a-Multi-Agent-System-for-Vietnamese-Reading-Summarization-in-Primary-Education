@@ -721,19 +721,58 @@
             "length_option": "medium"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-25T04:25:18.171359",
+        "input": {
+          "user_input_length": 1716,
+          "history_length": 0
+        },
+        "output": "Bộ bàn ghế là đồ vật quen thuộc trong ngôi nhà của mọi gia đình, thường được trưng bày giữa phòng khách và nơi tiếp khách. Nhà em có bộ bàn ghế làm từ gỗ cây xoan đào, rất chắc chắn và đẹp mắt. Nó dài",
+        "success": true,
+        "execution_time": 104.48526906967163,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c5f6616-96d9-4bf3-a955-a95bf21edfa1",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "long"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-25T04:29:26.133313",
+        "input": {
+          "user_input_length": 1731,
+          "history_length": 0
+        },
+        "output": "Chúng ta có thể thấy hình ảnh quen thuộc của một đồ vật mà trong ngôi nhà của bất kì gia đình nào cũng có đó chính là bộ bàn ghế, những bộ bàn ghế được trưng bày ngay giữa gian phòng khách, nơi tiếp k",
+        "success": true,
+        "execution_time": 97.65035367012024,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "5d5ecf23-dba9-4275-bf54-cbc56897ef50",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 37,
-      "successful": 26,
+      "total_uses": 39,
+      "successful": 28,
       "failed": 11,
-      "success_rate": 0.7027027027027027,
-      "recent_success_rate": 0.6,
-      "avg_execution_time": 33.414443254470825,
-      "last_used": "2026-03-21T09:29:58.742959"
+      "success_rate": 0.717948717948718,
+      "recent_success_rate": 0.7,
+      "avg_execution_time": 36.88384674756955,
+      "last_used": "2026-03-25T04:29:26.133313"
     }
   },
-  "updated_at": "2026-03-21T09:29:58.742959"
+  "updated_at": "2026-03-25T04:29:26.133313"
 }

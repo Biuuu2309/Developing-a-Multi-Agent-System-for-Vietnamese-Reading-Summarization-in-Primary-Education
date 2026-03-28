@@ -1094,19 +1094,76 @@
             "intent": "unknown"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-25T03:27:48.662647",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 0
+        },
+        "output": "Lỗi: Không thể tạo tóm tắt. Vui lòng thử lại.",
+        "success": false,
+        "execution_time": 41.015390396118164,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "72692f18-b50f-40d8-9e85-20948654346c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-25T03:32:58.558797",
+        "input": {
+          "user_input_length": 122,
+          "history_length": 2
+        },
+        "output": "Nhạc sĩ Hoàng Long và Hoàng Lân là hai anh em song sinh, sinh ngày 18/06/1942 tại Vĩnh Yên và lớn lên ở Sơn Tây. Từ 14-15 tuổi, hai ông bắt đầu sáng tác âm nhạc và nhiều tác phẩm đã được phát trên Đài",
+        "success": true,
+        "execution_time": 188.5257329940796,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "72692f18-b50f-40d8-9e85-20948654346c",
+          "intent": {
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-25T03:33:28.455859",
+        "input": {
+          "user_input_length": 8,
+          "history_length": 4
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 23.390358448028564,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "72692f18-b50f-40d8-9e85-20948654346c",
+          "intent": {
+            "summarization_type": null,
+            "grade_level": null,
+            "intent": "casual_chat"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 69,
-      "successful": 65,
-      "failed": 4,
-      "success_rate": 0.9420289855072463,
-      "recent_success_rate": 0.95,
-      "avg_execution_time": 41.69528208953747,
-      "last_used": "2026-03-21T13:42:58.806562"
+      "total_uses": 72,
+      "successful": 66,
+      "failed": 6,
+      "success_rate": 0.9166666666666666,
+      "recent_success_rate": 0.85,
+      "avg_execution_time": 43.47091591689322,
+      "last_used": "2026-03-25T03:33:28.455859"
     }
   },
-  "updated_at": "2026-03-21T13:42:58.806562"
+  "updated_at": "2026-03-25T03:33:28.455859"
 }
