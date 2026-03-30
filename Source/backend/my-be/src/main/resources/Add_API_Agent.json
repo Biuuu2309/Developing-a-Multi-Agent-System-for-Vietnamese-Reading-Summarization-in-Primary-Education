@@ -43,10 +43,10 @@
 }
 {
   "name": "Evaluation Agent",
-  "description": "Đánh giá chất lượng tóm tắt bằng ROUGE, BERTScore và feature độ khó văn bản (difficulty level, lexical metrics).",
+  "description": "Đánh giá chất lượng tóm tắt bằng BERTScore (so với văn bản gốc), tỷ lệ từ thuộc từ điển cấp lớp và feature độ khó văn bản (difficulty level, lexical metrics). Không dùng ROUGE vì không có bản tóm tắt tham chiếu (gold).",
   "agentType": "EVALUATION",
   "isActive": true,
-  "capabilities": "{\"tasks\": [\"summary_evaluation\", \"rouge\", \"bertscore\", \"text_difficulty\"]}"
+  "capabilities": "{\"tasks\": [\"summary_evaluation\", \"bertscore\", \"grade_vocab\", \"text_difficulty\"]}"
 }
 {
   "name": "Coordinator Agent",

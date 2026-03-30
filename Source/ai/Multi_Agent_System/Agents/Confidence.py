@@ -1,4 +1,4 @@
-from typing import Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 from datetime import datetime
 import math
 
@@ -46,8 +46,15 @@ class ConfidenceManager:
             # Normalize metrics to 0-1 range
             normalized_metrics = {}
             for key, value in metrics.items():
-                if "f1" in key.lower() or "score" in key.lower():
-                    normalized_metrics[key] = min(max(value, 0.0), 1.0)
+                if "f1" not in key.lower() and "score" not in key.lower():
+                    continue
+                if value is None:
+                    continue
+                try:
+                    v = float(value)
+                except (TypeError, ValueError):
+                    continue
+                normalized_metrics[key] = min(max(v, 0.0), 1.0)
             
             if normalized_metrics:
                 avg_metric = sum(normalized_metrics.values()) / len(normalized_metrics)

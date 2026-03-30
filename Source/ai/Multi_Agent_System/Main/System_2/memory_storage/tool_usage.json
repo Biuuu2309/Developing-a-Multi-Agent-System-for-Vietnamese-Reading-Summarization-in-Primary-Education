@@ -1151,19 +1151,132 @@
             "intent": "casual_chat"
           }
         }
+      },
+      {
+        "timestamp": "2026-03-29T08:22:36.132086",
+        "input": {
+          "user_input_length": 1258,
+          "history_length": 0
+        },
+        "output": "Trong nhiều năm, hai nhạc sĩ tham gia các hoạt động âm nhạc như giảng dạy, sáng tác và nghiên cứu về giáo dục âm nhạc cho học sinh phổ thông. Hai ông sáng tác chung hoặc riêng hàng trăm tác phẩm với c",
+        "success": true,
+        "execution_time": 44.53498125076294,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "8093a680-3181-442a-abee-7214fd9e4fcc",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-29T08:23:04.526782",
+        "input": {
+          "user_input_length": 7,
+          "history_length": 2
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo dạng trích xuất hay diễn giải?",
+        "success": true,
+        "execution_time": 9.66257357597351,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "8093a680-3181-442a-abee-7214fd9e4fcc",
+          "intent": {
+            "summarization_type": null,
+            "intent": "summarize"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-29T09:30:42.917400",
+        "input": {
+          "user_input_length": 7,
+          "history_length": 0
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo lớp mấy? Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 11.741451025009155,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b063a4ed-67a9-44aa-8556-3e9fd1101931",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-29T09:31:26.975977",
+        "input": {
+          "user_input_length": 1258,
+          "history_length": 2
+        },
+        "output": "Trong nhiều năm, hai nhạc sĩ tham gia các hoạt động âm nhạc như giảng dạy, sáng tác và nghiên cứu về giáo dục âm nhạc cho học sinh phổ thông. Hai ông sáng tác chung hoặc riêng hàng trăm tác phẩm với c",
+        "success": true,
+        "execution_time": 25.081056594848633,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b063a4ed-67a9-44aa-8556-3e9fd1101931",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-29T09:52:11.903176",
+        "input": {
+          "user_input_length": 1258,
+          "history_length": 0
+        },
+        "output": "Trong nhiều năm, hai nhạc sĩ tham gia các hoạt động âm nhạc như giảng dạy, sáng tác và nghiên cứu về giáo dục âm nhạc cho học sinh phổ thông. Hai ông sáng tác chung hoặc riêng hàng trăm tác phẩm với c",
+        "success": true,
+        "execution_time": 131.74538111686707,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "0516af8d-1453-4fbf-9b6d-0f6f248c2545",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-29T09:59:10.075531",
+        "input": {
+          "user_input_length": 1258,
+          "history_length": 0
+        },
+        "output": "Trong nhiều năm, hai nhạc sĩ tham gia các hoạt động âm nhạc như giảng dạy, sáng tác và nghiên cứu về giáo dục âm nhạc cho học sinh phổ thông. Hai ông sáng tác chung hoặc riêng hàng trăm tác phẩm với c",
+        "success": true,
+        "execution_time": 38.73000144958496,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "2a1c0872-998b-4e1b-82fb-f4e22ad2c157",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 72,
-      "successful": 66,
+      "total_uses": 78,
+      "successful": 72,
       "failed": 6,
-      "success_rate": 0.9166666666666666,
+      "success_rate": 0.9230769230769231,
       "recent_success_rate": 0.85,
-      "avg_execution_time": 43.47091591689322,
-      "last_used": "2026-03-25T03:33:28.455859"
+      "avg_execution_time": 43.4795050131969,
+      "last_used": "2026-03-29T09:59:10.075531"
     }
   },
-  "updated_at": "2026-03-25T03:33:28.455859"
+  "updated_at": "2026-03-29T09:59:10.075531"
 }

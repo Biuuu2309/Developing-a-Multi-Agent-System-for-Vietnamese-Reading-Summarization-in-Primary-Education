@@ -1,22 +1,23 @@
 # Extractor_Agent.py
 
+import inspect
 import torch
 import torch.nn as nn
 from transformers import AutoTokenizer, AutoModel
 from nltk.tokenize import sent_tokenize
-from typing import Optional
-
-
 # ==========================================
 # MODEL DEFINITION
 # ==========================================
+# Matches Train_Model_TX ver2: Dropout + Linear (keys classifier.1.*)
+
 
 class PhoBERTSUM(nn.Module):
     def __init__(self, encoder):
         super().__init__()
         self.encoder = encoder
-        self.classifier = nn.Linear(
-            encoder.config.hidden_size, 1
+        self.classifier = nn.Sequential(
+            nn.Dropout(0.1),
+            nn.Linear(encoder.config.hidden_size, 1),
         )
 
     def forward(self, input_ids, attention_mask):
@@ -26,6 +27,17 @@ class PhoBERTSUM(nn.Module):
         )
         sent_emb = outputs.last_hidden_state.mean(dim=1)
         return self.classifier(sent_emb)
+
+
+def _align_classifier_state_dict(state):
+    """Map single Linear classifier weights to Sequential(Dropout, Linear)."""
+    if not isinstance(state, dict):
+        return state
+    out = dict(state)
+    if "classifier.weight" in out and "classifier.1.weight" not in out:
+        out["classifier.1.weight"] = out.pop("classifier.weight")
+        out["classifier.1.bias"] = out.pop("classifier.bias")
+    return out
 
 
 # ==========================================
@@ -75,14 +87,34 @@ class ExtractorAgent:
 
         self.model = PhoBERTSUM(encoder).to(self.device)
 
-        checkpoint = torch.load(
-            self.model_path,
-            map_location=self.device
-        )
+        load_kw = {"map_location": self.device}
+        if "weights_only" in inspect.signature(torch.load).parameters:
+            load_kw["weights_only"] = False
+        checkpoint = torch.load(self.model_path, **load_kw)
 
-        self.model.load_state_dict(
-            checkpoint["model_state_dict"]
-        )
+        state = None
+        if isinstance(checkpoint, dict):
+            for key in ("model_state_dict", "model_state", "state_dict"):
+                if key in checkpoint:
+                    state = checkpoint[key]
+                    break
+            if state is None:
+                # raw state dict (tensor keys only)
+                if checkpoint and all(
+                    isinstance(v, torch.Tensor) for v in checkpoint.values()
+                ):
+                    state = checkpoint
+        else:
+            state = checkpoint
+
+        if state is None:
+            raise KeyError(
+                "Checkpoint must contain model_state_dict, model_state, "
+                "state_dict, or be a raw state dict. "
+                f"Got keys: {list(checkpoint.keys()) if isinstance(checkpoint, dict) else type(checkpoint)}"
+            )
+
+        self.model.load_state_dict(_align_classifier_state_dict(state))
 
         self.model.eval()
 

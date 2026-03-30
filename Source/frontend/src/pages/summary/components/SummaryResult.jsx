@@ -122,15 +122,19 @@ export default function SummaryResult({ result, embedded = false }) {
 
     // Important metrics to highlight
     const importantMetrics = {
-      rouge1_f1: evaluationData.rouge1_f1,
-      rougeL_f1: evaluationData.rougeL_f1,
       bertscore_f1: evaluationData.bertscore_f1,
+      vocab_match_ratio: evaluationData.vocab_match_ratio,
+      vocab_ok: evaluationData.vocab_ok,
       difficulty_level: evaluationData.difficulty_level,
     };
 
-    // Other metrics
     const otherMetrics = Object.entries(evaluationData)
-      .filter(([key]) => !['rouge1_f1', 'rougeL_f1', 'bertscore_f1', 'difficulty_level'].includes(key))
+      .filter(([key]) => ![
+        'bertscore_f1', 'bertscore_precision', 'bertscore_recall',
+        'vocab_match_ratio', 'vocab_ok', 'vocab_threshold', 'grade_level',
+        'matched_tokens', 'total_valid_tokens',
+        'difficulty_level',
+      ].includes(key))
       .filter(([, value]) => value !== null && value !== undefined);
 
     return (
@@ -142,28 +146,23 @@ export default function SummaryResult({ result, embedded = false }) {
         
         {/* Important Metrics */}
         <div className="important-metrics">
-          {importantMetrics.rouge1_f1 !== undefined && importantMetrics.rouge1_f1 !== null && (
-            <div className="metric-card important">
-              <div className="metric-label">ROUGE-1 F1</div>
-              <div className="metric-value">{typeof importantMetrics.rouge1_f1 === 'number' 
-                ? (importantMetrics.rouge1_f1 * 100).toFixed(2) + '%' 
-                : importantMetrics.rouge1_f1}</div>
-            </div>
-          )}
-          {importantMetrics.rougeL_f1 !== undefined && importantMetrics.rougeL_f1 !== null && (
-            <div className="metric-card important">
-              <div className="metric-label">ROUGE-L F1</div>
-              <div className="metric-value">{typeof importantMetrics.rougeL_f1 === 'number' 
-                ? (importantMetrics.rougeL_f1 * 100).toFixed(2) + '%' 
-                : importantMetrics.rougeL_f1}</div>
-            </div>
-          )}
           {importantMetrics.bertscore_f1 !== undefined && importantMetrics.bertscore_f1 !== null && (
             <div className="metric-card important">
               <div className="metric-label">BERTScore F1</div>
               <div className="metric-value">{typeof importantMetrics.bertscore_f1 === 'number' 
                 ? (importantMetrics.bertscore_f1 * 100).toFixed(2) + '%' 
                 : importantMetrics.bertscore_f1}</div>
+            </div>
+          )}
+          {importantMetrics.vocab_match_ratio !== undefined && importantMetrics.vocab_match_ratio !== null && (
+            <div className="metric-card important">
+              <div className="metric-label">Từ vựng SGK (cấp lớp)</div>
+              <div className="metric-value">
+                {typeof importantMetrics.vocab_match_ratio === 'number'
+                  ? (importantMetrics.vocab_match_ratio * 100).toFixed(2) + '%'
+                  : importantMetrics.vocab_match_ratio}
+                {importantMetrics.vocab_ok === false && ' (dưới ngưỡng)'}
+              </div>
             </div>
           )}
           {importantMetrics.difficulty_level !== undefined && importantMetrics.difficulty_level !== null && (

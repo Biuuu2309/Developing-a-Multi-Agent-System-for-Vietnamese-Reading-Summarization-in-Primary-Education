@@ -87,7 +87,7 @@ abstracter = AbstracterAgent(
 )
 
 extractor = ExtractorAgent(
-    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_TX\vubert_summary_model.pth"
+    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_TX_ver2\final_best_model.pt"
 )
 
 system1_engine = Orchestrator(
@@ -577,20 +577,14 @@ def planning_node(state: MASState):
                 "needs_improvement": False,
             }
 
-        rouge_f1 = previous_evaluation.get("rougeL_f1", 1.0)
         bert_f1 = previous_evaluation.get("bertscore_f1", 1.0)
-        
-        # Tạo plan cải thiện với các điều chỉnh:
-        # 1. Thử điều chỉnh grade_level (nếu có)
-        # 2. Thêm refine step
-        # 3. Có thể thử strategy khác nếu cần
-        
+
         plan = planning_agent.revise_plan(
             previous_plan,
             {
                 "needs_refinement": True,
                 "improvement_mode": True,
-                "low_scores": {"rouge_f1": rouge_f1, "bert_f1": bert_f1}
+                "low_scores": {"bert_f1": bert_f1}
             },
             previous_evaluation
         )
@@ -613,11 +607,10 @@ def planning_node(state: MASState):
     
     # Nếu có evaluation từ lần trước và score thấp, có thể cần revise plan
     if previous_evaluation and previous_plan:
-        rouge_f1 = previous_evaluation.get("rougeL_f1", 1.0)
         bert_f1 = previous_evaluation.get("bertscore_f1", 1.0)
-        
-        # Nếu score thấp và chưa revise quá nhiều lần
-        if (rouge_f1 < 0.5 or bert_f1 < 0.6) and state.get("plan_revision_count", 0) < 2:
+
+        # BERTScore thấp (không dùng ROUGE — không có gold summary)
+        if bert_f1 < 0.6 and state.get("plan_revision_count", 0) < 2:
             # Revise plan với strategy switching
             plan = planning_agent.revise_plan(
                 previous_plan,
@@ -1061,13 +1054,10 @@ def evaluation_node(state: MASState):
                     chosen_summary = vocab_best_summary or state["summary"]
                     eval_result = vocab_best_eval_result or eval_result
             else:
-                # Nếu đã đạt threshold, vẫn cho phép self-improve theo rouge/bert như cũ
+                # Đã đạt ngưỡng từ điển: self-improve theo BERTScore (so với văn bản gốc)
                 if strategy == "abstractive" and improvement_count < 2:
-                    rouge_f1 = eval_result.get("rougeL_f1", 1.0)
                     bert_f1 = eval_result.get("bertscore_f1", 1.0)
-
-                    # Điều kiện: f1 < 0.6 và rouge_f1 < 0.3
-                    if bert_f1 < 0.6 and rouge_f1 < 0.3:
+                    if bert_f1 < 0.6:
                         needs_improvement = True
 
                 # Update best (để trace nếu cần)

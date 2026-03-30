@@ -75,7 +75,7 @@ Trả về JSON với format:
     "subgoals": ["goal1", "goal2", ...],
     "pipeline": [
         {{"step": "summarize", "strategy": "extractive|abstractive", "grade_level": int, "reasoning": "lý do"}},
-        {{"step": "evaluate", "metrics": ["rouge", "bertscore"], "reasoning": "lý do"}},
+        {{"step": "evaluate", "metrics": ["bertscore"], "reasoning": "lý do"}},
         ...
     ],
     "assumptions": ["assumption1", ...],
@@ -270,10 +270,8 @@ Text characteristics: {text_characteristics}""")
         
         # Tự động trigger meta-reasoning nếu evaluation score thấp
         if not needs_meta_reasoning and evaluation_results:
-            rouge_f1 = evaluation_results.get("rougeL_f1", 1.0)
             bert_f1 = evaluation_results.get("bertscore_f1", 1.0)
-            # Nếu score thấp, tự động dùng meta-reasoning để cải thiện
-            if rouge_f1 < 0.5 or bert_f1 < 0.6:
+            if bert_f1 < 0.6:
                 needs_meta_reasoning = True
         
         if not needs_meta_reasoning:
@@ -379,7 +377,7 @@ Text characteristics: {text_characteristics}""")
             plan["pipeline"].append(
                 {
                     "step": "evaluate",
-                    "metrics": intent_result.get("metrics", ["rouge", "bertscore"]),
+                    "metrics": intent_result.get("metrics", ["bertscore"]),
                     "reasoning": "Đánh giá chất lượng tóm tắt"
                 }
             )
@@ -392,7 +390,7 @@ Text characteristics: {text_characteristics}""")
             "pipeline": [
                 {
                     "step": "evaluate",
-                    "metrics": intent_result.get("metrics", ["rouge"]),
+                    "metrics": intent_result.get("metrics", ["bertscore"]),
                     "reasoning": "Đánh giá chất lượng tóm tắt"
                 }
             ]
@@ -428,19 +426,16 @@ Text characteristics: {text_characteristics}""")
         
         # Nếu evaluation score thấp và không phải improvement mode, có thể thay đổi strategy
         elif evaluation_results:
-            rouge_f1 = evaluation_results.get("rougeL_f1", 0)
             bert_f1 = evaluation_results.get("bertscore_f1", 0)
-            
-            # Nếu score thấp, đề xuất thay đổi strategy
-            if rouge_f1 < 0.4 or bert_f1 < 0.7:
+
+            if bert_f1 < 0.7:
                 for step in revised_plan.get("pipeline", []):
                     if step.get("step") == "summarize":
                         current_strategy = step.get("strategy", "abstractive")
-                        # Đổi strategy
                         new_strategy = "extractive" if current_strategy == "abstractive" else "abstractive"
                         step["strategy"] = new_strategy
                         step["strategy_changed"] = True
-                        step["change_reason"] = f"Score thấp (ROUGE: {rouge_f1:.2f}, BERT: {bert_f1:.2f}), thử strategy {new_strategy}"
+                        step["change_reason"] = f"BERTScore F1 thấp ({bert_f1:.2f}), thử strategy {new_strategy}"
         
         # Thêm step refine nếu cần
         if feedback.get("needs_refinement", False):
