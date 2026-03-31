@@ -760,19 +760,58 @@
             "grade_level": null
           }
         }
+      },
+      {
+        "timestamp": "2026-03-31T03:16:13.872379",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 86.81908512115479,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-03-31T03:25:26.439886",
+        "input": {
+          "user_input_length": 1615,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinkie và cả sáu hộp nước trái",
+        "success": true,
+        "execution_time": 67.2438600063324,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c5f6616-96d9-4bf3-a955-a95bf21edfa1",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": 5
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 39,
-      "successful": 28,
+      "total_uses": 41,
+      "successful": 30,
       "failed": 11,
-      "success_rate": 0.717948717948718,
-      "recent_success_rate": 0.7,
-      "avg_execution_time": 36.88384674756955,
-      "last_used": "2026-03-25T04:29:26.133313"
+      "success_rate": 0.7317073170731707,
+      "recent_success_rate": 0.75,
+      "avg_execution_time": 38.842267519090235,
+      "last_used": "2026-03-31T03:25:26.439886"
     }
   },
-  "updated_at": "2026-03-25T04:29:26.133313"
+  "updated_at": "2026-03-31T03:25:26.439886"
 }

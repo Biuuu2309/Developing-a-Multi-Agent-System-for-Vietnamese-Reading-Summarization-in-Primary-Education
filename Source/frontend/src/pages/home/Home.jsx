@@ -555,16 +555,16 @@ export default function Home() {
                     >
                       <div className="p-2 text-justify" style={{ fontSize: '1rem', margin: '10px' }}>
                         Mô hình thực hiện tóm tắt văn bản bằng cách trích xuất các câu quan trọng từ văn bản gốc dựa trên các tiêu chí như tần suất từ khóa, vị trí câu và đặc trưng ngữ nghĩa, sau đó kết hợp chúng để tạo thành bản tóm tắt. Nội dung được giữ nguyên cấu trúc và cách diễn đạt ban đầu nên hạn chế sai lệch thông tin. Tuy nhiên, do các câu được trích chọn rời rạc, bản tóm tắt có thể thiếu tính liên kết và mạch lạc. <br /><br />
-                        Mô hình được Optuna qua 14 lần tìm kiếm tham số với bộ dữ liệu gồm hơn 10.000 văn bản tiếng Việt đảm bảo tính đa dạng và độ tin cậy. PhoBERT được tinh chỉnh trên hơn 200.000 mẫu câu đã gắn nhãn (hơn 10.000 bài) để phân loại câu quan trọng (nhãn 0/1) cho tóm tắt trích xuất. Dữ liệu được chia 80% huấn luyện, 10% kiểm định, 10% kiểm tra. Siêu tham số tối ưu bằng Optuna: <br />
+                        Mô hình được Optuna qua 20 lần tìm kiếm tham số với bộ dữ liệu gồm hơn 10.000 văn bản tiếng Việt đảm bảo tính đa dạng và độ tin cậy. PhoBERT được tinh chỉnh trên hơn 200.000 mẫu câu đã gắn nhãn (hơn 10.000 bài) để phân loại câu quan trọng (nhãn 0/1) cho tóm tắt trích xuất. Dữ liệu được chia 80% huấn luyện, 10% kiểm định, 10% kiểm tra. Siêu tham số tối ưu bằng Optuna: <br />
                         - learning_rate: 1.8508569223777847e-05 <br />
                         - batch_size: 16 <br />
                         - max_len: 256 <br />
                         - num_epochs: 2 <br />
                         - warmup_ratio: 0.09771605700633802.<br /><br />
-                        Với mẫu kiểm tra, PhoBERT đạt: <br />
-                        - ROUGE-1-F1: 0.5 <br />
-                        - ROUGE-L-F1: 0.41 <br />
-                        - BERTScore-F1: 0.85 <br /> <br />
+                        Với kết quả thực nghiệm, PhoBERT đạt: <br />
+                        - ROUGE-1-F1: 0.8288 <br />
+                        - ROUGE-L-F1: 0.7329 <br />
+                        - BERTScore-F1: 0.8822 <br /> <br />
                         Nhìn chung, mô hình đã đạt được độ chính xác cao, vừa tối ưu về chi phí và thời gian, vừa đảm bảo tính hiệu quả và chất lượng đầu ra.
                       </div>
                     </InteractiveGradient>
@@ -600,7 +600,7 @@ export default function Home() {
                     >
                       <div className="p-2 text-justify" style={{ fontSize: '1rem', margin: '10px' }}>
                         Phương pháp diễn giải tạo bản tóm tắt bằng cách hiểu nội dung tổng thể và diễn đạt lại các ý chính trong một văn bản mới, tương tự cách con người tóm lược. Thường dựa trên các mô hình học sâu, đặc biệt là mô hình ngôn ngữ lớn, phương pháp này cho phép tạo ra nội dung ngắn gọn, mạch lạc và tự nhiên. Tuy nhiên, nếu không được kiểm soát phù hợp, hệ thống có thể phát sinh sai lệch hoặc bổ sung thông tin không có trong văn bản gốc. <br /><br />
-                        Mô hình được Optuna qua 13 lần cho phiên bản 1 và 19 lần cho phiên bản 2, ViT5 được tinh chỉnh trên hơn 20.000 văn bản tóm tắt. Dữ liệu được chia 80% huấn luyện, 10% kiểm định, 10% kiểm tra. Siêu tham số tối ưu bằng Optuna: <br />
+                        Mô hình được Optuna qua 20 lần, ViT5 được tinh chỉnh trên hơn 20.000 văn bản tóm tắt. Dữ liệu được chia 80% huấn luyện, 10% kiểm định, 10% kiểm tra. Siêu tham số tối ưu bằng Optuna: <br />
                         - max_input_len: 768 <br />
                         - max_target_len: 256 <br />
                         - learning_rate: 0.00014854565680664033 <br />
@@ -609,10 +609,11 @@ export default function Home() {
                         - num_train_epochs: 5 <br />
                         - weight_decay: 0.0016483963466136164 <br />
                         - warmup_ratio: 0.1 <br />
-                        Trên mẫu kiểm tra, ViT5 đạt: <br />
-                        - eval_rouge1: 0.847 <br />
-                        - eval_rouge2: 0.607 <br />
-                        - eval_rougeL: 0.603 <br /> <br />
+                        Với kết quả thực nghiệm, ViT5 đạt: <br />
+                        - ROUGE-1-F1: 0.7016 <br />
+                        - ROUGE-2-F1: 0.3397 <br />
+                        - ROUGE-L-F1: 0.3580 <br />
+                        - BERTScore-F1: 0.7594 <br /> <br />
                         Nhìn chung, mô hình đã nắm bắt được hầu hết từ khóa quan trọng từ văn bản gốc. Model sinh văn bản mạch lạc, cấu trúc câu tự nhiên, không bị rời rạc hay lộn xộn
                       </div>
                     </InteractiveGradient>
@@ -738,8 +739,8 @@ export default function Home() {
                     >
                       <div className="p-2 text-justify" style={{ fontSize: '1rem', margin: '10px' }}>
                         Nghiên cứu này đã đề xuất và triển khai một hệ thống tóm tắt văn bản tiếng Việt cho học sinh tiểu học dựa trên kiến trúc đa tác tử kết hợp giữa mô hình học sâu và cơ chế kiểm soát đầu ra theo cấp lớp. Về mặt công nghệ, hệ thống tích hợp các mô hình ngôn ngữ đã được tinh chỉnh cho hai hướng tiếp cận trích xuất và diễn giải, cơ chế tối ưu siêu tham số bằng Optuna, bộ từ điển phân tầng theo khối lớp; phần ứng dụng triển khai dùng BERTScore (so với văn bản gốc) và kiểm tra từ vựng theo cấp lớp (không dùng ROUGE vì không có bản tóm tắt tham chiếu). Kiến trúc triển khai theo hướng phân tách Frontend (React), Backend (Spring Boot) và AI Service độc lập (Flask-based MAS) giúp đảm bảo tính mô-đun và khả năng mở rộng. <br /><br />
-                        Trong thử nghiệm có bản tóm tắt tham chiếu, các chỉ số đánh giá hiệu suất, độ bao phủ của mô hình tóm tắt trích xuất đạt kết quả tốt trên tập test 10 văn bản ngẫu nhiên với ROUGE-1 F1 = 0.744697863, ROUGE-L F1 = 0.744697863, BERTScore F1 = 0.849169618. Kết quả cho thấy mô hình chọn đúng câu trọng tâm và giữ được ngữ nghĩa cốt lõi. <br />
-                        Cùng điều kiện có tham chiếu, mô hình tóm tắt diễn giải đạt ROUGE-1 F1 = 0.586668157, ROUGE-L F1 = 0.56622815, BERTScore F1 = 0.82366181; ứng dụng thực tế bổ sung ràng buộc từ điển theo cấp lớp như mô tả ở trên. <br /><br />
+                        Trong thử nghiệm có bản tóm tắt tham chiếu, các chỉ số đánh giá hiệu suất, độ bao phủ của mô hình tóm tắt trích xuất đạt kết quả tốt trên tập test 10 văn bản ngẫu nhiên với BERTScore Precision = 0.858266068, BERTScore Recall = 0.840338039, BERTScore F1 = 0.849169618. Kết quả cho thấy mô hình chọn đúng câu trọng tâm và giữ được ngữ nghĩa cốt lõi. <br />
+                        Cùng điều kiện có tham chiếu, mô hình tóm tắt diễn giải đạt BERTScore Precision = 0.846551186, BERTScore Recall = 0.802163553, BERTScore F1 = 0.7711; ứng dụng thực tế bổ sung ràng buộc từ điển theo cấp lớp như mô tả ở trên. <br /><br />
                         Về lợi ích, mô hình MAS cho phép phân tách rõ vai trò giữa các tác tử: sinh tóm tắt, đánh giá, phân loại ý định, chuẩn hóa đầu vào và điều phối xử lý. Cách tiếp cận này giúp tăng tính linh hoạt, dễ bảo trì và có thể mở rộng thêm các chức năng như phản hồi học tập hoặc cá nhân hóa nội dung trong tương lai. Ngoài ra, việc xây dựng bộ dữ liệu chuyên biệt cho bậc tiểu học đóng góp một nguồn tài nguyên có giá trị cho nghiên cứu xử lý ngôn ngữ tự nhiên tiếng Việt trong lĩnh vực giáo dục. Tuy nhiên, hệ thống hiện vẫn tồn tại một số hạn chế. Thứ nhất, thời gian sinh tóm tắt chưa được tối ưu trên môi trường thử nghiệm do giới hạn về cấu hình phần cứng. Thứ hai, việc đánh giá chủ yếu dựa trên thang đo tự động; các đánh giá định tính từ giáo viên và học sinh chưa được thực hiện đầy đủ. <br /><br />
                         Nghiên cứu đã xây dựng một hệ thống hỗ trợ tóm tắt văn bản tiếng Việt cho học sinh tiểu học dựa trên kiến trúc đa tác tử, kết hợp hai phương pháp trích xuất và diễn giải. Hệ thống tích hợp các mô hình học sâu đã tinh chỉnh, tối ưu siêu tham số bằng Optuna; đánh giá trên ứng dụng dùng BERTScore và từ điển cấp lớp. Bộ dữ liệu được xây dựng với cơ chế kiểm soát từ vựng theo cấp lớp, giúp bản tóm tắt phù hợp với năng lực đọc hiểu của học sinh lớp 1–5. Kiến trúc hệ thống được triển khai theo mô hình phân tách React (Frontend), Spring Boot (Backend) và AI Service độc lập, đảm bảo tính mô-đun và khả năng mở rộng. Kết quả thực nghiệm cho thấy hệ thống đạt hiệu quả ổn định, cho thấy tiềm năng của kiến trúc đa tác tử trong bài toán tóm tắt văn bản giáo dục tiếng Việt.
                       </div>
