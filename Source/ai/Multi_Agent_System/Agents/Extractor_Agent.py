@@ -8,16 +8,19 @@ from nltk.tokenize import sent_tokenize
 # ==========================================
 # MODEL DEFINITION
 # ==========================================
-# Matches Train_Model_TX ver2: Dropout + Linear (keys classifier.1.*)
+# Matches Train_Model_TX notebook architecture.
 
 
 class PhoBERTSUM(nn.Module):
     def __init__(self, encoder):
         super().__init__()
         self.encoder = encoder
+        hidden = encoder.config.hidden_size
         self.classifier = nn.Sequential(
-            nn.Dropout(0.1),
-            nn.Linear(encoder.config.hidden_size, 1),
+            nn.Linear(hidden, 256),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(256, 1),
         )
 
     def forward(self, input_ids, attention_mask):
@@ -25,18 +28,21 @@ class PhoBERTSUM(nn.Module):
             input_ids=input_ids,
             attention_mask=attention_mask
         )
-        sent_emb = outputs.last_hidden_state.mean(dim=1)
-        return self.classifier(sent_emb)
+        cls_emb = outputs.last_hidden_state[:, 0, :]
+        return self.classifier(cls_emb)
 
 
 def _align_classifier_state_dict(state):
-    """Map single Linear classifier weights to Sequential(Dropout, Linear)."""
+    """Map older classifier layouts to the current notebook layout."""
     if not isinstance(state, dict):
         return state
     out = dict(state)
-    if "classifier.weight" in out and "classifier.1.weight" not in out:
-        out["classifier.1.weight"] = out.pop("classifier.weight")
-        out["classifier.1.bias"] = out.pop("classifier.bias")
+    if "classifier.weight" in out and "classifier.3.weight" not in out:
+        out["classifier.3.weight"] = out.pop("classifier.weight")
+        out["classifier.3.bias"] = out.pop("classifier.bias")
+    if "classifier.1.weight" in out and "classifier.3.weight" not in out:
+        out["classifier.3.weight"] = out.pop("classifier.1.weight")
+        out["classifier.3.bias"] = out.pop("classifier.1.bias")
     return out
 
 
@@ -53,7 +59,7 @@ class ExtractorAgent:
     def __init__(
         self,
         model_path: str,
-        encoder_name: str = "vinai/phobert-base",
+        encoder_name: str = "vinai/phobert-large",
         max_len: int = 128
     ):
 

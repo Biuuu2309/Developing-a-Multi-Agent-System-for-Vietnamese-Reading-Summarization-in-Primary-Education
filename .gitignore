@@ -19,6 +19,8 @@
 *.db
 *.
 *.pt
+*.pptx
+*.sqlite3
 # Log file
 *.log
 *.docx

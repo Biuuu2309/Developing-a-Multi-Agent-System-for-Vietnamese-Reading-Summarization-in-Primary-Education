@@ -1264,19 +1264,38 @@
             "grade_level": null
           }
         }
+      },
+      {
+        "timestamp": "2026-04-01T11:04:00.216746",
+        "input": {
+          "user_input_length": 1258,
+          "history_length": 0
+        },
+        "output": "Năm 14 - 15 tuổi, hai ông bắt đầu sáng tác âm nhạc. Năm 17 tuổi, hai ông đã có nhiều tác phẩm được phát trên Đài Tiếng nói Việt Nam. Trong nhiều năm, hai nhạc sĩ tham gia các hoạt động âm nhạc như giả",
+        "success": true,
+        "execution_time": 54.570921659469604,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "1ff527a9-5958-449f-9292-129fd6610345",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 78,
-      "successful": 72,
+      "total_uses": 79,
+      "successful": 73,
       "failed": 6,
-      "success_rate": 0.9230769230769231,
+      "success_rate": 0.9240506329113924,
       "recent_success_rate": 0.85,
-      "avg_execution_time": 43.4795050131969,
-      "last_used": "2026-03-29T09:59:10.075531"
+      "avg_execution_time": 43.619902692263636,
+      "last_used": "2026-04-01T11:04:00.216746"
     }
   },
-  "updated_at": "2026-03-29T09:59:10.075531"
+  "updated_at": "2026-04-01T11:04:00.217747"
 }

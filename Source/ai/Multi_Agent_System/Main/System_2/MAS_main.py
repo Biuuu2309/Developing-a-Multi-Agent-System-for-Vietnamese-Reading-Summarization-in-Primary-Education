@@ -87,7 +87,7 @@ abstracter = AbstracterAgent(
 )
 
 extractor = ExtractorAgent(
-    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_TX_ver2\final_best_model.pt"
+    model_path=r"E:\Project_NguyenMinhVu_2211110063\Source\ai\Model Train\Model_TX_ver3\final_best_model.pt"
 )
 
 system1_engine = Orchestrator(
