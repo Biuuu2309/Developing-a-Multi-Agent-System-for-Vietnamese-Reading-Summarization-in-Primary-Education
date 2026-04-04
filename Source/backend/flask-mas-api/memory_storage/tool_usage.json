@@ -799,19 +799,173 @@
             "grade_level": 5
           }
         }
+      },
+      {
+        "timestamp": "2026-04-03T09:04:58.978893",
+        "input": {
+          "user_input_length": 1145,
+          "history_length": 0
+        },
+        "output": "Thượng đế cảm thấy rất bi thương, lần này, ngài nói: \"Nếu ta cho cậu một trăm tỷ thì sao?\". Thượng đế lấy làm vui mừng. Lúc này, kẻ ăn xin bổ sung một câu: \"Tới lúc đó, tôi có thể đuổi hết những tên ă",
+        "success": true,
+        "execution_time": 70.67560601234436,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c5f6616-96d9-4bf3-a955-a95bf21edfa1",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "extractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T09:08:10.253441",
+        "input": {
+          "user_input_length": 19,
+          "history_length": 0
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo lớp mấy? Vui lòng cung cấp văn bản cần tóm tắt.",
+        "success": true,
+        "execution_time": 9.907925844192505,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "21ea52e1-5219-418c-b0eb-3af84329fbe6",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T09:09:29.454494",
+        "input": {
+          "user_input_length": 1614,
+          "history_length": 2
+        },
+        "output": "Bạn muốn tóm tắt văn bản theo dạng trích xuất hay diễn giải?",
+        "success": true,
+        "execution_time": 19.55476474761963,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "21ea52e1-5219-418c-b0eb-3af84329fbe6",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": null,
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T09:12:16.025486",
+        "input": {
+          "user_input_length": 9,
+          "history_length": 4
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang ngắm chim bồ câu. Cậu bé ngồi c",
+        "success": true,
+        "execution_time": 160.40807628631592,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "21ea52e1-5219-418c-b0eb-3af84329fbe6",
+          "intent": {
+            "grade_level": 5,
+            "intent": "summarize",
+            "summarization_type": "abstractive"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T09:14:31.341575",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 119.17379713058472,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "27d35fc6-558a-4a2b-854a-6f984b3d2af8",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T09:18:15.468728",
+        "input": {
+          "user_input_length": 1720,
+          "history_length": 2
+        },
+        "output": "Cậu bé thấy vậy bảo làng giết thịt trâu và đồ hai thúng gạo nếp ăn còn mình cùng cha lên kinh đô gặp vua. Lúc bấy giờ, nước láng giềng muốn xâm lược nước ta, để dò xét họ liền sai sứ giả mang một cái ",
+        "success": true,
+        "execution_time": 59.31095266342163,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c5f6616-96d9-4bf3-a955-a95bf21edfa1",
+          "intent": {
+            "summarization_type": "extractive",
+            "intent": "summarize",
+            "grade_level": null
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T09:20:59.752160",
+        "input": {
+          "user_input_length": 1615,
+          "history_length": 4
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế. Cậu biết rằng phải đi cả một quãng đường rất dài mới có thể đến được nơi ở của Người, nên gói ghém mang theo bên mình những chiếc bánh Twinkie và cả sáu hộp nước trái",
+        "success": true,
+        "execution_time": 56.85182189941406,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c5f6616-96d9-4bf3-a955-a95bf21edfa1",
+          "intent": {
+            "summarization_type": "extractive",
+            "intent": "summarize",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-03T13:16:45.005855",
+        "input": {
+          "user_input_length": 1620,
+          "history_length": 0
+        },
+        "output": "Có một cậu bé muốn gặp Thượng Đế, nên cậu mang theo bánh Twinkie và nước trái cây để bắt đầu hành trình. Trên đường đi, cậu gặp một bà lão ngồi trong công viên, bà đang nhìn đàn chim. Cậu bé ngồi cạnh",
+        "success": true,
+        "execution_time": 101.80469942092896,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "7c5f6616-96d9-4bf3-a955-a95bf21edfa1",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 41,
-      "successful": 30,
+      "total_uses": 49,
+      "successful": 38,
       "failed": 11,
-      "success_rate": 0.7317073170731707,
-      "recent_success_rate": 0.75,
-      "avg_execution_time": 38.842267519090235,
-      "last_used": "2026-03-31T03:25:26.439886"
+      "success_rate": 0.7755102040816326,
+      "recent_success_rate": 0.95,
+      "avg_execution_time": 44.69837984260248,
+      "last_used": "2026-04-03T13:16:45.005855"
     }
   },
-  "updated_at": "2026-03-31T03:25:26.439886"
+  "updated_at": "2026-04-03T13:16:45.005855"
 }
