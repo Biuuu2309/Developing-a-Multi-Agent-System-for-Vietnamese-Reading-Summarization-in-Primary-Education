@@ -27,7 +27,7 @@ Dự án xây dựng ứng dụng hỗ trợ **tóm tắt văn bản tiếng Vi�
 | Backend | Spring Boot 3.4, Java 21, Spring Data JPA, MySQL |
 | MAS bridge | Flask (`Source/backend/flask-mas-api`) |
 | MAS lõi | Python, LangGraph, các agent (Intent, Clarification, Planning, Image2Text, Abstracter, Extractor, Evaluation, …) |
-| Xử lý ngôn ngữ | VnCoreNLP, mô hình tóm tắt (ViT5 / trích xuất theo cấu hình dự án), OCR (ví dụ Qwen2.5-VL qua Ollama — theo cấu hình trong mã) |
+| Xử lý ngôn ngữ | VnCoreNLP, mô hình tóm tắt (ViT5 / PhoBERT), OCR (ví dụ Qwen2.5-VL qua Ollama — theo cấu hình trong mã) |
 | CSDL | MySQL (schema tham khảo: `Source/database/mysql.sql`) |
 
 ## Cấu trúc thư mục (rút gọn)
