@@ -111,6 +111,6 @@ Chi tiết request/response Flask: xem `Source/backend/flask-mas-api/README.md`.
 ## Giấy phép / ghi chú
 
 - Mã nguồn phục vụ mục đích học thuật / khóa luận. Thành phần bên thứ ba (thư viện, mô hình) tuân theo giấy phép tương ứng của từng gói.
-- Dự án không công khai toàn bộ, nếu bạn có nhu cầu tham khảo, cảm phiền hãy vào mục `Report` hoặc `\Source\`.
+- Dự án không công khai toàn bộ, nếu bạn có nhu cầu tham khảo, cảm phiền hãy vào mục `\Report` hoặc `\Source\ai\Multi_Agent_System\Main\MAS.ipynb`.
 ---
 
