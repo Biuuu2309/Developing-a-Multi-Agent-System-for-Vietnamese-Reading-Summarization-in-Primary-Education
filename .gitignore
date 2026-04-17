@@ -21,6 +21,8 @@
 *.pt
 *.pptx
 *.sqlite3
+*.pyc
+*.cpython-*.pyc
 # Log file
 *.log
 *.docx
