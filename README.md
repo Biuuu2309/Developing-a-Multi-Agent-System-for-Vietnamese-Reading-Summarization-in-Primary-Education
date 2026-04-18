@@ -1,12 +1,10 @@
 # Hệ thống tóm tắt bài đọc Tiểu học (Multi-Agent System)
 
 Dự án xây dựng ứng dụng hỗ trợ **tóm tắt văn bản tiếng Việt** theo **trình độ lớp**, kết hợp **hệ đa tác tử (MAS)** điều phối các bước: nhận diện ý định, làm rõ yêu cầu, lập kế hoạch, OCR (khi có ảnh), tóm tắt trích xuất/diễn giải và đánh giá chất lượng — có thể lặp cải thiện kết quả.
-
+Dự án không công khai toàn bộ, nếu bạn có nhu cầu tham khảo, cảm phiền hãy vào mục `\Report` hoặc `\Source\ai\Multi_Agent_System\Main\MAS.ipynb`.
 ## Tác giả
 
 - **Sinh viên:** Nguyễn Minh Vũ — MSSV: `2211110063`
-
-Dự án không công khai toàn bộ, nếu bạn có nhu cầu tham khảo, cảm phiền hãy vào mục `\Report` hoặc `\Source\ai\Multi_Agent_System\Main\MAS.ipynb`.
 ## Kiến trúc tổng quan
 
 ```
