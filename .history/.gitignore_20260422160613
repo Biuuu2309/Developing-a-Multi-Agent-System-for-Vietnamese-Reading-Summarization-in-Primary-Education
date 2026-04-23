@@ -18,12 +18,17 @@
 *.log
 *.db
 *.
+*.pt
+*.pptx
+*.sqlite3
+*.pyc
+*.cpython-*.pyc
 # Log file
 *.log
 *.docx
 # BlueJ files
 *.ctxt
-*.pdf
+*.py
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
