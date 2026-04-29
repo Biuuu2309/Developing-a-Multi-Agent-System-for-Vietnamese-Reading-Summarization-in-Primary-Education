@@ -1283,19 +1283,624 @@
             "grade_level": null
           }
         }
+      },
+      {
+        "timestamp": "2026-04-29T15:45:41.893119",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 128.31136846542358,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6d0104a4-1831-4a99-8cd4-cd4ba26f2fb4",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T15:49:20.304475",
+        "input": {
+          "user_input_length": 35,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm t",
+        "success": true,
+        "execution_time": 90.68542718887329,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6d0104a4-1831-4a99-8cd4-cd4ba26f2fb4",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T15:51:23.775791",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 4
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm t",
+        "success": true,
+        "execution_time": 0.0019986629486083984,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6d0104a4-1831-4a99-8cd4-cd4ba26f2fb4",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T15:51:41.078790",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 6
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm t",
+        "success": true,
+        "execution_time": 0.0010018348693847656,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "6d0104a4-1831-4a99-8cd4-cd4ba26f2fb4",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T16:33:47.584766",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 57.78909516334534,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "d6ed0d4a-1bb4-43b2-96ff-4d65d51da950",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T16:36:00.621760",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm t",
+        "success": true,
+        "execution_time": 94.15441131591797,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "d6ed0d4a-1bb4-43b2-96ff-4d65d51da950",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T16:37:48.379629",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 4
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm t",
+        "success": true,
+        "execution_time": 52.70828413963318,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "d6ed0d4a-1bb4-43b2-96ff-4d65d51da950",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T16:57:27.978019",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 138.5452253818512,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "8252ee6a-c0ba-489e-9de9-948a9f7cbd14",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T16:57:45.590040",
+        "input": {
+          "user_input_length": 32,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.003994464874267578,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "8252ee6a-c0ba-489e-9de9-948a9f7cbd14",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:19:31.760470",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 103.05805659294128,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "f43303ce-d307-4bf8-93e9-86e267563090",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:19:47.935656",
+        "input": {
+          "user_input_length": 32,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.0020148754119873047,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "f43303ce-d307-4bf8-93e9-86e267563090",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:20:03.506087",
+        "input": {
+          "user_input_length": 0,
+          "history_length": 4
+        },
+        "output": "Lỗi: Không tìm thấy bước tóm tắt trong kế hoạch.",
+        "success": false,
+        "execution_time": 6.3217103481292725,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "f43303ce-d307-4bf8-93e9-86e267563090",
+          "intent": {
+            "summarization_type": null,
+            "grade_level": null,
+            "intent": "unknown"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:30:12.281967",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 249.65703082084656,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "cc4fb88d-afa8-4c15-b8ed-783e5c7fd12b",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:30:24.655600",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.001996755599975586,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "cc4fb88d-afa8-4c15-b8ed-783e5c7fd12b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:33:59.781112",
+        "input": {
+          "user_input_length": 32,
+          "history_length": 4
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm m",
+        "success": true,
+        "execution_time": 112.16634678840637,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "cc4fb88d-afa8-4c15-b8ed-783e5c7fd12b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T17:39:33.995102",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 6
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá khu rừng cũng đ",
+        "success": true,
+        "execution_time": 272.1355257034302,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "cc4fb88d-afa8-4c15-b8ed-783e5c7fd12b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:23:30.988648",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 148.87914562225342,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b73a27f8-c286-44b0-b4cb-0d37e6e6f79b",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:23:53.612319",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.0020062923431396484,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b73a27f8-c286-44b0-b4cb-0d37e6e6f79b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:25:21.097138",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 4
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm m",
+        "success": true,
+        "execution_time": 69.31530427932739,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b73a27f8-c286-44b0-b4cb-0d37e6e6f79b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:25:35.496941",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 6
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.0029997825622558594,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b73a27f8-c286-44b0-b4cb-0d37e6e6f79b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:25:44.644231",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 8
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.003000020980834961,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "b73a27f8-c286-44b0-b4cb-0d37e6e6f79b",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:37:20.748603",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 173.06435537338257,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "0f1c4c62-d863-413c-a144-75dbadb68017",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:37:37.915871",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.009905099868774414,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "0f1c4c62-d863-413c-a144-75dbadb68017",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:38:54.621568",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 4
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm m",
+        "success": true,
+        "execution_time": 53.14332866668701,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "0f1c4c62-d863-413c-a144-75dbadb68017",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:39:41.355646",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 6
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.0020253658294677734,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "0f1c4c62-d863-413c-a144-75dbadb68017",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:49:01.605709",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 126.65287899971008,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "e88ac389-a049-4dde-973e-db2277e8a24e",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T18:49:38.615191",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 0.0020029544830322266,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "e88ac389-a049-4dde-973e-db2277e8a24e",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T19:04:34.902977",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng ",
+        "success": true,
+        "execution_time": 152.69345593452454,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "57810e4a-e7e5-4390-89b0-f39ef325fb27",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T19:06:58.791685",
+        "input": {
+          "user_input_length": 23,
+          "history_length": 2
+        },
+        "output": "Bảo vệ vật chất xung quanh là nghĩa vụ của mỗi người, ngay cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều điều kiện như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng",
+        "success": true,
+        "execution_time": 83.83776497840881,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "57810e4a-e7e5-4390-89b0-f39ef325fb27",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T19:08:35.469977",
+        "input": {
+          "user_input_length": 19,
+          "history_length": 4
+        },
+        "output": "Bảo vệ vật chất xung quanh là trách nhiệm của mỗi người, . Môi trường xung quanh chúng ta đang bị ô nhiễm rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật v",
+        "success": true,
+        "execution_time": 84.77425003051758,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "57810e4a-e7e5-4390-89b0-f39ef325fb27",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T19:13:00.121236",
+        "input": {
+          "user_input_length": 895,
+          "history_length": 0
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá ",
+        "success": true,
+        "execution_time": 123.02728033065796,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "dc21f175-60cf-4b0c-a6cc-d92fa372d3c0",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T19:14:01.889689",
+        "input": {
+          "user_input_length": 19,
+          "history_length": 2
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm m",
+        "success": true,
+        "execution_time": 50.659611225128174,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "dc21f175-60cf-4b0c-a6cc-d92fa372d3c0",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-29T19:15:53.203912",
+        "input": {
+          "user_input_length": 19,
+          "history_length": 4
+        },
+        "output": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá khu rừng cũng l",
+        "success": true,
+        "execution_time": 78.41638326644897,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "dc21f175-60cf-4b0c-a6cc-d92fa372d3c0",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 79,
-      "successful": 73,
-      "failed": 6,
-      "success_rate": 0.9240506329113924,
-      "recent_success_rate": 0.85,
-      "avg_execution_time": 43.619902692263636,
-      "last_used": "2026-04-01T11:04:00.216746"
+      "total_uses": 112,
+      "successful": 105,
+      "failed": 7,
+      "success_rate": 0.9375,
+      "recent_success_rate": 1.0,
+      "avg_execution_time": 52.64287053048611,
+      "last_used": "2026-04-29T19:15:53.203912"
     }
   },
-  "updated_at": "2026-04-01T11:04:00.217747"
+  "updated_at": "2026-04-29T19:15:53.203912"
 }

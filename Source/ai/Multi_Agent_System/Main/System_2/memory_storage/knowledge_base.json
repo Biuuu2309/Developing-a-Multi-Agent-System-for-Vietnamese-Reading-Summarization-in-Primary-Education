@@ -581,6 +581,13 @@
         "confidence": 0.3,
         "timestamp": "2026-03-21T13:42:44.580888",
         "metadata": {}
+      },
+      {
+        "fact": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân ",
+        "source": "conversation_default_user",
+        "confidence": 0.3,
+        "timestamp": "2026-04-29T18:25:44.828447",
+        "metadata": {}
       }
     ]
   },
@@ -782,5 +789,5 @@
     ]
   },
   "domain_knowledge": {},
-  "updated_at": "2026-03-21T13:42:44.582906"
+  "updated_at": "2026-04-29T18:25:44.828447"
 }

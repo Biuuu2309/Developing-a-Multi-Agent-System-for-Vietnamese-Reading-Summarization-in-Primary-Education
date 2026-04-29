@@ -1305,6 +1305,64 @@
       ],
       "message_count": 40,
       "metadata": {}
+    },
+    {
+      "session_id": "b73a27f8-c286-44b0-b4cb-0d37e6e6f79b",
+      "timestamp": "2026-04-29T18:25:44.648227",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hãy tóm tắt diễn giải theo lớp 5 văn bản sau: Bảo vệ môi trường là trách nhiệm của mỗi người chúng ta, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang ngày càng bị ô nhiễm do nhiều nguyên nhân khác nhau. Rác thải bị vứt bừa bãi ra đường phố, xuống sông hồ làm ô nhiễm nguồn nước và đất đai. Khói từ các nhà máy và phương tiện giao thông làm ô nhiễm không khí. Việc chặt phá rừng bừa bãi làm mất đi mái nhà của nhiều loài động vật và làm trái đất nóng lên. Mỗi chúng ta có thể làm nhiều việc nhỏ để bảo vệ môi trường như không vứt rác bừa bãi mà bỏ vào thùng rác, tiết kiệm điện và nước, trồng cây xanh quanh nhà và trường học, sử dụng túi vải thay vì túi nilon khó phân hủy. Ở trường, chúng ta có thể tham gia các buổi dọn vệ sinh sân trường và khu phố. Hãy nhớ rằng mỗi hành động nhỏ của chúng ta góp phần tạo nên sự thay đổi lớn cho môi trường sống của chúng ta và các thế hệ tương lai.",
+          "timestamp": "cf70ae78-6207-4eb3-8a72-220a558fd3dc"
+        },
+        {
+          "role": "assistant",
+          "content": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm trái đất nóng lên. Chúng ta có thể làm nhiều việc nhỏ như không vứt rác bừa bãi, tiết kiệm điện và nước.\n\nĐánh giá:\n{'bertscore_precision': 0.8236552476882935, 'bertscore_recall': 0.7910299897193909, 'bertscore_f1': 0.8070129752159119, 'comment': 'Mức độ tương đồng ngữ nghĩa với văn bản gốc rất cao.', 'difficulty_level': 'Grade 3', 'total_words': 154, 'unique_words': 103, 'type_token_ratio': 0.6688311688311688, 'rare_word_ratio': 0.0, 'unknown_word_ratio': 0.0, 'avg_word_grade': 0.0, 'num_sentences': 8, 'avg_sentence_length': 18.25, 'max_sentence_length': 41, 'min_sentence_length': 10, 'long_sentence_ratio': 0.5, 'avg_word_length': 4.6103896103896105, 'words_per_sentence': 19.25, 'lexical_density': 0.6688311688311688, 'matched_rules': 'grade3_intermediate_text', 'grade_level': 5, 'vocab_match_ratio': 0.7517482517482518, 'vocab_threshold': 0.8, 'vocab_ok': False}",
+          "timestamp": "374de1ba-0597-481e-9208-9f3987775d2b"
+        },
+        {
+          "role": "user",
+          "content": "Tăng độ khó bản tóm tắt vừa rồi",
+          "timestamp": "35ecd7a2-f6a7-4f1d-851d-e5820fb3e09d"
+        },
+        {
+          "role": "assistant",
+          "content": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm trái đất nóng lên. Chúng ta có thể làm nhiều việc nhỏ như không vứt rác bừa bãi, tiết kiệm điện và nước.",
+          "timestamp": "00072bab-ba15-4ae2-8d4e-987d8ea1b580"
+        },
+        {
+          "role": "user",
+          "content": "Giảm độ khó bản tóm tắt vừa rồi",
+          "timestamp": "71185f69-66ab-4753-b669-5e3f45c78eed"
+        },
+        {
+          "role": "assistant",
+          "content": "Bảo vệ môi trường là trách nhiệm, kể cả các em nhỏ. Môi trường xung quanh chúng ta đang có ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm trái đất nóng lên. Chúng ta có thể làm nhiều việc nhỏ như không vứt rác bừa bãi, tiết kiệm điện và nước.",
+          "timestamp": "13767544-72c4-46d3-8250-8b4d99ef5614"
+        },
+        {
+          "role": "user",
+          "content": "Tăng độ khó bản tóm tắt vừa rồi",
+          "timestamp": "9b628ae0-4e10-4555-80d4-b3c4e02502ed"
+        },
+        {
+          "role": "assistant",
+          "content": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm trái đất nóng lên. Chúng ta có thể làm nhiều việc nhỏ như không vứt rác bừa bãi, tiết kiệm điện và nước.",
+          "timestamp": "2920a313-1a30-480e-976e-f8f7304569e0"
+        },
+        {
+          "role": "user",
+          "content": "Tăng độ khó bản tóm tắt vừa rồi",
+          "timestamp": "2cb5714c-e589-43f9-8abc-2449362f587f"
+        },
+        {
+          "role": "assistant",
+          "content": "Bảo vệ môi trường là trách nhiệm của mỗi người, kể cả các bạn nhỏ. Môi trường xung quanh chúng ta đang bị ô nhiễm do nhiều nguyên nhân khác nhau như rác thải, ô nhiễm nguồn nước và đất. Việc chặt phá rừng cũng làm mất đi mái nhà của động vật và làm trái đất nóng lên. Chúng ta có thể làm nhiều việc nhỏ như không vứt rác bừa bãi, tiết kiệm điện và nước.",
+          "timestamp": "079e9c7c-4706-4d9b-8e86-2e7f32f6dd99"
+        }
+      ],
+      "message_count": 10,
+      "metadata": {}
     }
   ]
 }
