@@ -61,6 +61,19 @@ CREATE TABLE read_history (
     FOREIGN KEY (summary_id) REFERENCES summaries(summary_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+CREATE TABLE summary_difficulty_adjustments (
+    id BIGINT AUTO_INCREMENT,
+    summary_id VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(255) NOT NULL,
+    content_summary MEDIUMTEXT NOT NULL,
+    summary_increase MEDIUMTEXT,
+    summary_decrease MEDIUMTEXT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (summary_id) REFERENCES summaries(summary_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (created_by) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
 CREATE TABLE conversations (
 	conversation_id VARCHAR(255),
     user_id VARCHAR(255),

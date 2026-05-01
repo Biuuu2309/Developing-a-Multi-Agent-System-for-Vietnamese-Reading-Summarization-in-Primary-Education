@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,15 +21,13 @@ import com.example.my_be.dto.MasSessionRequest;
 import com.example.my_be.dto.MasSessionResponse;
 import com.example.my_be.dto.MasStateRequest;
 import com.example.my_be.dto.MasStateResponse;
+import com.example.my_be.dto.SummaryDifficultyAdjustmentDTO;
 import com.example.my_be.model.Agent;
 import com.example.my_be.model.Agent.AgentType;
 import com.example.my_be.model.Message;
 import com.example.my_be.model.Message.MessageRole;
 import com.example.my_be.model.Message.MessageStatus;
 import com.example.my_be.repository.MessageRepository;
-import com.example.my_be.service.AgentService;
-import com.example.my_be.service.SummaryService;
-import com.example.my_be.service.UserService;
 import com.example.my_be.model.Summary;
 import com.example.my_be.model.User;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -73,6 +70,9 @@ public class MasSystemService {
 
     @Autowired
     private SummaryService summaryService;
+
+    @Autowired
+    private SummaryDifficultyAdjustmentService summaryDifficultyAdjustmentService;
 
     @Autowired
     private UserService userService;
@@ -232,7 +232,7 @@ public class MasSystemService {
                 "summarization"
             );
 
-            // Tạo bản ghi summaries cho người dùng nếu đã có summary cuối cùng (không cần clarification)
+            // Tạo bản ghi summaries cho người dùng nếu intent là summarize (không cần clarification)
             Summary createdSummary = null;
             if (!clarificationNeeded) {
                 createdSummary = createSummaryFromMas(request, responseJson);
@@ -242,6 +242,11 @@ public class MasSystemService {
                     response.setImageUrl(createdSummary.getImageUrl());
                     response.setSummaryImageUrl(createdSummary.getSummaryImageUrl());
                 }
+            }
+
+            // Nếu user yêu cầu tăng/giảm độ khó thì lưu vào bảng summary_difficulty_adjustments
+            if (!clarificationNeeded) {
+                saveDifficultyAdjustmentIfRequested(request, responseJson, response);
             }
 
             // Ghi AgentLog cơ bản dựa trên thông tin MAS trả về
@@ -332,6 +337,12 @@ public class MasSystemService {
 
     private Summary createSummaryFromMas(MasChatRequest request, JsonNode responseJson) {
         try {
+            JsonNode intentNode = parseIntentNode(responseJson);
+            String intentType = intentNode.path("intent").asText("");
+            if (!"summarize".equalsIgnoreCase(intentType)) {
+                return null;
+            }
+
             // Lấy user tạo summary
             String userId = request.getUserId();
             if (userId == null || userId.isEmpty()) {
@@ -359,12 +370,12 @@ public class MasSystemService {
             String method = null;
             try {
                 if (intentRaw != null && !intentRaw.isEmpty()) {
-                    JsonNode intentNode = objectMapper.readTree(intentRaw);
-                    int gradeLevel = intentNode.path("grade_level").asInt(0);
+                    JsonNode parsedIntentNode = objectMapper.readTree(intentRaw);
+                    int gradeLevel = parsedIntentNode.path("grade_level").asInt(0);
                     if (gradeLevel > 0) {
                         grade = String.valueOf(gradeLevel);
                     }
-                    String summarizationType = intentNode.path("summarization_type").asText("abstractive");
+                    String summarizationType = parsedIntentNode.path("summarization_type").asText("abstractive");
                     if ("extractive".equalsIgnoreCase(summarizationType)) {
                         method = "extractive";          // Extractive (PhoBERTSUM)
                     } else {
@@ -423,6 +434,59 @@ public class MasSystemService {
         }
     }
 
+    private JsonNode parseIntentNode(JsonNode responseJson) {
+        try {
+            JsonNode intentRaw = responseJson.path("intent");
+            if (intentRaw.isTextual()) {
+                return objectMapper.readTree(intentRaw.asText());
+            }
+            if (intentRaw.isObject()) {
+                return intentRaw;
+            }
+        } catch (Exception e) {
+            System.err.println("[WARN] Failed to parse intent node: " + e.getMessage());
+        }
+        return objectMapper.createObjectNode();
+    }
+
+    private void saveDifficultyAdjustmentIfRequested(MasChatRequest request, JsonNode responseJson, MasChatResponse response) {
+        try {
+            JsonNode intentNode = parseIntentNode(responseJson);
+            String intentType = intentNode.path("intent").asText("");
+            if (!"adjust_difficulty".equalsIgnoreCase(intentType)) {
+                return;
+            }
+
+            String action = intentNode.path("difficulty_action").asText("");
+            String adjustedText = response.getFinalOutput();
+            if (adjustedText == null || adjustedText.isBlank()) {
+                return;
+            }
+
+            Optional<Summary> latestSummaryOpt = summaryService.getLatestSummaryByUserId(request.getUserId());
+            if (latestSummaryOpt.isEmpty()) {
+                System.err.println("[WARN] No latest summary found to save difficulty adjustment.");
+                return;
+            }
+
+            Summary latestSummary = latestSummaryOpt.get();
+            SummaryDifficultyAdjustmentDTO dto = new SummaryDifficultyAdjustmentDTO();
+            dto.setSummaryId(latestSummary.getSummaryId());
+            dto.setCreatedByUserId(request.getUserId());
+            dto.setContentSummary(latestSummary.getSummaryContent());
+            if ("increase".equalsIgnoreCase(action)) {
+                dto.setSummaryIncrease(adjustedText);
+            } else if ("decrease".equalsIgnoreCase(action)) {
+                dto.setSummaryDecrease(adjustedText);
+            } else {
+                return;
+            }
+            summaryDifficultyAdjustmentService.create(dto);
+        } catch (Exception e) {
+            System.err.println("[WARN] Failed to save difficulty adjustment: " + e.getMessage());
+        }
+    }
+
     /**
      * Đếm số câu trong văn bản tiếng Việt
      */
@@ -433,9 +497,6 @@ public class MasSystemService {
         
         String trimmed = text.trim();
         // Pattern để tách câu: kết thúc bằng . ! ? và có khoảng trắng sau, hoặc ở cuối text
-        Pattern sentencePattern = Pattern.compile("[.!?]+(\\s+|$)");
-        String[] parts = sentencePattern.split(trimmed);
-        
         // Đếm số dấu câu trong text
         int punctuationCount = 0;
         for (int i = 0; i < trimmed.length(); i++) {

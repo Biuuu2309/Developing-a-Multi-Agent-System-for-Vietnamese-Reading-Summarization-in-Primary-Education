@@ -176,4 +176,8 @@ public class SummaryService {
         return summaryRepository.findByMethod(method).stream()
             .collect(Collectors.toList());
     }
+
+    public Optional<Summary> getLatestSummaryByUserId(String userId) {
+        return summaryRepository.findFirstByCreatedBy_UserIdOrderByCreatedAtDesc(userId);
+    }
 }

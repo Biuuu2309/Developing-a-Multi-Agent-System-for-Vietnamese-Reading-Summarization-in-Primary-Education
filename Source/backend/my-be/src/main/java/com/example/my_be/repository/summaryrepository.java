@@ -34,6 +34,8 @@ public interface SummaryRepository extends JpaRepository<Summary, String> {
 
     List<Summary> findByMethod(String method); // Filter summaries by method (PHOBERT or T5_DIEN_GIAI)
 
+    Optional<Summary> findFirstByCreatedBy_UserIdOrderByCreatedAtDesc(String userId);
+
     @Query("SELECT s FROM Summary s LEFT JOIN FETCH s.createdBy WHERE s.summaryId = :id")
 Optional<Summary> getSummaryByIdwoStatus(@Param("id") String id);
 }

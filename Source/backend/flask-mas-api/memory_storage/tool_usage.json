@@ -953,19 +953,55 @@
             "length_option": "medium"
           }
         }
+      },
+      {
+        "timestamp": "2026-04-30T15:06:16.787691",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 0
+        },
+        "output": "Không tìm thấy bản tóm tắt trước đó để điều chỉnh độ khó.",
+        "success": true,
+        "execution_time": 0.005223989486694336,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-04-30T15:11:41.472004",
+        "input": {
+          "user_input_length": 1641,
+          "history_length": 2
+        },
+        "output": "Không tìm thấy bản tóm tắt trước đó để điều chỉnh độ khó.",
+        "success": true,
+        "execution_time": 7.405788898468018,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 49,
-      "successful": 38,
+      "total_uses": 51,
+      "successful": 40,
       "failed": 11,
-      "success_rate": 0.7755102040816326,
-      "recent_success_rate": 0.95,
-      "avg_execution_time": 44.69837984260248,
-      "last_used": "2026-04-03T13:16:45.005855"
+      "success_rate": 0.7843137254901961,
+      "recent_success_rate": 1.0,
+      "avg_execution_time": 43.09081617991129,
+      "last_used": "2026-04-30T15:11:41.472004"
     }
   },
-  "updated_at": "2026-04-03T13:16:45.005855"
+  "updated_at": "2026-04-30T15:11:41.472004"
 }
