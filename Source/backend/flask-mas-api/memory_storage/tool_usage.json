@@ -989,19 +989,95 @@
             "difficulty_action": "decrease"
           }
         }
+      },
+      {
+        "timestamp": "2026-05-07T09:39:12.081348",
+        "input": {
+          "user_input_length": 1911,
+          "history_length": 0
+        },
+        "output": "Mỗi dịp sinh nhật, bố tặng cho em một con vật nhỏ để em có thể làm bạn với nó. Năm nay, Bố tặng em một chú bồ câu xinh xắn, màu trắng muốt, đặt tên là Bạch Tuyết. Bạch Tuyết đã ở cùng em sáu tháng và ",
+        "success": true,
+        "execution_time": 179.93177556991577,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-05-07T09:45:39.082728",
+        "input": {
+          "user_input_length": 1911,
+          "history_length": 0
+        },
+        "output": "Mỗi dịp sinh nhật, bố tặng cho em một con vật nhỏ để em có thể làm bạn với nó. Năm nay, Bố tặng em một chú bồ câu xinh xắn, màu trắng muốt, đặt tên là Bạch Tuyết. Bạch Tuyết đã ở cùng em sáu tháng và ",
+        "success": true,
+        "execution_time": 91.18992638587952,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-05-07T09:48:51.031286",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Mỗi dịp sinh nhật, pa tặng cho em một con vật nhỏ để em có thể làm bạn với nó. Bố tặng em một chú bồ câu xinh xắn, màu trắng muốt, đặt tên là Bạch Tuyết. Bạch Tuyết đã ở với em sáu tháng và trở thành ",
+        "success": true,
+        "execution_time": 105.34520602226257,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-05-07T09:55:25.117455",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 4
+        },
+        "output": "Mỗi dịp sinh nhật, pa tặng cho em một đồ chơi nhỏ để em có thể làm bạn với nó. Bố trao tặng em một chú bồ câu xinh xắn, màu trắng muốt, đặt tên là Bạch Tuyết. Bạch Tuyết đã ở với em sáu tháng và trở t",
+        "success": true,
+        "execution_time": 278.44779443740845,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "3e6ef938-aa03-4fb9-97cc-2a98c166a21c",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "increase"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 51,
-      "successful": 40,
+      "total_uses": 55,
+      "successful": 44,
       "failed": 11,
-      "success_rate": 0.7843137254901961,
+      "success_rate": 0.8,
       "recent_success_rate": 1.0,
-      "avg_execution_time": 43.09081617991129,
-      "last_used": "2026-04-30T15:11:41.472004"
+      "avg_execution_time": 51.86447868347168,
+      "last_used": "2026-05-07T09:55:25.117455"
     }
   },
-  "updated_at": "2026-04-30T15:11:41.472004"
+  "updated_at": "2026-05-07T09:55:25.117455"
 }

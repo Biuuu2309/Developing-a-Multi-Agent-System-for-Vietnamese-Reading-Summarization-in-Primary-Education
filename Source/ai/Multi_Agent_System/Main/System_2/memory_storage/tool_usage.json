@@ -1888,19 +1888,57 @@
             "difficulty_action": "increase"
           }
         }
+      },
+      {
+        "timestamp": "2026-05-07T09:22:42.047130",
+        "input": {
+          "user_input_length": 1910,
+          "history_length": 0
+        },
+        "output": "Mỗi dịp sinh nhật, bố tặng cho em một con vật nhỏ để em có thể làm bạn với nó. Năm nay, Bố tặng em một chú bồ câu xinh xắn, màu trắng muốt, đặt tên là Bạch Tuyết. Bạch Tuyết đã ở cùng em sáu tháng và ",
+        "success": true,
+        "execution_time": 99.1153655052185,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a501711f-9443-443f-b2ff-16f0dba120d0",
+          "intent": {
+            "intent": "summarize",
+            "summarization_type": "abstractive",
+            "grade_level": 5,
+            "length_option": "medium"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-05-07T09:27:15.479570",
+        "input": {
+          "user_input_length": 31,
+          "history_length": 2
+        },
+        "output": "Bố tặng cho em một con vật nhỏ để em có thể làm bạn với nó. Bố tặng em một chú bồ câu xinh xắn, màu trắng muốt, đặt tên là Bạch Tuyết. Bạch Tuyết đã ở sáu tháng và trở thành một chú chim bé xíu. Chú c",
+        "success": true,
+        "execution_time": 208.0126919746399,
+        "agent_name": "mas_system",
+        "context": {
+          "session_id": "a501711f-9443-443f-b2ff-16f0dba120d0",
+          "intent": {
+            "intent": "adjust_difficulty",
+            "difficulty_action": "decrease"
+          }
+        }
       }
     ]
   },
   "stats": {
     "mas_graph": {
-      "total_uses": 112,
-      "successful": 105,
+      "total_uses": 114,
+      "successful": 107,
       "failed": 7,
-      "success_rate": 0.9375,
+      "success_rate": 0.9385964912280702,
       "recent_success_rate": 1.0,
-      "avg_execution_time": 52.64287053048611,
-      "last_used": "2026-04-29T19:15:53.203912"
+      "avg_execution_time": 54.413417165739496,
+      "last_used": "2026-05-07T09:27:15.479570"
     }
   },
-  "updated_at": "2026-04-29T19:15:53.203912"
+  "updated_at": "2026-05-07T09:27:15.479570"
 }
